@@ -1,0 +1,4941 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7f9f73f41d6c1b1e4487b07b06380b1c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+
+    <header class="container">
+        <aside >
+            <h1>新北市交通資訊</h1>
+            <h2>加油站</h2>
+        </aside>
+        <nav>
+            <ul >
+                <li><a href="/">停車位</a></li>
+                <li><a href="/dig">道路施工</a></li>
+                <li><a href="/gas">加油站</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="folium-map" id="map_7f9f73f41d6c1b1e4487b07b06380b1c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7f9f73f41d6c1b1e4487b07b06380b1c = L.map(
+                "map_7f9f73f41d6c1b1e4487b07b06380b1c",
+                {
+                    center: [23.5, 121.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f88e9eb8bdf89e4124494e230121a7e6 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7f9f73f41d6c1b1e4487b07b06380b1c);
+        
+    
+            var marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94 = L.markerClusterGroup(
+                {}
+            );
+            map_7f9f73f41d6c1b1e4487b07b06380b1c.addLayer(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+            var marker_177075a5c38f77922a8946c9a2838886 = L.marker(
+                [25.07969, 121.3859438],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_18fe99748881373f51e907d3b66e9a44 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e98062531ed76c5d522213fbdfedbf2 = $(`<div id="html_7e98062531ed76c5d522213fbdfedbf2" style="width: 100.0%; height: 100.0%;">八里加油站新北市八里區中山路1段1號</div>`)[0];
+                popup_18fe99748881373f51e907d3b66e9a44.setContent(html_7e98062531ed76c5d522213fbdfedbf2);
+            
+        
+
+        marker_177075a5c38f77922a8946c9a2838886.bindPopup(popup_18fe99748881373f51e907d3b66e9a44)
+        ;
+
+        
+    
+    
+            var marker_605115bf4da4104811858a67d6ad8822 = L.marker(
+                [25.1458499, 121.4008295],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_cb33796fb9c458ecffe0a74947fd24ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_343a627f026b3f2436c146ce1b20edd8 = $(`<div id="html_343a627f026b3f2436c146ce1b20edd8" style="width: 100.0%; height: 100.0%;">台亞八里台北港新北市八里區中華路2段341號</div>`)[0];
+                popup_cb33796fb9c458ecffe0a74947fd24ac.setContent(html_343a627f026b3f2436c146ce1b20edd8);
+            
+        
+
+        marker_605115bf4da4104811858a67d6ad8822.bindPopup(popup_cb33796fb9c458ecffe0a74947fd24ac)
+        ;
+
+        
+    
+    
+            var marker_49d46602827f1e342560901c9a375cd4 = L.marker(
+                [25.1440043, 121.3980602],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_b7bf90518c1a9891b7c46d64e1271765 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2455e037f2d288ae5870d676f3206ee8 = $(`<div id="html_2455e037f2d288ae5870d676f3206ee8" style="width: 100.0%; height: 100.0%;">台亞八里加油站新北市八里區中華路2段381號</div>`)[0];
+                popup_b7bf90518c1a9891b7c46d64e1271765.setContent(html_2455e037f2d288ae5870d676f3206ee8);
+            
+        
+
+        marker_49d46602827f1e342560901c9a375cd4.bindPopup(popup_b7bf90518c1a9891b7c46d64e1271765)
+        ;
+
+        
+    
+    
+            var marker_0d989f6da966343ae3328f55452e27a6 = L.marker(
+                [25.1529524, 121.4116394],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f7b97fbb457f778dd559d362979e53fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_61677aa4e1c8a5a0a319a416a17face3 = $(`<div id="html_61677aa4e1c8a5a0a319a416a17face3" style="width: 100.0%; height: 100.0%;">三詠加油站新北市八里區中華路2段39號</div>`)[0];
+                popup_f7b97fbb457f778dd559d362979e53fe.setContent(html_61677aa4e1c8a5a0a319a416a17face3);
+            
+        
+
+        marker_0d989f6da966343ae3328f55452e27a6.bindPopup(popup_f7b97fbb457f778dd559d362979e53fe)
+        ;
+
+        
+    
+    
+            var marker_aa4225a72a94eac309abd4eb457593e2 = L.marker(
+                [25.1145953, 121.4583872],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e842cf63da2420063235b085a06ee609 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1bb8232797a2ad3bf97442930f7c1ce7 = $(`<div id="html_1bb8232797a2ad3bf97442930f7c1ce7" style="width: 100.0%; height: 100.0%;">獅子頭加油站新北市八里區龍米路1段50號</div>`)[0];
+                popup_e842cf63da2420063235b085a06ee609.setContent(html_1bb8232797a2ad3bf97442930f7c1ce7);
+            
+        
+
+        marker_aa4225a72a94eac309abd4eb457593e2.bindPopup(popup_e842cf63da2420063235b085a06ee609)
+        ;
+
+        
+    
+    
+            var marker_85aba0fb4794fafb9e41ed9f51e19675 = L.marker(
+                [25.1145953, 121.4583872],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2ea70c75b23e3c45a8eaacfaa97bbb55 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8762664ec5bbbc3d3e4abbb10619ea1c = $(`<div id="html_8762664ec5bbbc3d3e4abbb10619ea1c" style="width: 100.0%; height: 100.0%;">八仙加油站新北市八里區龍米路1段51號</div>`)[0];
+                popup_2ea70c75b23e3c45a8eaacfaa97bbb55.setContent(html_8762664ec5bbbc3d3e4abbb10619ea1c);
+            
+        
+
+        marker_85aba0fb4794fafb9e41ed9f51e19675.bindPopup(popup_2ea70c75b23e3c45a8eaacfaa97bbb55)
+        ;
+
+        
+    
+    
+            var marker_c160a118761e3fe31e3fec13933f9fb6 = L.marker(
+                [25.1567762, 121.4361223],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_834f2ee1711a3a4f716d0acd30869cc6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_76b46befe1460569da038786d63efc39 = $(`<div id="html_76b46befe1460569da038786d63efc39" style="width: 100.0%; height: 100.0%;">龍形加油站新北市八里區龍米路2段150號</div>`)[0];
+                popup_834f2ee1711a3a4f716d0acd30869cc6.setContent(html_76b46befe1460569da038786d63efc39);
+            
+        
+
+        marker_c160a118761e3fe31e3fec13933f9fb6.bindPopup(popup_834f2ee1711a3a4f716d0acd30869cc6)
+        ;
+
+        
+    
+    
+            var marker_4a9b8ae456acde2afc91158b02a283e2 = L.marker(
+                [25.1413455, 121.4481093],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2d42d1dee310e44585903f268a1e8f1c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d27db497d718b6f78938060491fe7ed6 = $(`<div id="html_d27db497d718b6f78938060491fe7ed6" style="width: 100.0%; height: 100.0%;">關渡橋加油站新北市八里區龍米路2段72-1號</div>`)[0];
+                popup_2d42d1dee310e44585903f268a1e8f1c.setContent(html_d27db497d718b6f78938060491fe7ed6);
+            
+        
+
+        marker_4a9b8ae456acde2afc91158b02a283e2.bindPopup(popup_2d42d1dee310e44585903f268a1e8f1c)
+        ;
+
+        
+    
+    
+            var marker_5fc88b60b57554ca42812df2784ea596 = L.marker(
+                [25.2616914, 121.5027135],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_90620b9093860e74d50c5a66cf0a29ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2db7ea398625328c857e26a362d96b14 = $(`<div id="html_2db7ea398625328c857e26a362d96b14" style="width: 100.0%; height: 100.0%;">北海加油站新北市三芝區北海路2段167號</div>`)[0];
+                popup_90620b9093860e74d50c5a66cf0a29ba.setContent(html_2db7ea398625328c857e26a362d96b14);
+            
+        
+
+        marker_5fc88b60b57554ca42812df2784ea596.bindPopup(popup_90620b9093860e74d50c5a66cf0a29ba)
+        ;
+
+        
+    
+    
+            var marker_9f2d1d590d87b40295a909530bef5a35 = L.marker(
+                [25.2611271, 121.5027222],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9fd00d0ffbb8fa4367d5a93ed77ed2b3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb090fd6eed712abe69d37ed1875df8b = $(`<div id="html_bb090fd6eed712abe69d37ed1875df8b" style="width: 100.0%; height: 100.0%;">南海加油站新北市三芝區北海路2段168號</div>`)[0];
+                popup_9fd00d0ffbb8fa4367d5a93ed77ed2b3.setContent(html_bb090fd6eed712abe69d37ed1875df8b);
+            
+        
+
+        marker_9f2d1d590d87b40295a909530bef5a35.bindPopup(popup_9fd00d0ffbb8fa4367d5a93ed77ed2b3)
+        ;
+
+        
+    
+    
+            var marker_34a963a719b83ecb1a6f5cda7f09e843 = L.marker(
+                [25.2573697, 121.5013127],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_bb8aea1655da795661305e5e45d94b3c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca66669864197529970d5350b9eafc9e = $(`<div id="html_ca66669864197529970d5350b9eafc9e" style="width: 100.0%; height: 100.0%;">三芝加油站新北市三芝區埔頭里埔頭15號</div>`)[0];
+                popup_bb8aea1655da795661305e5e45d94b3c.setContent(html_ca66669864197529970d5350b9eafc9e);
+            
+        
+
+        marker_34a963a719b83ecb1a6f5cda7f09e843.bindPopup(popup_bb8aea1655da795661305e5e45d94b3c)
+        ;
+
+        
+    
+    
+            var marker_c03e39bfe139d3c346d860a1110f9cf7 = L.marker(
+                [25.259456, 121.477271],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ce1c721ab81f415a6e9300e55da6af3d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_178e988308fa889a85d96aa2cddb91f4 = $(`<div id="html_178e988308fa889a85d96aa2cddb91f4" style="width: 100.0%; height: 100.0%;">大嘉好加油站新北市三芝區錫板里海尾14-32號</div>`)[0];
+                popup_ce1c721ab81f415a6e9300e55da6af3d.setContent(html_178e988308fa889a85d96aa2cddb91f4);
+            
+        
+
+        marker_c03e39bfe139d3c346d860a1110f9cf7.bindPopup(popup_ce1c721ab81f415a6e9300e55da6af3d)
+        ;
+
+        
+    
+    
+            var marker_5fab8e632fcc8a9ecf86559ab73c97b9 = L.marker(
+                [25.0753707, 121.4894946],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f15cc732ef7a38ea641a63ed908c26f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8dd6056afc5a2ca358ac6f05597c5c1e = $(`<div id="html_8dd6056afc5a2ca358ac6f05597c5c1e" style="width: 100.0%; height: 100.0%;">聯華三重交流道新北市三重區三和路4段81-1號</div>`)[0];
+                popup_f15cc732ef7a38ea641a63ed908c26f8.setContent(html_8dd6056afc5a2ca358ac6f05597c5c1e);
+            
+        
+
+        marker_5fab8e632fcc8a9ecf86559ab73c97b9.bindPopup(popup_f15cc732ef7a38ea641a63ed908c26f8)
+        ;
+
+        
+    
+    
+            var marker_ac00e1581675ee343f1ecfaf00c76608 = L.marker(
+                [25.0708381, 121.4753284],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a43aed0bbc16947ce9c5f170a7a72d69 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c14e4f98d57f91697a9cfae1050fec0c = $(`<div id="html_c14e4f98d57f91697a9cfae1050fec0c" style="width: 100.0%; height: 100.0%;">三重加油站新北市三重區中正北路237號</div>`)[0];
+                popup_a43aed0bbc16947ce9c5f170a7a72d69.setContent(html_c14e4f98d57f91697a9cfae1050fec0c);
+            
+        
+
+        marker_ac00e1581675ee343f1ecfaf00c76608.bindPopup(popup_a43aed0bbc16947ce9c5f170a7a72d69)
+        ;
+
+        
+    
+    
+            var marker_ef507f1caf207922b888c9120a01e61f = L.marker(
+                [25.0716353, 121.4742222],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_0264448a6eb158c59da0880c12650e54 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0cfbbb64bcaf517a93e02cb8ffaece1a = $(`<div id="html_0cfbbb64bcaf517a93e02cb8ffaece1a" style="width: 100.0%; height: 100.0%;">中正加油站新北市三重區中正北路305號</div>`)[0];
+                popup_0264448a6eb158c59da0880c12650e54.setContent(html_0cfbbb64bcaf517a93e02cb8ffaece1a);
+            
+        
+
+        marker_ef507f1caf207922b888c9120a01e61f.bindPopup(popup_0264448a6eb158c59da0880c12650e54)
+        ;
+
+        
+    
+    
+            var marker_2587847b4f4e8abfb35773ffe1619375 = L.marker(
+                [25.0433717, 121.4706126],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e7a109e22d49002a801fff3890b55fe4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_181df0b2ee42ea1bccd412c499e5d7de = $(`<div id="html_181df0b2ee42ea1bccd412c499e5d7de" style="width: 100.0%; height: 100.0%;">台亞三重環河路加油站新北市三重區中興南街33-2號</div>`)[0];
+                popup_e7a109e22d49002a801fff3890b55fe4.setContent(html_181df0b2ee42ea1bccd412c499e5d7de);
+            
+        
+
+        marker_2587847b4f4e8abfb35773ffe1619375.bindPopup(popup_e7a109e22d49002a801fff3890b55fe4)
+        ;
+
+        
+    
+    
+            var marker_50b3b6d3d05ab91d5ecd48a813158132 = L.marker(
+                [25.0769728, 121.4887804],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_79954c9660ad8071035edfa64ee84b10 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0529ca3af69cea53a977d6e02db5394c = $(`<div id="html_0529ca3af69cea53a977d6e02db5394c" style="width: 100.0%; height: 100.0%;">楓林加油站新北市三重區仁美街2號</div>`)[0];
+                popup_79954c9660ad8071035edfa64ee84b10.setContent(html_0529ca3af69cea53a977d6e02db5394c);
+            
+        
+
+        marker_50b3b6d3d05ab91d5ecd48a813158132.bindPopup(popup_79954c9660ad8071035edfa64ee84b10)
+        ;
+
+        
+    
+    
+            var marker_69c6bd5f814bdbea9dfadb3f754296b5 = L.marker(
+                [25.077081, 121.488913],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ef82f0b8284d21c55b4e61aafc0999aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a07dc24f87bcc09cf11eaddef63d81c0 = $(`<div id="html_a07dc24f87bcc09cf11eaddef63d81c0" style="width: 100.0%; height: 100.0%;">堤頂加油站新北市三重區自強路4段34號</div>`)[0];
+                popup_ef82f0b8284d21c55b4e61aafc0999aa.setContent(html_a07dc24f87bcc09cf11eaddef63d81c0);
+            
+        
+
+        marker_69c6bd5f814bdbea9dfadb3f754296b5.bindPopup(popup_ef82f0b8284d21c55b4e61aafc0999aa)
+        ;
+
+        
+    
+    
+            var marker_49bc3fb56f9268ea2ccd2961081e3c76 = L.marker(
+                [25.079472, 121.49095],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_322a1f71c3b87348818b9af5583b8890 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd72dfca3c24ebdb6e31482e0529b905 = $(`<div id="html_bd72dfca3c24ebdb6e31482e0529b905" style="width: 100.0%; height: 100.0%;">台亞三重自強路加油站新北市三重區自強路4段96號</div>`)[0];
+                popup_322a1f71c3b87348818b9af5583b8890.setContent(html_bd72dfca3c24ebdb6e31482e0529b905);
+            
+        
+
+        marker_49bc3fb56f9268ea2ccd2961081e3c76.bindPopup(popup_322a1f71c3b87348818b9af5583b8890)
+        ;
+
+        
+    
+    
+            var marker_869d706970af8d7640726a83438f6d3d = L.marker(
+                [25.0719035, 121.4926345],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_b13ac466cef565e4b89528d77296d574 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1154e35a8335ae1de70271182355f48 = $(`<div id="html_a1154e35a8335ae1de70271182355f48" style="width: 100.0%; height: 100.0%;">重陽路加油站新北市三重區忠孝路1段1號</div>`)[0];
+                popup_b13ac466cef565e4b89528d77296d574.setContent(html_a1154e35a8335ae1de70271182355f48);
+            
+        
+
+        marker_869d706970af8d7640726a83438f6d3d.bindPopup(popup_b13ac466cef565e4b89528d77296d574)
+        ;
+
+        
+    
+    
+            var marker_493db22044eb4bdf7d4563225f0427d4 = L.marker(
+                [25.0587144, 121.4893995],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1a6193ca6edbbf3ba5ab4df07583406a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_46dcfca7eb8a7b318b7482c1b7aae16c = $(`<div id="html_46dcfca7eb8a7b318b7482c1b7aae16c" style="width: 100.0%; height: 100.0%;">菜寮加油站新北市三重區重新路3段157號</div>`)[0];
+                popup_1a6193ca6edbbf3ba5ab4df07583406a.setContent(html_46dcfca7eb8a7b318b7482c1b7aae16c);
+            
+        
+
+        marker_493db22044eb4bdf7d4563225f0427d4.bindPopup(popup_1a6193ca6edbbf3ba5ab4df07583406a)
+        ;
+
+        
+    
+    
+            var marker_965a3ff3668430e8be426f30561485f0 = L.marker(
+                [25.0615697, 121.4929945],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8b04727a34c5f46dbec86f4d0ec46cac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_20d6d7780d8ce30b5a88f9f073af1bf8 = $(`<div id="html_20d6d7780d8ce30b5a88f9f073af1bf8" style="width: 100.0%; height: 100.0%;">國園加油站新北市三重區重新路3段49號</div>`)[0];
+                popup_8b04727a34c5f46dbec86f4d0ec46cac.setContent(html_20d6d7780d8ce30b5a88f9f073af1bf8);
+            
+        
+
+        marker_965a3ff3668430e8be426f30561485f0.bindPopup(popup_8b04727a34c5f46dbec86f4d0ec46cac)
+        ;
+
+        
+    
+    
+            var marker_60846bdc36b1d221a2b88b896b429514 = L.marker(
+                [25.0468178, 121.4723433],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e3dd2585956844d620bd58a1d80bcade = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27c815bd357b9cfa28892c7eedb41550 = $(`<div id="html_27c815bd357b9cfa28892c7eedb41550" style="width: 100.0%; height: 100.0%;">三重重新路加油站新北市三重區重新路5段495號</div>`)[0];
+                popup_e3dd2585956844d620bd58a1d80bcade.setContent(html_27c815bd357b9cfa28892c7eedb41550);
+            
+        
+
+        marker_60846bdc36b1d221a2b88b896b429514.bindPopup(popup_e3dd2585956844d620bd58a1d80bcade)
+        ;
+
+        
+    
+    
+            var marker_444aeefbb1c3d1f5722e0413cbdd3695 = L.marker(
+                [25.0446345, 121.4687247],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_18f5a84834f949b6d94ce0535c115280 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_769890ab57da56fd0e510442d8e3e529 = $(`<div id="html_769890ab57da56fd0e510442d8e3e529" style="width: 100.0%; height: 100.0%;">山隆興隆加油站新北市三重區重新路5段628號</div>`)[0];
+                popup_18f5a84834f949b6d94ce0535c115280.setContent(html_769890ab57da56fd0e510442d8e3e529);
+            
+        
+
+        marker_444aeefbb1c3d1f5722e0413cbdd3695.bindPopup(popup_18f5a84834f949b6d94ce0535c115280)
+        ;
+
+        
+    
+    
+            var marker_7e79250ef9556166323872658fa2ce59 = L.marker(
+                [25.0439782, 121.4680859],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_58005e1a885c3956f8540bc1c42ebfc5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc5ffa8a1113152a6e8bca69fbe32da6 = $(`<div id="html_fc5ffa8a1113152a6e8bca69fbe32da6" style="width: 100.0%; height: 100.0%;">二重加油站新北市三重區重新路5段652號</div>`)[0];
+                popup_58005e1a885c3956f8540bc1c42ebfc5.setContent(html_fc5ffa8a1113152a6e8bca69fbe32da6);
+            
+        
+
+        marker_7e79250ef9556166323872658fa2ce59.bindPopup(popup_58005e1a885c3956f8540bc1c42ebfc5)
+        ;
+
+        
+    
+    
+            var marker_5cd6ad446f1b2fb39e7f2091ffdf71eb = L.marker(
+                [25.0886759, 121.492925],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_05b6f1df14d57af7fa0b5114cd5caf51 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8fd6b5d34703f9211a4c80586e0c081 = $(`<div id="html_b8fd6b5d34703f9211a4c80586e0c081" style="width: 100.0%; height: 100.0%;">重陽橋加油站新北市三重區集賢路72號</div>`)[0];
+                popup_05b6f1df14d57af7fa0b5114cd5caf51.setContent(html_b8fd6b5d34703f9211a4c80586e0c081);
+            
+        
+
+        marker_5cd6ad446f1b2fb39e7f2091ffdf71eb.bindPopup(popup_05b6f1df14d57af7fa0b5114cd5caf51)
+        ;
+
+        
+    
+    
+            var marker_7160c564a6c01c95fd2daaf57f85d910 = L.marker(
+                [25.0830938, 121.4874178],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1d6d6f9c58ba5d20924c12d2815a5d4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67ad63d1c0dd9da8ba88a42cf7c24f0b = $(`<div id="html_67ad63d1c0dd9da8ba88a42cf7c24f0b" style="width: 100.0%; height: 100.0%;">碧華加油站新北市三重區溪尾街268號</div>`)[0];
+                popup_1d6d6f9c58ba5d20924c12d2815a5d4c.setContent(html_67ad63d1c0dd9da8ba88a42cf7c24f0b);
+            
+        
+
+        marker_7160c564a6c01c95fd2daaf57f85d910.bindPopup(popup_1d6d6f9c58ba5d20924c12d2815a5d4c)
+        ;
+
+        
+    
+    
+            var marker_f68726e9ca6abc61a4066e8002580556 = L.marker(
+                [24.9209516, 121.3702179],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a88202fd68eadebf6796b11f8a8d7187 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e1ed48a63424bedde5da494268afc6f4 = $(`<div id="html_e1ed48a63424bedde5da494268afc6f4" style="width: 100.0%; height: 100.0%;">台亞三峽新北市三峽區中正路1段307號</div>`)[0];
+                popup_a88202fd68eadebf6796b11f8a8d7187.setContent(html_e1ed48a63424bedde5da494268afc6f4);
+            
+        
+
+        marker_f68726e9ca6abc61a4066e8002580556.bindPopup(popup_a88202fd68eadebf6796b11f8a8d7187)
+        ;
+
+        
+    
+    
+            var marker_f92a20ff5d1bd7e758dff66b215ecfb3 = L.marker(
+                [24.914863, 121.366292],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_fe2e903d3b14ca1ec46fadcd13d06ead = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_09915873ff6278b0526cd44d86a32120 = $(`<div id="html_09915873ff6278b0526cd44d86a32120" style="width: 100.0%; height: 100.0%;">大埔加油站新北市三峽區中正路2段165號</div>`)[0];
+                popup_fe2e903d3b14ca1ec46fadcd13d06ead.setContent(html_09915873ff6278b0526cd44d86a32120);
+            
+        
+
+        marker_f92a20ff5d1bd7e758dff66b215ecfb3.bindPopup(popup_fe2e903d3b14ca1ec46fadcd13d06ead)
+        ;
+
+        
+    
+    
+            var marker_252642acdb307031285702763ffd1acc = L.marker(
+                [24.9099133, 121.3655766],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1ca87b12f66f8992ff299d7416131435 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_38f2c06ac504794043fbd11e7f4aaea1 = $(`<div id="html_38f2c06ac504794043fbd11e7f4aaea1" style="width: 100.0%; height: 100.0%;">民盛加油站新北市三峽區中正路2段362號</div>`)[0];
+                popup_1ca87b12f66f8992ff299d7416131435.setContent(html_38f2c06ac504794043fbd11e7f4aaea1);
+            
+        
+
+        marker_252642acdb307031285702763ffd1acc.bindPopup(popup_1ca87b12f66f8992ff299d7416131435)
+        ;
+
+        
+    
+    
+            var marker_ad5aa18a2eb03ad8d404dc5fade6af03 = L.marker(
+                [24.9333461, 121.3752693],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_4810b7fbdc8736333366da54a291dd66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_83554d3d2040a367afa1c3160885dba7 = $(`<div id="html_83554d3d2040a367afa1c3160885dba7" style="width: 100.0%; height: 100.0%;">三峽加油站新北市三峽區介壽路1段193號</div>`)[0];
+                popup_4810b7fbdc8736333366da54a291dd66.setContent(html_83554d3d2040a367afa1c3160885dba7);
+            
+        
+
+        marker_ad5aa18a2eb03ad8d404dc5fade6af03.bindPopup(popup_4810b7fbdc8736333366da54a291dd66)
+        ;
+
+        
+    
+    
+            var marker_ec1098db5e5f29d18e33f5f59b314a6c = L.marker(
+                [24.9333461, 121.3752693],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_93d07a2a38df8f2c4ccab7043224fbaf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e408a69d4e89325f27128e8d0d3c7a21 = $(`<div id="html_e408a69d4e89325f27128e8d0d3c7a21" style="width: 100.0%; height: 100.0%;">柑園三峽加油站新北市三峽區介壽路1段385號</div>`)[0];
+                popup_93d07a2a38df8f2c4ccab7043224fbaf.setContent(html_e408a69d4e89325f27128e8d0d3c7a21);
+            
+        
+
+        marker_ec1098db5e5f29d18e33f5f59b314a6c.bindPopup(popup_93d07a2a38df8f2c4ccab7043224fbaf)
+        ;
+
+        
+    
+    
+            var marker_d4533087e02d5ba8f63593ddc67c34eb = L.marker(
+                [24.9333461, 121.3752693],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_80227bdde7c2337cc3159d1dbfe9f2c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eff2696e20f9e01aa97c08adbf30336e = $(`<div id="html_eff2696e20f9e01aa97c08adbf30336e" style="width: 100.0%; height: 100.0%;">宏福加油站新北市三峽區介壽路1段550號</div>`)[0];
+                popup_80227bdde7c2337cc3159d1dbfe9f2c6.setContent(html_eff2696e20f9e01aa97c08adbf30336e);
+            
+        
+
+        marker_d4533087e02d5ba8f63593ddc67c34eb.bindPopup(popup_80227bdde7c2337cc3159d1dbfe9f2c6)
+        ;
+
+        
+    
+    
+            var marker_e7769252b4ffbb17af62779506722e42 = L.marker(
+                [24.9413767, 121.3977603],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1af9d123eae133d4943a9d140fc29460 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d825faaa8e474876c9fff163b38c5775 = $(`<div id="html_d825faaa8e474876c9fff163b38c5775" style="width: 100.0%; height: 100.0%;">全國橫溪加油站新北市三峽區介壽路3段114號</div>`)[0];
+                popup_1af9d123eae133d4943a9d140fc29460.setContent(html_d825faaa8e474876c9fff163b38c5775);
+            
+        
+
+        marker_e7769252b4ffbb17af62779506722e42.bindPopup(popup_1af9d123eae133d4943a9d140fc29460)
+        ;
+
+        
+    
+    
+            var marker_820575baebac6c7cd4952fc5e9a614fb = L.marker(
+                [24.9427284, 121.4002823],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_4d9894303ed14b5dd28ae014d359917f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b79c0038ec11d7e8a5a191a909c3b2c9 = $(`<div id="html_b79c0038ec11d7e8a5a191a909c3b2c9" style="width: 100.0%; height: 100.0%;">長壽山加油站新北市三峽區介壽路3段131號</div>`)[0];
+                popup_4d9894303ed14b5dd28ae014d359917f.setContent(html_b79c0038ec11d7e8a5a191a909c3b2c9);
+            
+        
+
+        marker_820575baebac6c7cd4952fc5e9a614fb.bindPopup(popup_4d9894303ed14b5dd28ae014d359917f)
+        ;
+
+        
+    
+    
+            var marker_ab5d78f67d06428c061ab724a558d9b6 = L.marker(
+                [24.9391847, 121.3660679],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2c480bff5bf457f3a24f9f72fb719185 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f58ab7f485cfe2c51b81ca57e789dc5 = $(`<div id="html_0f58ab7f485cfe2c51b81ca57e789dc5" style="width: 100.0%; height: 100.0%;">三鶯加油站新北市三峽區復興路316號</div>`)[0];
+                popup_2c480bff5bf457f3a24f9f72fb719185.setContent(html_0f58ab7f485cfe2c51b81ca57e789dc5);
+            
+        
+
+        marker_ab5d78f67d06428c061ab724a558d9b6.bindPopup(popup_2c480bff5bf457f3a24f9f72fb719185)
+        ;
+
+        
+    
+    
+            var marker_aacccc071b2d8df2c286482fd9de1c58 = L.marker(
+                [24.93488, 121.4016522],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f1cd03d0a737cf11a1f8da27f21abd66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_03c6e15c375973d7a77074f8c435e13b = $(`<div id="html_03c6e15c375973d7a77074f8c435e13b" style="width: 100.0%; height: 100.0%;">清溪加油站新北市三峽區溪東路89號</div>`)[0];
+                popup_f1cd03d0a737cf11a1f8da27f21abd66.setContent(html_03c6e15c375973d7a77074f8c435e13b);
+            
+        
+
+        marker_aacccc071b2d8df2c286482fd9de1c58.bindPopup(popup_f1cd03d0a737cf11a1f8da27f21abd66)
+        ;
+
+        
+    
+    
+            var marker_604906bd41a74304dd7fc42e2010f8b8 = L.marker(
+                [24.991566, 121.448764],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f75307bafdc1e4f43f22a20ca345d0ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_10ef6058dd26cba459d5022574f300cf = $(`<div id="html_10ef6058dd26cba459d5022574f300cf" style="width: 100.0%; height: 100.0%;">冠軍加油站新北市土城區中央路1段7-1號</div>`)[0];
+                popup_f75307bafdc1e4f43f22a20ca345d0ff.setContent(html_10ef6058dd26cba459d5022574f300cf);
+            
+        
+
+        marker_604906bd41a74304dd7fc42e2010f8b8.bindPopup(popup_f75307bafdc1e4f43f22a20ca345d0ff)
+        ;
+
+        
+    
+    
+            var marker_aeff6e6cf8f31515f451321aec93263b = L.marker(
+                [24.9742145, 121.4406406],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_608ebbfb72fadcb52d4c3919b91c76f1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59d6a717d8e3e0c5d206e9665915ca13 = $(`<div id="html_59d6a717d8e3e0c5d206e9665915ca13" style="width: 100.0%; height: 100.0%;">土城加油站新北市土城區中央路2段280號</div>`)[0];
+                popup_608ebbfb72fadcb52d4c3919b91c76f1.setContent(html_59d6a717d8e3e0c5d206e9665915ca13);
+            
+        
+
+        marker_aeff6e6cf8f31515f451321aec93263b.bindPopup(popup_608ebbfb72fadcb52d4c3919b91c76f1)
+        ;
+
+        
+    
+    
+            var marker_fa36bfe86710db1da28ca26875d077df = L.marker(
+                [24.9657912, 121.432121],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_21bb58194115e1362933796e5c71ec9d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e5980c208d3b7e2f6deea31578973eb7 = $(`<div id="html_e5980c208d3b7e2f6deea31578973eb7" style="width: 100.0%; height: 100.0%;">全國土城交流道加油站新北市土城區中央路3段158號</div>`)[0];
+                popup_21bb58194115e1362933796e5c71ec9d.setContent(html_e5980c208d3b7e2f6deea31578973eb7);
+            
+        
+
+        marker_fa36bfe86710db1da28ca26875d077df.bindPopup(popup_21bb58194115e1362933796e5c71ec9d)
+        ;
+
+        
+    
+    
+            var marker_5d74086ae725ea7b51bc0f93cfaef02f = L.marker(
+                [24.965666, 121.4317127],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_118362e6f7781d8ece2cdb2cdbddb15a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1423ff4f9d4aefd3a7570c38cdaaa611 = $(`<div id="html_1423ff4f9d4aefd3a7570c38cdaaa611" style="width: 100.0%; height: 100.0%;">土城交流道加油站新北市土城區中央路3段164號</div>`)[0];
+                popup_118362e6f7781d8ece2cdb2cdbddb15a.setContent(html_1423ff4f9d4aefd3a7570c38cdaaa611);
+            
+        
+
+        marker_5d74086ae725ea7b51bc0f93cfaef02f.bindPopup(popup_118362e6f7781d8ece2cdb2cdbddb15a)
+        ;
+
+        
+    
+    
+            var marker_c21e4c22ef00881dad6b7e12c226ea8d = L.marker(
+                [24.9680539, 121.4382474],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_4f3a5d394dbaa923484c44ff5ecf5c79 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf834591164927d85c14f451169129b2 = $(`<div id="html_bf834591164927d85c14f451169129b2" style="width: 100.0%; height: 100.0%;">中央路加油站新北市土城區中央路3段83號</div>`)[0];
+                popup_4f3a5d394dbaa923484c44ff5ecf5c79.setContent(html_bf834591164927d85c14f451169129b2);
+            
+        
+
+        marker_c21e4c22ef00881dad6b7e12c226ea8d.bindPopup(popup_4f3a5d394dbaa923484c44ff5ecf5c79)
+        ;
+
+        
+    
+    
+            var marker_a79244a01b5a3b314f71b2b87b2db98c = L.marker(
+                [24.9617019, 121.422754],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8339add48c4d44f7be2d53167c5079c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6fc192e7fa6c4dcb95019b7b68b6e13f = $(`<div id="html_6fc192e7fa6c4dcb95019b7b68b6e13f" style="width: 100.0%; height: 100.0%;">頂埔加油站新北市土城區中央路4段43號</div>`)[0];
+                popup_8339add48c4d44f7be2d53167c5079c9.setContent(html_6fc192e7fa6c4dcb95019b7b68b6e13f);
+            
+        
+
+        marker_a79244a01b5a3b314f71b2b87b2db98c.bindPopup(popup_8339add48c4d44f7be2d53167c5079c9)
+        ;
+
+        
+    
+    
+            var marker_0cfa00ac54ea0f72c7523336dbe1e392 = L.marker(
+                [24.96266, 121.424573],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c4f4a7cebf021bd17a05df8d8e88649a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_45e416643227f5ccf6fb5d46af8be134 = $(`<div id="html_45e416643227f5ccf6fb5d46af8be134" style="width: 100.0%; height: 100.0%;">台亞土城工業區加油站新北市土城區中央路4段8號</div>`)[0];
+                popup_c4f4a7cebf021bd17a05df8d8e88649a.setContent(html_45e416643227f5ccf6fb5d46af8be134);
+            
+        
+
+        marker_0cfa00ac54ea0f72c7523336dbe1e392.bindPopup(popup_c4f4a7cebf021bd17a05df8d8e88649a)
+        ;
+
+        
+    
+    
+            var marker_614328fe3f71729eb70c51d2e001ec1e = L.marker(
+                [24.9884929, 121.4460527],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f76759ebf4973a9497489f7c1445fba1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b9cc63360662b90869e8013719a780b = $(`<div id="html_7b9cc63360662b90869e8013719a780b" style="width: 100.0%; height: 100.0%;">亞柏土城新北市土城區中華路1段164號</div>`)[0];
+                popup_f76759ebf4973a9497489f7c1445fba1.setContent(html_7b9cc63360662b90869e8013719a780b);
+            
+        
+
+        marker_614328fe3f71729eb70c51d2e001ec1e.bindPopup(popup_f76759ebf4973a9497489f7c1445fba1)
+        ;
+
+        
+    
+    
+            var marker_7d3d6d82feb5951b20adabf560ba6972 = L.marker(
+                [24.9790064, 121.4398706],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_36305d0dd6f06b3e458762d04a75bf96 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cc223b7e48844e75bd98ea85c9d9c380 = $(`<div id="html_cc223b7e48844e75bd98ea85c9d9c380" style="width: 100.0%; height: 100.0%;">全國中華路加油站新北市土城區中華路2段1號</div>`)[0];
+                popup_36305d0dd6f06b3e458762d04a75bf96.setContent(html_cc223b7e48844e75bd98ea85c9d9c380);
+            
+        
+
+        marker_7d3d6d82feb5951b20adabf560ba6972.bindPopup(popup_36305d0dd6f06b3e458762d04a75bf96)
+        ;
+
+        
+    
+    
+            var marker_18886b78877f4fb8fe4043dca1b83225 = L.marker(
+                [24.979457, 121.4394412],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d6f1832d363777a61bc05dc9ac216bb6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2140286d61ec46e45a18abe15dcceffc = $(`<div id="html_2140286d61ec46e45a18abe15dcceffc" style="width: 100.0%; height: 100.0%;">全國美城加油站新北市土城區中華路2段2號</div>`)[0];
+                popup_d6f1832d363777a61bc05dc9ac216bb6.setContent(html_2140286d61ec46e45a18abe15dcceffc);
+            
+        
+
+        marker_18886b78877f4fb8fe4043dca1b83225.bindPopup(popup_d6f1832d363777a61bc05dc9ac216bb6)
+        ;
+
+        
+    
+    
+            var marker_fae7b53516085c6c295a5727eabb35d8 = L.marker(
+                [24.995914, 121.4560361],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9f6f33d0e1a16afd5b0083a0c5998863 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a107ac56ee58bee58bd48d27576261a5 = $(`<div id="html_a107ac56ee58bee58bd48d27576261a5" style="width: 100.0%; height: 100.0%;">土城廣福路加油站新北市土城區四川路1號</div>`)[0];
+                popup_9f6f33d0e1a16afd5b0083a0c5998863.setContent(html_a107ac56ee58bee58bd48d27576261a5);
+            
+        
+
+        marker_fae7b53516085c6c295a5727eabb35d8.bindPopup(popup_9f6f33d0e1a16afd5b0083a0c5998863)
+        ;
+
+        
+    
+    
+            var marker_06aa921c64ba42d9cbf6900022a80b9b = L.marker(
+                [24.972205, 121.434537],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_347c198134598a8a11720a1bd6f2eab1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3caedd989a47def60fb210ac51a4c163 = $(`<div id="html_3caedd989a47def60fb210ac51a4c163" style="width: 100.0%; height: 100.0%;">台亞土城城林橋加油站新北市土城區亞洲路9號</div>`)[0];
+                popup_347c198134598a8a11720a1bd6f2eab1.setContent(html_3caedd989a47def60fb210ac51a4c163);
+            
+        
+
+        marker_06aa921c64ba42d9cbf6900022a80b9b.bindPopup(popup_347c198134598a8a11720a1bd6f2eab1)
+        ;
+
+        
+    
+    
+            var marker_04264d8e4e0d1086023c477e3fd84648 = L.marker(
+                [24.9882643, 121.4695509],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_20930e284f7d10cea77c2d19213b5e39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c5183a94397b6ee962228fe82be2fc54 = $(`<div id="html_c5183a94397b6ee962228fe82be2fc54" style="width: 100.0%; height: 100.0%;">延吉加油站新北市土城區金城路3段202-8號</div>`)[0];
+                popup_20930e284f7d10cea77c2d19213b5e39.setContent(html_c5183a94397b6ee962228fe82be2fc54);
+            
+        
+
+        marker_04264d8e4e0d1086023c477e3fd84648.bindPopup(popup_20930e284f7d10cea77c2d19213b5e39)
+        ;
+
+        
+    
+    
+            var marker_1514bd85392f931978fdf0a2931e21d0 = L.marker(
+                [24.9907974, 121.4734543],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a8ead4bd3737e627d60888dbb1084b27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f689f3480d8c86a6d40699f0485e8e5 = $(`<div id="html_4f689f3480d8c86a6d40699f0485e8e5" style="width: 100.0%; height: 100.0%;">連城加油站新北市土城區金城路3段283號</div>`)[0];
+                popup_a8ead4bd3737e627d60888dbb1084b27.setContent(html_4f689f3480d8c86a6d40699f0485e8e5);
+            
+        
+
+        marker_1514bd85392f931978fdf0a2931e21d0.bindPopup(popup_a8ead4bd3737e627d60888dbb1084b27)
+        ;
+
+        
+    
+    
+            var marker_e6036a397bb2d5a0662ed7bd28a2b79f = L.marker(
+                [25.0054439, 121.5047095],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3d83ec84c13ffcb7767442172bfcb03f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35ca85d8bf0376137723da5c9ab3a2e9 = $(`<div id="html_35ca85d8bf0376137723da5c9ab3a2e9" style="width: 100.0%; height: 100.0%;">北基嘉和加油站新北市中和區中山路2段22號</div>`)[0];
+                popup_3d83ec84c13ffcb7767442172bfcb03f.setContent(html_35ca85d8bf0376137723da5c9ab3a2e9);
+            
+        
+
+        marker_e6036a397bb2d5a0662ed7bd28a2b79f.bindPopup(popup_3d83ec84c13ffcb7767442172bfcb03f)
+        ;
+
+        
+    
+    
+            var marker_5e414108bdb2f43429b41cac3d6a21a0 = L.marker(
+                [25.0053652, 121.4838229],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d9206407b47457beed17394951798235 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f29a66a59e965f2d5e12461816b0c2b = $(`<div id="html_7f29a66a59e965f2d5e12461816b0c2b" style="width: 100.0%; height: 100.0%;">積穗加油站新北市中和區中山路2段550號</div>`)[0];
+                popup_d9206407b47457beed17394951798235.setContent(html_7f29a66a59e965f2d5e12461816b0c2b);
+            
+        
+
+        marker_5e414108bdb2f43429b41cac3d6a21a0.bindPopup(popup_d9206407b47457beed17394951798235)
+        ;
+
+        
+    
+    
+            var marker_7f75a0c41a38419025ac156389010534 = L.marker(
+                [25.0055327, 121.476724],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d22ef2f191e476e8ac1e5f4a69b80c57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7cafbcbc8cfab3e0d9087bb08db681c = $(`<div id="html_f7cafbcbc8cfab3e0d9087bb08db681c" style="width: 100.0%; height: 100.0%;">北基中和新北市中和區中山路3段53號</div>`)[0];
+                popup_d22ef2f191e476e8ac1e5f4a69b80c57.setContent(html_f7cafbcbc8cfab3e0d9087bb08db681c);
+            
+        
+
+        marker_7f75a0c41a38419025ac156389010534.bindPopup(popup_d22ef2f191e476e8ac1e5f4a69b80c57)
+        ;
+
+        
+    
+    
+            var marker_d5e8c325f7d490a943d7749d6e746a61 = L.marker(
+                [25.0099902, 121.4803417],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_43d41f59d9907d596b322de96eddc652 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d49fa0666b2adbb797de54aecb6ee396 = $(`<div id="html_d49fa0666b2adbb797de54aecb6ee396" style="width: 100.0%; height: 100.0%;">金祥和板和加油站新北市中和區中正路1191號</div>`)[0];
+                popup_43d41f59d9907d596b322de96eddc652.setContent(html_d49fa0666b2adbb797de54aecb6ee396);
+            
+        
+
+        marker_d5e8c325f7d490a943d7749d6e746a61.bindPopup(popup_43d41f59d9907d596b322de96eddc652)
+        ;
+
+        
+    
+    
+            var marker_9e9d4fd8ee2421b2164286242140a32b = L.marker(
+                [25.0040221, 121.484806],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_874314e5a0aa2a336d322017ca0e62ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db114efa754d53f1ea09badc01434dcd = $(`<div id="html_db114efa754d53f1ea09badc01434dcd" style="width: 100.0%; height: 100.0%;">全宏加油站新北市中和區中正路828號</div>`)[0];
+                popup_874314e5a0aa2a336d322017ca0e62ac.setContent(html_db114efa754d53f1ea09badc01434dcd);
+            
+        
+
+        marker_9e9d4fd8ee2421b2164286242140a32b.bindPopup(popup_874314e5a0aa2a336d322017ca0e62ac)
+        ;
+
+        
+    
+    
+            var marker_d8e423097da0870f47b1c077dfe32c74 = L.marker(
+                [25.0039526, 121.4849904],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_305182ede0500395bfced1a9c8624710 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_37449e36c1f99ba1cc40751fcfdf66d7 = $(`<div id="html_37449e36c1f99ba1cc40751fcfdf66d7" style="width: 100.0%; height: 100.0%;">全國國揚加油站新北市中和區中正路830號</div>`)[0];
+                popup_305182ede0500395bfced1a9c8624710.setContent(html_37449e36c1f99ba1cc40751fcfdf66d7);
+            
+        
+
+        marker_d8e423097da0870f47b1c077dfe32c74.bindPopup(popup_305182ede0500395bfced1a9c8624710)
+        ;
+
+        
+    
+    
+            var marker_ba78874729d46b1af88e493a0ddf4cfe = L.marker(
+                [24.9995379, 121.505809],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_fee5887f5fe66d4c30d41eeea90e84cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f02329fdce2aed309b040a15d646e432 = $(`<div id="html_f02329fdce2aed309b040a15d646e432" style="width: 100.0%; height: 100.0%;">全宏二站新北市中和區中和路212號</div>`)[0];
+                popup_fee5887f5fe66d4c30d41eeea90e84cb.setContent(html_f02329fdce2aed309b040a15d646e432);
+            
+        
+
+        marker_ba78874729d46b1af88e493a0ddf4cfe.bindPopup(popup_fee5887f5fe66d4c30d41eeea90e84cb)
+        ;
+
+        
+    
+    
+            var marker_c390c871802af3d13aac83fd45b6ea81 = L.marker(
+                [24.9994871, 121.5078548],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_86340966507e6f90c3ac9b1de65918ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d09114979fc86a4a693af0ed26a44495 = $(`<div id="html_d09114979fc86a4a693af0ed26a44495" style="width: 100.0%; height: 100.0%;">中和新北市中和區中和路260號</div>`)[0];
+                popup_86340966507e6f90c3ac9b1de65918ff.setContent(html_d09114979fc86a4a693af0ed26a44495);
+            
+        
+
+        marker_c390c871802af3d13aac83fd45b6ea81.bindPopup(popup_86340966507e6f90c3ac9b1de65918ff)
+        ;
+
+        
+    
+    
+            var marker_a35c1a6f829f7a326f2c1f90ec8d06b2 = L.marker(
+                [25.0039794, 121.4877834],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3d23e0522c27d98595aaafed9963faeb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cfc45ce15c73ee22e00e9328aac112fb = $(`<div id="html_cfc45ce15c73ee22e00e9328aac112fb" style="width: 100.0%; height: 100.0%;">台亞中和建一路加油站新北市中和區建一路18號</div>`)[0];
+                popup_3d23e0522c27d98595aaafed9963faeb.setContent(html_cfc45ce15c73ee22e00e9328aac112fb);
+            
+        
+
+        marker_a35c1a6f829f7a326f2c1f90ec8d06b2.bindPopup(popup_3d23e0522c27d98595aaafed9963faeb)
+        ;
+
+        
+    
+    
+            var marker_e2c3e8ab0031ef541882d1aebeafaa5d = L.marker(
+                [24.9986916, 121.4856275],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_41b87d78e2322eee141bf1b8d0554c70 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa32976c4de5fefb7e2ca1d5c16b2cf5 = $(`<div id="html_fa32976c4de5fefb7e2ca1d5c16b2cf5" style="width: 100.0%; height: 100.0%;">嘉樂福加油站新北市中和區建八路1號</div>`)[0];
+                popup_41b87d78e2322eee141bf1b8d0554c70.setContent(html_fa32976c4de5fefb7e2ca1d5c16b2cf5);
+            
+        
+
+        marker_e2c3e8ab0031ef541882d1aebeafaa5d.bindPopup(popup_41b87d78e2322eee141bf1b8d0554c70)
+        ;
+
+        
+    
+    
+            var marker_9e7ffa9007c02828fe5985c15dd2f600 = L.marker(
+                [25.000381, 121.4921437],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_05eaf1c103441a2b82254434c2d68b04 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eacb11a5a1c076a47c0fbfa53d15381c = $(`<div id="html_eacb11a5a1c076a47c0fbfa53d15381c" style="width: 100.0%; height: 100.0%;">台亞中和建康路加油站新北市中和區建康路191號</div>`)[0];
+                popup_05eaf1c103441a2b82254434c2d68b04.setContent(html_eacb11a5a1c076a47c0fbfa53d15381c);
+            
+        
+
+        marker_9e7ffa9007c02828fe5985c15dd2f600.bindPopup(popup_05eaf1c103441a2b82254434c2d68b04)
+        ;
+
+        
+    
+    
+            var marker_bd576260b2e51c9363b39ee9a8a09b76 = L.marker(
+                [24.9939257, 121.4675108],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_285e7e21869c2a52a999af5d292bb21b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa4c77e84a22eb071aaa8f34059b5500 = $(`<div id="html_fa4c77e84a22eb071aaa8f34059b5500" style="width: 100.0%; height: 100.0%;">坤業莒光路加油站新北市中和區莒光路260號</div>`)[0];
+                popup_285e7e21869c2a52a999af5d292bb21b.setContent(html_fa4c77e84a22eb071aaa8f34059b5500);
+            
+        
+
+        marker_bd576260b2e51c9363b39ee9a8a09b76.bindPopup(popup_285e7e21869c2a52a999af5d292bb21b)
+        ;
+
+        
+    
+    
+            var marker_ef162045be965854ca9001770cfce112 = L.marker(
+                [24.9917286, 121.476739],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_efc7f989b8f4e8ebee85824f295349a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7dec324dad118fb70ccd9e0a7364878 = $(`<div id="html_e7dec324dad118fb70ccd9e0a7364878" style="width: 100.0%; height: 100.0%;">四十張加油站新北市中和區連城路629號</div>`)[0];
+                popup_efc7f989b8f4e8ebee85824f295349a4.setContent(html_e7dec324dad118fb70ccd9e0a7364878);
+            
+        
+
+        marker_ef162045be965854ca9001770cfce112.bindPopup(popup_efc7f989b8f4e8ebee85824f295349a4)
+        ;
+
+        
+    
+    
+            var marker_2058fead3446aa731270bc4387386a33 = L.marker(
+                [25.0001129, 121.4964315],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_951cba792f179d77978ae2ca111ef17c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92747c109daad74b42ef654e4e56d9b7 = $(`<div id="html_92747c109daad74b42ef654e4e56d9b7" style="width: 100.0%; height: 100.0%;">華中橋加油站新北市中和區連城路96號</div>`)[0];
+                popup_951cba792f179d77978ae2ca111ef17c.setContent(html_92747c109daad74b42ef654e4e56d9b7);
+            
+        
+
+        marker_2058fead3446aa731270bc4387386a33.bindPopup(popup_951cba792f179d77978ae2ca111ef17c)
+        ;
+
+        
+    
+    
+            var marker_c73ee2a183603dea82083b49bc26d029 = L.marker(
+                [24.9923932, 121.5119066],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_75864c98f4996f91ce7a422a587ed0ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4806065a197c53e94286e0d252308384 = $(`<div id="html_4806065a197c53e94286e0d252308384" style="width: 100.0%; height: 100.0%;">高加加油站新北市中和區景平路177號</div>`)[0];
+                popup_75864c98f4996f91ce7a422a587ed0ba.setContent(html_4806065a197c53e94286e0d252308384);
+            
+        
+
+        marker_c73ee2a183603dea82083b49bc26d029.bindPopup(popup_75864c98f4996f91ce7a422a587ed0ba)
+        ;
+
+        
+    
+    
+            var marker_e8b60da04354b5cde32663485c959a41 = L.marker(
+                [25.005755, 121.49258],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d00ba654ad66dcb2c2d906c1dbf0a099 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe1ef63ea3177baf61569bad3cac50a4 = $(`<div id="html_fe1ef63ea3177baf61569bad3cac50a4" style="width: 100.0%; height: 100.0%;">橋和加油站新北市中和區橋和路126號</div>`)[0];
+                popup_d00ba654ad66dcb2c2d906c1dbf0a099.setContent(html_fe1ef63ea3177baf61569bad3cac50a4);
+            
+        
+
+        marker_e8b60da04354b5cde32663485c959a41.bindPopup(popup_d00ba654ad66dcb2c2d906c1dbf0a099)
+        ;
+
+        
+    
+    
+            var marker_c64ad2238a209b600328937d136565b7 = L.marker(
+                [25.0068824, 121.4944848],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_00d00e82c0aa9e2b77bf2c2966f4309c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fbdc297c605b9de409cdd8bc70cff506 = $(`<div id="html_fbdc297c605b9de409cdd8bc70cff506" style="width: 100.0%; height: 100.0%;">嘉尤加油站新北市中和區橋和路241號</div>`)[0];
+                popup_00d00e82c0aa9e2b77bf2c2966f4309c.setContent(html_fbdc297c605b9de409cdd8bc70cff506);
+            
+        
+
+        marker_c64ad2238a209b600328937d136565b7.bindPopup(popup_00d00e82c0aa9e2b77bf2c2966f4309c)
+        ;
+
+        
+    
+    
+            var marker_7e4ed7803328227a1cfe784b8a5f7d0c = L.marker(
+                [25.005498, 121.4892586],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_7d976e78d3bee2b61c90000298fafeb2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bdc3ed0b56047a547d54bb1bd423e4ec = $(`<div id="html_bdc3ed0b56047a547d54bb1bd423e4ec" style="width: 100.0%; height: 100.0%;">勝利中和橋和路加油站新北市中和區橋和路81號</div>`)[0];
+                popup_7d976e78d3bee2b61c90000298fafeb2.setContent(html_bdc3ed0b56047a547d54bb1bd423e4ec);
+            
+        
+
+        marker_7e4ed7803328227a1cfe784b8a5f7d0c.bindPopup(popup_7d976e78d3bee2b61c90000298fafeb2)
+        ;
+
+        
+    
+    
+            var marker_cff282847e0c14fb397930628422c631 = L.marker(
+                [25.082542, 121.439],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_361c36870c30539cda9f194fbe2457ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89f206544060a13e1104834a288cc5b5 = $(`<div id="html_89f206544060a13e1104834a288cc5b5" style="width: 100.0%; height: 100.0%;">五股加油站新北市五股區中興路4段21號</div>`)[0];
+                popup_361c36870c30539cda9f194fbe2457ba.setContent(html_89f206544060a13e1104834a288cc5b5);
+            
+        
+
+        marker_cff282847e0c14fb397930628422c631.bindPopup(popup_361c36870c30539cda9f194fbe2457ba)
+        ;
+
+        
+    
+    
+            var marker_41235656b8005fcacee23c1034a9f521 = L.marker(
+                [25.0777557, 121.4355962],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2cfadd4bd4dfd12c1cb05130e74042a6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f6131268baf683095618b5d0f12cac15 = $(`<div id="html_f6131268baf683095618b5d0f12cac15" style="width: 100.0%; height: 100.0%;">指南成泰加油站新北市五股區成泰路1段170號</div>`)[0];
+                popup_2cfadd4bd4dfd12c1cb05130e74042a6.setContent(html_f6131268baf683095618b5d0f12cac15);
+            
+        
+
+        marker_41235656b8005fcacee23c1034a9f521.bindPopup(popup_2cfadd4bd4dfd12c1cb05130e74042a6)
+        ;
+
+        
+    
+    
+            var marker_678ea716dff20ed2be308cdbaa946fc7 = L.marker(
+                [25.0961626, 121.4488503],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_50e929fc917d3310979dc2cd7132f9b3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9798989eb04e1e7fbab610402d4d15c7 = $(`<div id="html_9798989eb04e1e7fbab610402d4d15c7" style="width: 100.0%; height: 100.0%;">福泰加油站新北市五股區成泰路1段76號</div>`)[0];
+                popup_50e929fc917d3310979dc2cd7132f9b3.setContent(html_9798989eb04e1e7fbab610402d4d15c7);
+            
+        
+
+        marker_678ea716dff20ed2be308cdbaa946fc7.bindPopup(popup_50e929fc917d3310979dc2cd7132f9b3)
+        ;
+
+        
+    
+    
+            var marker_298fc4843e4dcc67bb266434d28e1cfd = L.marker(
+                [25.0871209, 121.4404844],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_4a76cfab1d9467a7142433e2d4452d82 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8df5cf48cc6b8b69ebf380b5f587e27e = $(`<div id="html_8df5cf48cc6b8b69ebf380b5f587e27e" style="width: 100.0%; height: 100.0%;">聯華五股新北市五股區成泰路2段250號</div>`)[0];
+                popup_4a76cfab1d9467a7142433e2d4452d82.setContent(html_8df5cf48cc6b8b69ebf380b5f587e27e);
+            
+        
+
+        marker_298fc4843e4dcc67bb266434d28e1cfd.bindPopup(popup_4a76cfab1d9467a7142433e2d4452d82)
+        ;
+
+        
+    
+    
+            var marker_238fce5305c2f7b30094a849be24a7da = L.marker(
+                [25.0767567, 121.4379668],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_6576c798df43e7c06e6f6f81e6c8bab9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_097224d96942afb0cb3e964542582bad = $(`<div id="html_097224d96942afb0cb3e964542582bad" style="width: 100.0%; height: 100.0%;">上群加油站新北市五股區新五路2段126號   </div>`)[0];
+                popup_6576c798df43e7c06e6f6f81e6c8bab9.setContent(html_097224d96942afb0cb3e964542582bad);
+            
+        
+
+        marker_238fce5305c2f7b30094a849be24a7da.bindPopup(popup_6576c798df43e7c06e6f6f81e6c8bab9)
+        ;
+
+        
+    
+    
+            var marker_5ac4159672bf6b9ae1a522d5fd0d022c = L.marker(
+                [25.0777199, 121.4375158],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a2c50ab3340253b21413e4a31b838879 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_52dbfb95bfa6eab952edeb2211bba076 = $(`<div id="html_52dbfb95bfa6eab952edeb2211bba076" style="width: 100.0%; height: 100.0%;">昇易加油站新北市五股區新五路2段129號</div>`)[0];
+                popup_a2c50ab3340253b21413e4a31b838879.setContent(html_52dbfb95bfa6eab952edeb2211bba076);
+            
+        
+
+        marker_5ac4159672bf6b9ae1a522d5fd0d022c.bindPopup(popup_a2c50ab3340253b21413e4a31b838879)
+        ;
+
+        
+    
+    
+            var marker_2a6fcfebd78e7b1da0a5bd471a425cda = L.marker(
+                [25.0815226, 121.4407614],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_97bbef9dd2957b44500e52370f05b70b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_193ef85ed3e6f591e80ee975316ccdb1 = $(`<div id="html_193ef85ed3e6f591e80ee975316ccdb1" style="width: 100.0%; height: 100.0%;">信誠加油站新北市五股區新五路2段258號</div>`)[0];
+                popup_97bbef9dd2957b44500e52370f05b70b.setContent(html_193ef85ed3e6f591e80ee975316ccdb1);
+            
+        
+
+        marker_2a6fcfebd78e7b1da0a5bd471a425cda.bindPopup(popup_97bbef9dd2957b44500e52370f05b70b)
+        ;
+
+        
+    
+    
+            var marker_76206827edd02500c776e1ff1b33def2 = L.marker(
+                [25.0862241, 121.4425378],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f393da5f912b347f4e532a196f43e5bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_631a1b27f5c431333f54f5d876404b84 = $(`<div id="html_631a1b27f5c431333f54f5d876404b84" style="width: 100.0%; height: 100.0%;">車容坊加油站新北市五股區新五路2段279號</div>`)[0];
+                popup_f393da5f912b347f4e532a196f43e5bc.setContent(html_631a1b27f5c431333f54f5d876404b84);
+            
+        
+
+        marker_76206827edd02500c776e1ff1b33def2.bindPopup(popup_f393da5f912b347f4e532a196f43e5bc)
+        ;
+
+        
+    
+    
+            var marker_23770e9eca83aaa54a3a7e11adc477d7 = L.marker(
+                [25.0036035, 121.5115294],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1f51cf341fcef41e929440da409e7595 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8370e2f61870f983670e31092e8000c1 = $(`<div id="html_8370e2f61870f983670e31092e8000c1" style="width: 100.0%; height: 100.0%;">永和加油站新北市永和區中和路573號</div>`)[0];
+                popup_1f51cf341fcef41e929440da409e7595.setContent(html_8370e2f61870f983670e31092e8000c1);
+            
+        
+
+        marker_23770e9eca83aaa54a3a7e11adc477d7.bindPopup(popup_1f51cf341fcef41e929440da409e7595)
+        ;
+
+        
+    
+    
+            var marker_9201d0d6c376c0d0c02ced9e1938e86e = L.marker(
+                [25.0043439, 121.5123313],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_b478fc2d02d9a1e35f3d7356c42d0c1d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f65a492fa96a7713bb45685949176f5d = $(`<div id="html_f65a492fa96a7713bb45685949176f5d" style="width: 100.0%; height: 100.0%;">挑戰者永和加油站新北市永和區中和路601號</div>`)[0];
+                popup_b478fc2d02d9a1e35f3d7356c42d0c1d.setContent(html_f65a492fa96a7713bb45685949176f5d);
+            
+        
+
+        marker_9201d0d6c376c0d0c02ced9e1938e86e.bindPopup(popup_b478fc2d02d9a1e35f3d7356c42d0c1d)
+        ;
+
+        
+    
+    
+            var marker_4a470b87f89857d56e446a0276a67e57 = L.marker(
+                [25.0049763, 121.5196697],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8196b758e3ddd6c1768e502661e6d25c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_714b0620b6a3d7d5137d7c641e354c26 = $(`<div id="html_714b0620b6a3d7d5137d7c641e354c26" style="width: 100.0%; height: 100.0%;">永和永利路加油站新北市永和區永利路69號</div>`)[0];
+                popup_8196b758e3ddd6c1768e502661e6d25c.setContent(html_714b0620b6a3d7d5137d7c641e354c26);
+            
+        
+
+        marker_4a470b87f89857d56e446a0276a67e57.bindPopup(popup_8196b758e3ddd6c1768e502661e6d25c)
+        ;
+
+        
+    
+    
+            var marker_d13c669f71554cfad1e686283b5349cc = L.marker(
+                [25.2915676, 121.5655949],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ebac97c6970567bf8981f52e74ae3192 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd2b37a3e4bfefa782ecb1b2422181d8 = $(`<div id="html_dd2b37a3e4bfefa782ecb1b2422181d8" style="width: 100.0%; height: 100.0%;">石門加油站新北市石門區中央路1-15號</div>`)[0];
+                popup_ebac97c6970567bf8981f52e74ae3192.setContent(html_dd2b37a3e4bfefa782ecb1b2422181d8);
+            
+        
+
+        marker_d13c669f71554cfad1e686283b5349cc.bindPopup(popup_ebac97c6970567bf8981f52e74ae3192)
+        ;
+
+        
+    
+    
+            var marker_ad903743c9b5c04d02890929ea395adc = L.marker(
+                [25.0098662, 121.6452827],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f3303cbe2f04f8e3e16a0fc9ce4b11f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79c17fea857a78751485a837ffa1757f = $(`<div id="html_79c17fea857a78751485a837ffa1757f" style="width: 100.0%; height: 100.0%;">石碇加油站新北市石碇區文山路1段8號</div>`)[0];
+                popup_f3303cbe2f04f8e3e16a0fc9ce4b11f9.setContent(html_79c17fea857a78751485a837ffa1757f);
+            
+        
+
+        marker_ad903743c9b5c04d02890929ea395adc.bindPopup(popup_f3303cbe2f04f8e3e16a0fc9ce4b11f9)
+        ;
+
+        
+    
+    
+            var marker_ccb0475d99fc19b9d565c350101ab53d = L.marker(
+                [25.0098662, 121.6452827],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_dfd5d46e6b6a7b7d3ca0ad9a9f550539 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_94838d6ce027334db79db83544ae35ad = $(`<div id="html_94838d6ce027334db79db83544ae35ad" style="width: 100.0%; height: 100.0%;">建德加油站新北市石碇區文山路1段9號</div>`)[0];
+                popup_dfd5d46e6b6a7b7d3ca0ad9a9f550539.setContent(html_94838d6ce027334db79db83544ae35ad);
+            
+        
+
+        marker_ccb0475d99fc19b9d565c350101ab53d.bindPopup(popup_dfd5d46e6b6a7b7d3ca0ad9a9f550539)
+        ;
+
+        
+    
+    
+            var marker_bd54e1d5c0c10e6591a8ac51d526dd4e = L.marker(
+                [25.0565744, 121.632098],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_123361470bd3a53fe13e1961f5cbbbc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62c8a67c7affceafb6504fa286cb39c5 = $(`<div id="html_62c8a67c7affceafb6504fa286cb39c5" style="width: 100.0%; height: 100.0%;">台亞汐止好市多新北市汐止區大同路1段154號</div>`)[0];
+                popup_123361470bd3a53fe13e1961f5cbbbc1.setContent(html_62c8a67c7affceafb6504fa286cb39c5);
+            
+        
+
+        marker_bd54e1d5c0c10e6591a8ac51d526dd4e.bindPopup(popup_123361470bd3a53fe13e1961f5cbbbc1)
+        ;
+
+        
+    
+    
+            var marker_aba19dabbccbd1e88b82bf5aef8f256f = L.marker(
+                [25.0565744, 121.632098],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_827a34d255061af4688353fc83eaecf8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43b72bcb768789de3dac75aa190a3898 = $(`<div id="html_43b72bcb768789de3dac75aa190a3898" style="width: 100.0%; height: 100.0%;">四海加油站新北市汐止區大同路1段1號</div>`)[0];
+                popup_827a34d255061af4688353fc83eaecf8.setContent(html_43b72bcb768789de3dac75aa190a3898);
+            
+        
+
+        marker_aba19dabbccbd1e88b82bf5aef8f256f.bindPopup(popup_827a34d255061af4688353fc83eaecf8)
+        ;
+
+        
+    
+    
+            var marker_7a6f0ae5dade369e45bc39b41f464912 = L.marker(
+                [25.0565744, 121.632098],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_50c9803e86030121d1c080e3c9bb061e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_87c1873c6555bdc561df0676c55ead9c = $(`<div id="html_87c1873c6555bdc561df0676c55ead9c" style="width: 100.0%; height: 100.0%;">汐止加油站新北市汐止區大同路1段353號</div>`)[0];
+                popup_50c9803e86030121d1c080e3c9bb061e.setContent(html_87c1873c6555bdc561df0676c55ead9c);
+            
+        
+
+        marker_7a6f0ae5dade369e45bc39b41f464912.bindPopup(popup_50c9803e86030121d1c080e3c9bb061e)
+        ;
+
+        
+    
+    
+            var marker_bdbff1198b0d8b32289e078c8ef1c6b2 = L.marker(
+                [25.0630685, 121.6478639],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_73562e304675f207d88b237a7e32a7c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_022ed91ff9781314e20c2cfa0e4943ca = $(`<div id="html_022ed91ff9781314e20c2cfa0e4943ca" style="width: 100.0%; height: 100.0%;">台亞汐止加油站新北市汐止區大同路2段37號</div>`)[0];
+                popup_73562e304675f207d88b237a7e32a7c6.setContent(html_022ed91ff9781314e20c2cfa0e4943ca);
+            
+        
+
+        marker_bdbff1198b0d8b32289e078c8ef1c6b2.bindPopup(popup_73562e304675f207d88b237a7e32a7c6)
+        ;
+
+        
+    
+    
+            var marker_0b45c1e034e626c4387b19060a31b776 = L.marker(
+                [25.074412, 121.674181],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e987554bd7b34bf8a776733dca980450 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cf9bdf21cdb31b8039cf3b910ae01fbe = $(`<div id="html_cf9bdf21cdb31b8039cf3b910ae01fbe" style="width: 100.0%; height: 100.0%;">保長坑加油站新北市汐止區大同路3段186-1號</div>`)[0];
+                popup_e987554bd7b34bf8a776733dca980450.setContent(html_cf9bdf21cdb31b8039cf3b910ae01fbe);
+            
+        
+
+        marker_0b45c1e034e626c4387b19060a31b776.bindPopup(popup_e987554bd7b34bf8a776733dca980450)
+        ;
+
+        
+    
+    
+            var marker_89ccb2de0de0ca3d27a8a189713fb51b = L.marker(
+                [25.0750678, 121.6744578],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_185015df0a27b0ad4bf2a25a709c900e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c9b008d90615cecc8fff2d858294293f = $(`<div id="html_c9b008d90615cecc8fff2d858294293f" style="width: 100.0%; height: 100.0%;">全國厚生加油站新北市汐止區大同路3段279號</div>`)[0];
+                popup_185015df0a27b0ad4bf2a25a709c900e.setContent(html_c9b008d90615cecc8fff2d858294293f);
+            
+        
+
+        marker_89ccb2de0de0ca3d27a8a189713fb51b.bindPopup(popup_185015df0a27b0ad4bf2a25a709c900e)
+        ;
+
+        
+    
+    
+            var marker_03c0ff960a6504894888dbcfde226466 = L.marker(
+                [25.0728919, 121.6830796],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f83aae98e6f28c085abf865237b51ee9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ead51d21b3563f2dcb29b946c1855f1a = $(`<div id="html_ead51d21b3563f2dcb29b946c1855f1a" style="width: 100.0%; height: 100.0%;">平安加油站新北市汐止區大同路3段575號</div>`)[0];
+                popup_f83aae98e6f28c085abf865237b51ee9.setContent(html_ead51d21b3563f2dcb29b946c1855f1a);
+            
+        
+
+        marker_03c0ff960a6504894888dbcfde226466.bindPopup(popup_f83aae98e6f28c085abf865237b51ee9)
+        ;
+
+        
+    
+    
+            var marker_94a3cdf1a8105dbf6068aaa1b94f799c = L.marker(
+                [25.091781, 121.642862],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_caa24c65a1fd883c140902f174c895b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_acedb7a0eb67848143b18367f2cb17e4 = $(`<div id="html_acedb7a0eb67848143b18367f2cb17e4" style="width: 100.0%; height: 100.0%;">伯爵加油站新北市汐止區汐萬路1段39號</div>`)[0];
+                popup_caa24c65a1fd883c140902f174c895b5.setContent(html_acedb7a0eb67848143b18367f2cb17e4);
+            
+        
+
+        marker_94a3cdf1a8105dbf6068aaa1b94f799c.bindPopup(popup_caa24c65a1fd883c140902f174c895b5)
+        ;
+
+        
+    
+    
+            var marker_89c57dfec2824670760ff010e8b86d31 = L.marker(
+                [25.068863, 121.634138],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_295165ec6b849129c78d27d614b1599e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8f240a55c91219be5cc995ba4f4a6fef = $(`<div id="html_8f240a55c91219be5cc995ba4f4a6fef" style="width: 100.0%; height: 100.0%;">明湖加油站新北市汐止區康寧街536號</div>`)[0];
+                popup_295165ec6b849129c78d27d614b1599e.setContent(html_8f240a55c91219be5cc995ba4f4a6fef);
+            
+        
+
+        marker_89c57dfec2824670760ff010e8b86d31.bindPopup(popup_295165ec6b849129c78d27d614b1599e)
+        ;
+
+        
+    
+    
+            var marker_43f9e38b02adf61ff384eb1ae9435b51 = L.marker(
+                [25.0675498, 121.6180549],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e28d0ad6acf5406f81ec36e4e2ad4241 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d2b69affe569c1041f5f17778311e0c = $(`<div id="html_1d2b69affe569c1041f5f17778311e0c" style="width: 100.0%; height: 100.0%;">全國東湖加油站新北市汐止區康寧街5號</div>`)[0];
+                popup_e28d0ad6acf5406f81ec36e4e2ad4241.setContent(html_1d2b69affe569c1041f5f17778311e0c);
+            
+        
+
+        marker_43f9e38b02adf61ff384eb1ae9435b51.bindPopup(popup_e28d0ad6acf5406f81ec36e4e2ad4241)
+        ;
+
+        
+    
+    
+            var marker_a97726d87c05edb4fb289bbfbaaaa91c = L.marker(
+                [25.0673217, 121.6177247],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_48f361f016b9cc10d8e749033a986430 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_464ac1a0c9bfe4e3712b76476cc652f0 = $(`<div id="html_464ac1a0c9bfe4e3712b76476cc652f0" style="width: 100.0%; height: 100.0%;">東湖加油站新北市汐止區康寧街6號</div>`)[0];
+                popup_48f361f016b9cc10d8e749033a986430.setContent(html_464ac1a0c9bfe4e3712b76476cc652f0);
+            
+        
+
+        marker_a97726d87c05edb4fb289bbfbaaaa91c.bindPopup(popup_48f361f016b9cc10d8e749033a986430)
+        ;
+
+        
+    
+    
+            var marker_cec039b7ff026a743328c328e6de07d9 = L.marker(
+                [25.0564206, 121.635567],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_17b7b4b65b658deab26c14aa3bd29109 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dbc75cd82d7d799440de37a161808a3d = $(`<div id="html_dbc75cd82d7d799440de37a161808a3d" style="width: 100.0%; height: 100.0%;">台亞新台五一站新北市汐止區新台五路1段115號</div>`)[0];
+                popup_17b7b4b65b658deab26c14aa3bd29109.setContent(html_dbc75cd82d7d799440de37a161808a3d);
+            
+        
+
+        marker_cec039b7ff026a743328c328e6de07d9.bindPopup(popup_17b7b4b65b658deab26c14aa3bd29109)
+        ;
+
+        
+    
+    
+            var marker_c15f5e46f565bee3ce1c408905607cd2 = L.marker(
+                [25.0564206, 121.635567],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_6dabc86269b76dc15bdc0e64fd3cd2a9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43aefc15f8d5832b30fc656b1f07ed37 = $(`<div id="html_43aefc15f8d5832b30fc656b1f07ed37" style="width: 100.0%; height: 100.0%;">北基汐科加油站新北市汐止區新台五路1段132號</div>`)[0];
+                popup_6dabc86269b76dc15bdc0e64fd3cd2a9.setContent(html_43aefc15f8d5832b30fc656b1f07ed37);
+            
+        
+
+        marker_c15f5e46f565bee3ce1c408905607cd2.bindPopup(popup_6dabc86269b76dc15bdc0e64fd3cd2a9)
+        ;
+
+        
+    
+    
+            var marker_d342134f3cf51772ac92baab33b2f75b = L.marker(
+                [25.0662456, 121.670685],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_db1ca94bb83a72fd89ac966bfe3d8db0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6230e47368aae3b02a4021d490593c11 = $(`<div id="html_6230e47368aae3b02a4021d490593c11" style="width: 100.0%; height: 100.0%;">淳寶加油站新北市汐止區新台五路2段236號</div>`)[0];
+                popup_db1ca94bb83a72fd89ac966bfe3d8db0.setContent(html_6230e47368aae3b02a4021d490593c11);
+            
+        
+
+        marker_d342134f3cf51772ac92baab33b2f75b.bindPopup(popup_db1ca94bb83a72fd89ac966bfe3d8db0)
+        ;
+
+        
+    
+    
+            var marker_041907e6439d55e6380909c18411e145 = L.marker(
+                [25.0683785, 121.6835098],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f4b1a3ea4ec1c681d857f9bcf1496619 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b255af9a1825c086ad4c1847c7a25467 = $(`<div id="html_b255af9a1825c086ad4c1847c7a25467" style="width: 100.0%; height: 100.0%;">汐平加油站新北市汐止區新台五路2段652號</div>`)[0];
+                popup_f4b1a3ea4ec1c681d857f9bcf1496619.setContent(html_b255af9a1825c086ad4c1847c7a25467);
+            
+        
+
+        marker_041907e6439d55e6380909c18411e145.bindPopup(popup_f4b1a3ea4ec1c681d857f9bcf1496619)
+        ;
+
+        
+    
+    
+            var marker_663f330ebfc2f5db83e3bc63ece47146 = L.marker(
+                [24.9356736, 121.7049834],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1ccf85046a92eb569260ef9cf6a6ec14 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_90279a2c926dd32743f300ad57e7d7e6 = $(`<div id="html_90279a2c926dd32743f300ad57e7d7e6" style="width: 100.0%; height: 100.0%;">坪林加油站新北市坪林區北宜路八段61號</div>`)[0];
+                popup_1ccf85046a92eb569260ef9cf6a6ec14.setContent(html_90279a2c926dd32743f300ad57e7d7e6);
+            
+        
+
+        marker_663f330ebfc2f5db83e3bc63ece47146.bindPopup(popup_1ccf85046a92eb569260ef9cf6a6ec14)
+        ;
+
+        
+    
+    
+            var marker_4cdd6c0ed546f507b162181e521ad723 = L.marker(
+                [25.0200984, 121.4790563],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_42634a4c484d887491ee08648033cb26 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4921b7b5e9796f93c05da113a78cf4d4 = $(`<div id="html_4921b7b5e9796f93c05da113a78cf4d4" style="width: 100.0%; height: 100.0%;">光仁加油站新北市板橋區三民路1段106號</div>`)[0];
+                popup_42634a4c484d887491ee08648033cb26.setContent(html_4921b7b5e9796f93c05da113a78cf4d4);
+            
+        
+
+        marker_4cdd6c0ed546f507b162181e521ad723.bindPopup(popup_42634a4c484d887491ee08648033cb26)
+        ;
+
+        
+    
+    
+            var marker_d50545aadf0c99384e4a2257c5fdaaa5 = L.marker(
+                [25.0115625, 121.479036],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3461f4147c00e563de1ad66b30967aa2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_36ff42520c1eced47b354c5935f2a1a3 = $(`<div id="html_36ff42520c1eced47b354c5935f2a1a3" style="width: 100.0%; height: 100.0%;">正隆加油站新北市板橋區三民路2段257號</div>`)[0];
+                popup_3461f4147c00e563de1ad66b30967aa2.setContent(html_36ff42520c1eced47b354c5935f2a1a3);
+            
+        
+
+        marker_d50545aadf0c99384e4a2257c5fdaaa5.bindPopup(popup_3461f4147c00e563de1ad66b30967aa2)
+        ;
+
+        
+    
+    
+            var marker_b322cdcdd6389ff6cc9d5e31a39e2015 = L.marker(
+                [25.0193864, 121.4806827],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_51faf3001f9b6ce35192b1bdedd1ca72 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_51af954536eeb63b059312b2717574a7 = $(`<div id="html_51af954536eeb63b059312b2717574a7" style="width: 100.0%; height: 100.0%;">埔墘加油站新北市板橋區中山路2段320號</div>`)[0];
+                popup_51faf3001f9b6ce35192b1bdedd1ca72.setContent(html_51af954536eeb63b059312b2717574a7);
+            
+        
+
+        marker_b322cdcdd6389ff6cc9d5e31a39e2015.bindPopup(popup_51faf3001f9b6ce35192b1bdedd1ca72)
+        ;
+
+        
+    
+    
+            var marker_917d4d94ee2b809fb8b9056e990e03cf = L.marker(
+                [25.028544, 121.4714923],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_528a4a4bebe3fd09c0d5040c76b8260d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_03694ec18973ea9157010943bd679bcc = $(`<div id="html_03694ec18973ea9157010943bd679bcc" style="width: 100.0%; height: 100.0%;">台亞板橋文化路新北市板橋區文化路2段262號</div>`)[0];
+                popup_528a4a4bebe3fd09c0d5040c76b8260d.setContent(html_03694ec18973ea9157010943bd679bcc);
+            
+        
+
+        marker_917d4d94ee2b809fb8b9056e990e03cf.bindPopup(popup_528a4a4bebe3fd09c0d5040c76b8260d)
+        ;
+
+        
+    
+    
+            var marker_fcdf321ccc72dc19b5ce6045aed3531f = L.marker(
+                [24.9950533, 121.453337],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_19350c542427d180a14411829fe53805 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd0188424f52a5cb900d5becbeea88e6 = $(`<div id="html_bd0188424f52a5cb900d5becbeea88e6" style="width: 100.0%; height: 100.0%;">全國板橋四川路加油站新北市板橋區四川路2段橋頭6號</div>`)[0];
+                popup_19350c542427d180a14411829fe53805.setContent(html_bd0188424f52a5cb900d5becbeea88e6);
+            
+        
+
+        marker_fcdf321ccc72dc19b5ce6045aed3531f.bindPopup(popup_19350c542427d180a14411829fe53805)
+        ;
+
+        
+    
+    
+            var marker_a9bbf9eaa06b84d31a7bb707528f8392 = L.marker(
+                [25.0223463, 121.4691639],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_5e8ecc650d42155ae2785598d870b3a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3513441976ed66254037d2cff68ac33 = $(`<div id="html_e3513441976ed66254037d2cff68ac33" style="width: 100.0%; height: 100.0%;">台亞板橋民生加油站新北市板橋區民生路2段19號</div>`)[0];
+                popup_5e8ecc650d42155ae2785598d870b3a8.setContent(html_e3513441976ed66254037d2cff68ac33);
+            
+        
+
+        marker_a9bbf9eaa06b84d31a7bb707528f8392.bindPopup(popup_5e8ecc650d42155ae2785598d870b3a8)
+        ;
+
+        
+    
+    
+            var marker_9d885271c66237a1d5cb4b065a9671b0 = L.marker(
+                [25.0089616, 121.4640005],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_24d9de82880f04bbb976c1e0f1a810dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a013d45e0806c61a94227aac6e2a3a4 = $(`<div id="html_5a013d45e0806c61a94227aac6e2a3a4" style="width: 100.0%; height: 100.0%;">板橋民族路加油站新北市板橋區民族路90號</div>`)[0];
+                popup_24d9de82880f04bbb976c1e0f1a810dc.setContent(html_5a013d45e0806c61a94227aac6e2a3a4);
+            
+        
+
+        marker_9d885271c66237a1d5cb4b065a9671b0.bindPopup(popup_24d9de82880f04bbb976c1e0f1a810dc)
+        ;
+
+        
+    
+    
+            var marker_4832103b9a95ff857d67ef1afd34f242 = L.marker(
+                [24.9903256, 121.4606749],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_31b0caabc8ac992c37ed0c0fcf1a4e77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1487aa13e1faa945e370708c99759477 = $(`<div id="html_1487aa13e1faa945e370708c99759477" style="width: 100.0%; height: 100.0%;">台亞板橋信義路加油站新北市板橋區信義路267號</div>`)[0];
+                popup_31b0caabc8ac992c37ed0c0fcf1a4e77.setContent(html_1487aa13e1faa945e370708c99759477);
+            
+        
+
+        marker_4832103b9a95ff857d67ef1afd34f242.bindPopup(popup_31b0caabc8ac992c37ed0c0fcf1a4e77)
+        ;
+
+        
+    
+    
+            var marker_cd3ce20322992a404e40ea3f87f5a96b = L.marker(
+                [25.0233453, 121.4602482],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_72422696592dbcbf07e37969f02c1ee5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e795363f70f681dd3a69bbd3788fd351 = $(`<div id="html_e795363f70f681dd3a69bbd3788fd351" style="width: 100.0%; height: 100.0%;">新海加油站新北市板橋區新海路137號</div>`)[0];
+                popup_72422696592dbcbf07e37969f02c1ee5.setContent(html_e795363f70f681dd3a69bbd3788fd351);
+            
+        
+
+        marker_cd3ce20322992a404e40ea3f87f5a96b.bindPopup(popup_72422696592dbcbf07e37969f02c1ee5)
+        ;
+
+        
+    
+    
+            var marker_0d02cf7ea6dbb9ce8bea63187d19da5b = L.marker(
+                [24.9921129, 121.431379],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_40d2fc14f0f093745888b3989d3f0b5f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3395d46aeebaad6fac5dbd20fcb99d3d = $(`<div id="html_3395d46aeebaad6fac5dbd20fcb99d3d" style="width: 100.0%; height: 100.0%;">台亞板橋浮洲橋新北市板橋區篤行路1段33號</div>`)[0];
+                popup_40d2fc14f0f093745888b3989d3f0b5f.setContent(html_3395d46aeebaad6fac5dbd20fcb99d3d);
+            
+        
+
+        marker_0d02cf7ea6dbb9ce8bea63187d19da5b.bindPopup(popup_40d2fc14f0f093745888b3989d3f0b5f)
+        ;
+
+        
+    
+    
+            var marker_7481478ea08faa7019c237b1437e9436 = L.marker(
+                [25.0227031, 121.4491867],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_b0a53efd1122cfbd1db749652ebae001 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f4d952511d2ce1a79f1fb2a7d99404a2 = $(`<div id="html_f4d952511d2ce1a79f1fb2a7d99404a2" style="width: 100.0%; height: 100.0%;">板橋新月橋加油站新北市板橋區環河西路五段368號</div>`)[0];
+                popup_b0a53efd1122cfbd1db749652ebae001.setContent(html_f4d952511d2ce1a79f1fb2a7d99404a2);
+            
+        
+
+        marker_7481478ea08faa7019c237b1437e9436.bindPopup(popup_b0a53efd1122cfbd1db749652ebae001)
+        ;
+
+        
+    
+    
+            var marker_f03533b385255ae935afef2288905494 = L.marker(
+                [25.0774794, 121.3969745],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3555b1fe2d383bffc3b8c4aaa6f459c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6f1234419f0d6c6b329da3ffa3c1fd81 = $(`<div id="html_6f1234419f0d6c6b329da3ffa3c1fd81" style="width: 100.0%; height: 100.0%;">林口加油站新北市林口區中山路1號</div>`)[0];
+                popup_3555b1fe2d383bffc3b8c4aaa6f459c3.setContent(html_6f1234419f0d6c6b329da3ffa3c1fd81);
+            
+        
+
+        marker_f03533b385255ae935afef2288905494.bindPopup(popup_3555b1fe2d383bffc3b8c4aaa6f459c3)
+        ;
+
+        
+    
+    
+            var marker_61a0c9af0e4ffac3f2e3abb3fa3f530f = L.marker(
+                [25.0781825, 121.3954785],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f5b33b0fa6035d0c63c278b500dd1e88 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a8d006b6526ce32d4980b4d2fe80d4a8 = $(`<div id="html_a8d006b6526ce32d4980b4d2fe80d4a8" style="width: 100.0%; height: 100.0%;">柑園林口二加油站新北市林口區中山路27號</div>`)[0];
+                popup_f5b33b0fa6035d0c63c278b500dd1e88.setContent(html_a8d006b6526ce32d4980b4d2fe80d4a8);
+            
+        
+
+        marker_61a0c9af0e4ffac3f2e3abb3fa3f530f.bindPopup(popup_f5b33b0fa6035d0c63c278b500dd1e88)
+        ;
+
+        
+    
+    
+            var marker_47f24e6ed15b35ec859cf009355de144 = L.marker(
+                [25.0724101, 121.3697408],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ed78006f68a5f0009c70abcb24da296b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d443455bfa70bcdf52e076d8a7a48024 = $(`<div id="html_d443455bfa70bcdf52e076d8a7a48024" style="width: 100.0%; height: 100.0%;">文化二路加油站新北市林口區文化二路1段413號</div>`)[0];
+                popup_ed78006f68a5f0009c70abcb24da296b.setContent(html_d443455bfa70bcdf52e076d8a7a48024);
+            
+        
+
+        marker_47f24e6ed15b35ec859cf009355de144.bindPopup(popup_ed78006f68a5f0009c70abcb24da296b)
+        ;
+
+        
+    
+    
+            var marker_7511c5a1b53fbab7341adf91e49ae6f7 = L.marker(
+                [25.0904176, 121.3835367],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3928d1a49a250959c57812664a7b08fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8c9bf564c61e67e58e40df01aded3f5 = $(`<div id="html_b8c9bf564c61e67e58e40df01aded3f5" style="width: 100.0%; height: 100.0%;">山隆通運股份有限公司林口新北市林口區文化二路2段553號</div>`)[0];
+                popup_3928d1a49a250959c57812664a7b08fa.setContent(html_b8c9bf564c61e67e58e40df01aded3f5);
+            
+        
+
+        marker_7511c5a1b53fbab7341adf91e49ae6f7.bindPopup(popup_3928d1a49a250959c57812664a7b08fa)
+        ;
+
+        
+    
+    
+            var marker_7969862674b46c4f481511b7dddb426e = L.marker(
+                [25.0835082, 121.3775381],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_723f5c4e3175058bce610b238af97313 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d2fa28e569659e3ee51743ff4ced756b = $(`<div id="html_d2fa28e569659e3ee51743ff4ced756b" style="width: 100.0%; height: 100.0%;">台亞林口中山加油站新北市林口區文化三路2段300號</div>`)[0];
+                popup_723f5c4e3175058bce610b238af97313.setContent(html_d2fa28e569659e3ee51743ff4ced756b);
+            
+        
+
+        marker_7969862674b46c4f481511b7dddb426e.bindPopup(popup_723f5c4e3175058bce610b238af97313)
+        ;
+
+        
+    
+    
+            var marker_2c058e337bf3f8d2004d30c576fdacc9 = L.marker(
+                [25.0733054, 121.3669613],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_0ac37df73019775cb62dd7ff39867654 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2c8bf0d40a48b7bd3fd709c887ae7b48 = $(`<div id="html_2c8bf0d40a48b7bd3fd709c887ae7b48" style="width: 100.0%; height: 100.0%;">台亞林口忠孝加油站新北市林口區忠孝路132號</div>`)[0];
+                popup_0ac37df73019775cb62dd7ff39867654.setContent(html_2c8bf0d40a48b7bd3fd709c887ae7b48);
+            
+        
+
+        marker_2c058e337bf3f8d2004d30c576fdacc9.bindPopup(popup_0ac37df73019775cb62dd7ff39867654)
+        ;
+
+        
+    
+    
+            var marker_cd677016ad5c2005251c51dc7c139793 = L.marker(
+                [25.0807748, 121.3981356],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9f30ff9db3223a2205f688ea32cfb51b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b54b22d436ddf19df0dc435328cffdcf = $(`<div id="html_b54b22d436ddf19df0dc435328cffdcf" style="width: 100.0%; height: 100.0%;">統一精工林口二加油站新北市林口區粉寮路一段121號</div>`)[0];
+                popup_9f30ff9db3223a2205f688ea32cfb51b.setContent(html_b54b22d436ddf19df0dc435328cffdcf);
+            
+        
+
+        marker_cd677016ad5c2005251c51dc7c139793.bindPopup(popup_9f30ff9db3223a2205f688ea32cfb51b)
+        ;
+
+        
+    
+    
+            var marker_2c2ca3428433bdb5240308da417e7eca = L.marker(
+                [25.224885, 121.6337259],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8f857ca2fee5dee5137fb4709e682c02 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_acd8d235179b1ad29a092420a790ba0a = $(`<div id="html_acd8d235179b1ad29a092420a790ba0a" style="width: 100.0%; height: 100.0%;">金山加油站新北市金山區中山路385號</div>`)[0];
+                popup_8f857ca2fee5dee5137fb4709e682c02.setContent(html_acd8d235179b1ad29a092420a790ba0a);
+            
+        
+
+        marker_2c2ca3428433bdb5240308da417e7eca.bindPopup(popup_8f857ca2fee5dee5137fb4709e682c02)
+        ;
+
+        
+    
+    
+            var marker_a1f98c17e71d09c0e99eaac88176d00a = L.marker(
+                [25.2247415, 121.630347],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_486ac994d33d07d0ba96322b3300d10d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47a26e9d890f99ada450cb150f041a32 = $(`<div id="html_47a26e9d890f99ada450cb150f041a32" style="width: 100.0%; height: 100.0%;">金農加油站新北市金山區環金路462號</div>`)[0];
+                popup_486ac994d33d07d0ba96322b3300d10d.setContent(html_47a26e9d890f99ada450cb150f041a32);
+            
+        
+
+        marker_a1f98c17e71d09c0e99eaac88176d00a.bindPopup(popup_486ac994d33d07d0ba96322b3300d10d)
+        ;
+
+        
+    
+    
+            var marker_309944d16ebee173188e2e427b2d3a2f = L.marker(
+                [25.0569777, 121.4360928],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9b49c993f01db80eff52a4975943599b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3aadff562881cd0e2370326812d9aea7 = $(`<div id="html_3aadff562881cd0e2370326812d9aea7" style="width: 100.0%; height: 100.0%;">中泰加油站新北市泰山區泰林路2段32號</div>`)[0];
+                popup_9b49c993f01db80eff52a4975943599b.setContent(html_3aadff562881cd0e2370326812d9aea7);
+            
+        
+
+        marker_309944d16ebee173188e2e427b2d3a2f.bindPopup(popup_9b49c993f01db80eff52a4975943599b)
+        ;
+
+        
+    
+    
+            var marker_01feada445a7c62bc003e43a514a6e0a = L.marker(
+                [25.0644877, 121.427016],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_5871c616ee1c6da0df15b3478e9ac6e6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_399092ebb5ccf156221302f2720dac17 = $(`<div id="html_399092ebb5ccf156221302f2720dac17" style="width: 100.0%; height: 100.0%;">泰山加油站新北市泰山區泰林路2段424號</div>`)[0];
+                popup_5871c616ee1c6da0df15b3478e9ac6e6.setContent(html_399092ebb5ccf156221302f2720dac17);
+            
+        
+
+        marker_01feada445a7c62bc003e43a514a6e0a.bindPopup(popup_5871c616ee1c6da0df15b3478e9ac6e6)
+        ;
+
+        
+    
+    
+            var marker_77733dbffc7d98a017cb273dba6c0355 = L.marker(
+                [25.0575183, 121.4354787],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2e372bb99965791135a877d799f40dd4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2cfd96f108503c0da8fc1b1f44090c45 = $(`<div id="html_2cfd96f108503c0da8fc1b1f44090c45" style="width: 100.0%; height: 100.0%;">永錡加油站新北市泰山區泰林路2段47號</div>`)[0];
+                popup_2e372bb99965791135a877d799f40dd4.setContent(html_2cfd96f108503c0da8fc1b1f44090c45);
+            
+        
+
+        marker_77733dbffc7d98a017cb273dba6c0355.bindPopup(popup_2e372bb99965791135a877d799f40dd4)
+        ;
+
+        
+    
+    
+            var marker_e258bff540e9643c134ee981efe02abf = L.marker(
+                [25.0741508, 121.4365939],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8e62f9e9e7f49ee2acea1cb1a802a258 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0d66dd5268755471297bd195544afbc = $(`<div id="html_c0d66dd5268755471297bd195544afbc" style="width: 100.0%; height: 100.0%;">元泰加油站新北市泰山區新五路1段135號</div>`)[0];
+                popup_8e62f9e9e7f49ee2acea1cb1a802a258.setContent(html_c0d66dd5268755471297bd195544afbc);
+            
+        
+
+        marker_e258bff540e9643c134ee981efe02abf.bindPopup(popup_8e62f9e9e7f49ee2acea1cb1a802a258)
+        ;
+
+        
+    
+    
+            var marker_1fa6c591d5cdb6cc09a7e07e99316ab0 = L.marker(
+                [25.0741508, 121.4365939],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c58841bdd09c3e86a6470f82b926386a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_725d6342469ddc466bf3e21ad3dc2259 = $(`<div id="html_725d6342469ddc466bf3e21ad3dc2259" style="width: 100.0%; height: 100.0%;">全國新五路加油站新北市泰山區新五路1段89號</div>`)[0];
+                popup_c58841bdd09c3e86a6470f82b926386a.setContent(html_725d6342469ddc466bf3e21ad3dc2259);
+            
+        
+
+        marker_1fa6c591d5cdb6cc09a7e07e99316ab0.bindPopup(popup_c58841bdd09c3e86a6470f82b926386a)
+        ;
+
+        
+    
+    
+            var marker_10e8e70c734894b1bb296a22eba55092 = L.marker(
+                [25.0514239, 121.4389443],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d3b06eeb4901d8542011089a8a7d9bcf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_53afc54ef16e35c82ce1d6fe01a8a40d = $(`<div id="html_53afc54ef16e35c82ce1d6fe01a8a40d" style="width: 100.0%; height: 100.0%;">泰新加油站新北市泰山區新北大道5段1號</div>`)[0];
+                popup_d3b06eeb4901d8542011089a8a7d9bcf.setContent(html_53afc54ef16e35c82ce1d6fe01a8a40d);
+            
+        
+
+        marker_10e8e70c734894b1bb296a22eba55092.bindPopup(popup_d3b06eeb4901d8542011089a8a7d9bcf)
+        ;
+
+        
+    
+    
+            var marker_b0ec1a1b69de494c4a32f45769557f65 = L.marker(
+                [25.0323848, 121.4195356],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_5f7827ba3f37d3431259d86cf327a0db = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_09e70d6c5c13bd2845741cde75bbd89b = $(`<div id="html_09e70d6c5c13bd2845741cde75bbd89b" style="width: 100.0%; height: 100.0%;">五洲加油站新北市泰山區新北大道七段2號</div>`)[0];
+                popup_5f7827ba3f37d3431259d86cf327a0db.setContent(html_09e70d6c5c13bd2845741cde75bbd89b);
+            
+        
+
+        marker_b0ec1a1b69de494c4a32f45769557f65.bindPopup(popup_5f7827ba3f37d3431259d86cf327a0db)
+        ;
+
+        
+    
+    
+            var marker_278dde36a8dddb6b24af9314f7b81d05 = L.marker(
+                [25.0638612, 121.4385202],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_34c9bcb48ea67bc91e82a84aeffcdd15 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8dd1d4e8acb9e8ec84739a879297045a = $(`<div id="html_8dd1d4e8acb9e8ec84739a879297045a" style="width: 100.0%; height: 100.0%;">全國五股交流道加油站新北市泰山區楓江路110號</div>`)[0];
+                popup_34c9bcb48ea67bc91e82a84aeffcdd15.setContent(html_8dd1d4e8acb9e8ec84739a879297045a);
+            
+        
+
+        marker_278dde36a8dddb6b24af9314f7b81d05.bindPopup(popup_34c9bcb48ea67bc91e82a84aeffcdd15)
+        ;
+
+        
+    
+    
+            var marker_840e48ff44c7feb0abd665f567aefa84 = L.marker(
+                [25.0634081, 121.4369458],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_18a98d6088c2f47828e97871e408385f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1fab4d1aff971e21e0e938b0412cf4d = $(`<div id="html_a1fab4d1aff971e21e0e938b0412cf4d" style="width: 100.0%; height: 100.0%;">楓江加油站新北市泰山區楓江路88號</div>`)[0];
+                popup_18a98d6088c2f47828e97871e408385f.setContent(html_a1fab4d1aff971e21e0e938b0412cf4d);
+            
+        
+
+        marker_840e48ff44c7feb0abd665f567aefa84.bindPopup(popup_18a98d6088c2f47828e97871e408385f)
+        ;
+
+        
+    
+    
+            var marker_97cc3eb4194aaacafc7abc909fb32d84 = L.marker(
+                [25.0245409, 121.9715154],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_61a2ea5989a35a42c6ead308acb28748 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a956c5040158ea1342efe2ec0e54b111 = $(`<div id="html_a956c5040158ea1342efe2ec0e54b111" style="width: 100.0%; height: 100.0%;">台亞貢寮加油站新北市貢寮區香蘭街2-1號</div>`)[0];
+                popup_61a2ea5989a35a42c6ead308acb28748.setContent(html_a956c5040158ea1342efe2ec0e54b111);
+            
+        
+
+        marker_97cc3eb4194aaacafc7abc909fb32d84.bindPopup(popup_61a2ea5989a35a42c6ead308acb28748)
+        ;
+
+        
+    
+    
+            var marker_60b5f79338790e82923dc651ef65bf50 = L.marker(
+                [25.0687653, 121.9240052],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_35dbd2c019d2dff0745af2279e1b9d1e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e0773837aaf1676a4bca07245f30ec2 = $(`<div id="html_5e0773837aaf1676a4bca07245f30ec2" style="width: 100.0%; height: 100.0%;">澳底加油站新北市貢寮區真理里美艷山街6-2號</div>`)[0];
+                popup_35dbd2c019d2dff0745af2279e1b9d1e.setContent(html_5e0773837aaf1676a4bca07245f30ec2);
+            
+        
+
+        marker_60b5f79338790e82923dc651ef65bf50.bindPopup(popup_35dbd2c019d2dff0745af2279e1b9d1e)
+        ;
+
+        
+    
+    
+            var marker_0bdebb357b56e07073a3d20238b1bc73 = L.marker(
+                [25.010528, 121.98863],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_466cdfdb00e17cbe124d5b0bfc1a3e02 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67f7049fdf874ac9850ab7b83f1e5bf9 = $(`<div id="html_67f7049fdf874ac9850ab7b83f1e5bf9" style="width: 100.0%; height: 100.0%;">濱海西加油站新北市貢寮區福連街35號</div>`)[0];
+                popup_466cdfdb00e17cbe124d5b0bfc1a3e02.setContent(html_67f7049fdf874ac9850ab7b83f1e5bf9);
+            
+        
+
+        marker_0bdebb357b56e07073a3d20238b1bc73.bindPopup(popup_466cdfdb00e17cbe124d5b0bfc1a3e02)
+        ;
+
+        
+    
+    
+            var marker_89a1ac1007d098698af078fffbe59ea4 = L.marker(
+                [25.0107385, 121.9889732],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e550f6fc688d5855dd0f27e7197492b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe5d8097c52d08cd5ae7b3d6954e3be5 = $(`<div id="html_fe5d8097c52d08cd5ae7b3d6954e3be5" style="width: 100.0%; height: 100.0%;">濱海東加油站新北市貢寮區福連街36號</div>`)[0];
+                popup_e550f6fc688d5855dd0f27e7197492b5.setContent(html_fe5d8097c52d08cd5ae7b3d6954e3be5);
+            
+        
+
+        marker_89a1ac1007d098698af078fffbe59ea4.bindPopup(popup_e550f6fc688d5855dd0f27e7197492b5)
+        ;
+
+        
+    
+    
+            var marker_7f63d31831986d13cbebc759f1624bfb = L.marker(
+                [25.0185637, 121.9334012],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_fc742a2d9e9e1c8f8478d6664a7866b8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8a3f931d996205d05b26bc5c75dc0426 = $(`<div id="html_8a3f931d996205d05b26bc5c75dc0426" style="width: 100.0%; height: 100.0%;">福隆加油站新北市貢寮區興隆街21-2號</div>`)[0];
+                popup_fc742a2d9e9e1c8f8478d6664a7866b8.setContent(html_8a3f931d996205d05b26bc5c75dc0426);
+            
+        
+
+        marker_7f63d31831986d13cbebc759f1624bfb.bindPopup(popup_fc742a2d9e9e1c8f8478d6664a7866b8)
+        ;
+
+        
+    
+    
+            var marker_5b3407b44fdca89eeb413fdfedcf41dd = L.marker(
+                [25.168715, 121.4454951],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3bfd044d6638a7a5c114b8d734ce4657 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e2157fda72afb82edf4b5ff96db7ace = $(`<div id="html_2e2157fda72afb82edf4b5ff96db7ace" style="width: 100.0%; height: 100.0%;">淡水加油站新北市淡水區中正東路1號</div>`)[0];
+                popup_3bfd044d6638a7a5c114b8d734ce4657.setContent(html_2e2157fda72afb82edf4b5ff96db7ace);
+            
+        
+
+        marker_5b3407b44fdca89eeb413fdfedcf41dd.bindPopup(popup_3bfd044d6638a7a5c114b8d734ce4657)
+        ;
+
+        
+    
+    
+            var marker_084ee60147c149badbe24c59d99fa276 = L.marker(
+                [25.1657275, 121.4487202],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_397fb295d726375dcbab7c1c7758fca2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f94fdc2ba889afda2faf4607203f873d = $(`<div id="html_f94fdc2ba889afda2faf4607203f873d" style="width: 100.0%; height: 100.0%;">永秦加油站新北市淡水區中正東路36號</div>`)[0];
+                popup_397fb295d726375dcbab7c1c7758fca2.setContent(html_f94fdc2ba889afda2faf4607203f873d);
+            
+        
+
+        marker_084ee60147c149badbe24c59d99fa276.bindPopup(popup_397fb295d726375dcbab7c1c7758fca2)
+        ;
+
+        
+    
+    
+            var marker_6aab8f8f8d6591593cb445d592b9c7b1 = L.marker(
+                [25.1404462, 121.460126],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d20c44fb5f60f9a8140b2fabed72f178 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc830d27a6068d298573abcb14c0be37 = $(`<div id="html_bc830d27a6068d298573abcb14c0be37" style="width: 100.0%; height: 100.0%;">全國淡水加油站新北市淡水區民權路41號</div>`)[0];
+                popup_d20c44fb5f60f9a8140b2fabed72f178.setContent(html_bc830d27a6068d298573abcb14c0be37);
+            
+        
+
+        marker_6aab8f8f8d6591593cb445d592b9c7b1.bindPopup(popup_d20c44fb5f60f9a8140b2fabed72f178)
+        ;
+
+        
+    
+    
+            var marker_5219c78294eaf00a906c2d0d5654425b = L.marker(
+                [25.1335615, 121.4588693],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1e6bea38b4555b33d202f394a96556d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7b736eae155c50a8310a414a6045bcb = $(`<div id="html_f7b736eae155c50a8310a414a6045bcb" style="width: 100.0%; height: 100.0%;">竹圍加油站新北市淡水區民權路86號</div>`)[0];
+                popup_1e6bea38b4555b33d202f394a96556d9.setContent(html_f7b736eae155c50a8310a414a6045bcb);
+            
+        
+
+        marker_5219c78294eaf00a906c2d0d5654425b.bindPopup(popup_1e6bea38b4555b33d202f394a96556d9)
+        ;
+
+        
+    
+    
+            var marker_0b2c924370efb54302b5bc1d140ad58d = L.marker(
+                [25.1644055, 121.4569777],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_751beb3d22f6e73f7703829a03ac6920 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc053283e331225e6d0a764e2c7b4098 = $(`<div id="html_dc053283e331225e6d0a764e2c7b4098" style="width: 100.0%; height: 100.0%;">金滿益加油站新北市淡水區淡金路101號</div>`)[0];
+                popup_751beb3d22f6e73f7703829a03ac6920.setContent(html_dc053283e331225e6d0a764e2c7b4098);
+            
+        
+
+        marker_0b2c924370efb54302b5bc1d140ad58d.bindPopup(popup_751beb3d22f6e73f7703829a03ac6920)
+        ;
+
+        
+    
+    
+            var marker_06412ba678c0e2bff1513c20362143ec = L.marker(
+                [25.1646446, 121.4580692],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_435d333aca8ee4664adec13d63818926 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75738c0fdb1592a32176f41553722dbf = $(`<div id="html_75738c0fdb1592a32176f41553722dbf" style="width: 100.0%; height: 100.0%;">淡海加油站新北市淡水區淡金路132號</div>`)[0];
+                popup_435d333aca8ee4664adec13d63818926.setContent(html_75738c0fdb1592a32176f41553722dbf);
+            
+        
+
+        marker_06412ba678c0e2bff1513c20362143ec.bindPopup(popup_435d333aca8ee4664adec13d63818926)
+        ;
+
+        
+    
+    
+            var marker_abb9e1174148067bac5e28b7c9b0b14b = L.marker(
+                [25.167163, 121.4607974],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_b33f2d846e435bacf8657bd86a75fd52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7813f62cd5efa63b39409574d9b191c7 = $(`<div id="html_7813f62cd5efa63b39409574d9b191c7" style="width: 100.0%; height: 100.0%;">東來加油站新北市淡水區淡金路1段69號</div>`)[0];
+                popup_b33f2d846e435bacf8657bd86a75fd52.setContent(html_7813f62cd5efa63b39409574d9b191c7);
+            
+        
+
+        marker_abb9e1174148067bac5e28b7c9b0b14b.bindPopup(popup_b33f2d846e435bacf8657bd86a75fd52)
+        ;
+
+        
+    
+    
+            var marker_f866e0f4530b88e7c354c328fad1f09b = L.marker(
+                [25.1920817, 121.4463098],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_bc44e7a48df3a81865c8b68720fdb176 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bbf4b6a168b5d6e5841bd7ef55529af0 = $(`<div id="html_bbf4b6a168b5d6e5841bd7ef55529af0" style="width: 100.0%; height: 100.0%;">淡海新市鎮加油站新北市淡水區淡金路2段599號</div>`)[0];
+                popup_bc44e7a48df3a81865c8b68720fdb176.setContent(html_bbf4b6a168b5d6e5841bd7ef55529af0);
+            
+        
+
+        marker_f866e0f4530b88e7c354c328fad1f09b.bindPopup(popup_bc44e7a48df3a81865c8b68720fdb176)
+        ;
+
+        
+    
+    
+            var marker_2aab2bbe18ec42fd568546b5973327dc = L.marker(
+                [25.2142409, 121.4507561],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a9816b4dd4748456b6081e6aaffaa7e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6b76a53e09c0f6be139c8d054b9fdb17 = $(`<div id="html_6b76a53e09c0f6be139c8d054b9fdb17" style="width: 100.0%; height: 100.0%;">北基淡金路加油站新北市淡水區淡金路3段446號</div>`)[0];
+                popup_a9816b4dd4748456b6081e6aaffaa7e8.setContent(html_6b76a53e09c0f6be139c8d054b9fdb17);
+            
+        
+
+        marker_2aab2bbe18ec42fd568546b5973327dc.bindPopup(popup_a9816b4dd4748456b6081e6aaffaa7e8)
+        ;
+
+        
+    
+    
+            var marker_81b7ad0021bd3befb0f9daeb4b8dc0f7 = L.marker(
+                [25.2252693, 121.4521565],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_76042c8c8a1744343e222f95ab056914 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_656d23f2a40745a63c7c1b9ab60bdbf9 = $(`<div id="html_656d23f2a40745a63c7c1b9ab60bdbf9" style="width: 100.0%; height: 100.0%;">新埔加油站新北市淡水區淡金路4段496號</div>`)[0];
+                popup_76042c8c8a1744343e222f95ab056914.setContent(html_656d23f2a40745a63c7c1b9ab60bdbf9);
+            
+        
+
+        marker_81b7ad0021bd3befb0f9daeb4b8dc0f7.bindPopup(popup_76042c8c8a1744343e222f95ab056914)
+        ;
+
+        
+    
+    
+            var marker_c44cdc1a20e0305cdb0a946088b18938 = L.marker(
+                [24.9987533, 121.6064931],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_873629b0c8c1e6d6807a39951a639931 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe2db528c5a74701d84fb6a09e0d8015 = $(`<div id="html_fe2db528c5a74701d84fb6a09e0d8015" style="width: 100.0%; height: 100.0%;">台亞深坑加油站新北市深坑區文山路3段110號</div>`)[0];
+                popup_873629b0c8c1e6d6807a39951a639931.setContent(html_fe2db528c5a74701d84fb6a09e0d8015);
+            
+        
+
+        marker_c44cdc1a20e0305cdb0a946088b18938.bindPopup(popup_873629b0c8c1e6d6807a39951a639931)
+        ;
+
+        
+    
+    
+            var marker_798568f03338b506255dfcc596ecbed2 = L.marker(
+                [24.9979005, 121.6128653],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_0c717e50cbb06ac2bd98cd54ca6b5e35 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e071aa4b497d223dd974a91a2971e372 = $(`<div id="html_e071aa4b497d223dd974a91a2971e372" style="width: 100.0%; height: 100.0%;">正洋加油站新北市深坑區文山路3段15號</div>`)[0];
+                popup_0c717e50cbb06ac2bd98cd54ca6b5e35.setContent(html_e071aa4b497d223dd974a91a2971e372);
+            
+        
+
+        marker_798568f03338b506255dfcc596ecbed2.bindPopup(popup_0c717e50cbb06ac2bd98cd54ca6b5e35)
+        ;
+
+        
+    
+    
+            var marker_9299f2c8ee7548abaffff257848eccab = L.marker(
+                [25.0008763, 121.609214],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a985198c4aa632a8d9fd36d9b4db96c7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_643f0edeea5e87611f6a0191115c0cb2 = $(`<div id="html_643f0edeea5e87611f6a0191115c0cb2" style="width: 100.0%; height: 100.0%;">東南加油站新北市深坑區北深路3段25巷14號</div>`)[0];
+                popup_a985198c4aa632a8d9fd36d9b4db96c7.setContent(html_643f0edeea5e87611f6a0191115c0cb2);
+            
+        
+
+        marker_9299f2c8ee7548abaffff257848eccab.bindPopup(popup_a985198c4aa632a8d9fd36d9b4db96c7)
+        ;
+
+        
+    
+    
+            var marker_ddea453c767054b8c9a8572b7c8f8178 = L.marker(
+                [25.0007285, 121.6105644],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_0091f6e10337c009e662e49c6fb8a54c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2a7aaaa3f80a000c8fc979f01768252 = $(`<div id="html_f2a7aaaa3f80a000c8fc979f01768252" style="width: 100.0%; height: 100.0%;">坤業深坑加油站新北市深坑區北深路3段7號</div>`)[0];
+                popup_0091f6e10337c009e662e49c6fb8a54c.setContent(html_f2a7aaaa3f80a000c8fc979f01768252);
+            
+        
+
+        marker_ddea453c767054b8c9a8572b7c8f8178.bindPopup(popup_0091f6e10337c009e662e49c6fb8a54c)
+        ;
+
+        
+    
+    
+            var marker_35832ff23e300be70ff95b6c0b89e6c8 = L.marker(
+                [24.9804253, 121.5337306],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9880e5c0533aeed33c20e0225c82c804 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_751b3e9bff8ae2cdbc1e4b635c8995fd = $(`<div id="html_751b3e9bff8ae2cdbc1e4b635c8995fd" style="width: 100.0%; height: 100.0%;">莊敬加油站新北市新店區中正路457號</div>`)[0];
+                popup_9880e5c0533aeed33c20e0225c82c804.setContent(html_751b3e9bff8ae2cdbc1e4b635c8995fd);
+            
+        
+
+        marker_35832ff23e300be70ff95b6c0b89e6c8.bindPopup(popup_9880e5c0533aeed33c20e0225c82c804)
+        ;
+
+        
+    
+    
+            var marker_10ff97e1a051e987963c6451c7d40e3a = L.marker(
+                [24.9806901, 121.534168],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2c1ba3f41abd4096d4d84cb2eefe4826 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd3a2a334f544ebaf65a081876d3e68b = $(`<div id="html_fd3a2a334f544ebaf65a081876d3e68b" style="width: 100.0%; height: 100.0%;">新店中正路新北市新店區中正路470號</div>`)[0];
+                popup_2c1ba3f41abd4096d4d84cb2eefe4826.setContent(html_fd3a2a334f544ebaf65a081876d3e68b);
+            
+        
+
+        marker_10ff97e1a051e987963c6451c7d40e3a.bindPopup(popup_2c1ba3f41abd4096d4d84cb2eefe4826)
+        ;
+
+        
+    
+    
+            var marker_eeae99e8ce7038c39bba4bf609035853 = L.marker(
+                [24.9790934, 121.5444041],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c457e4bd2b0c28fce383ec6c99ac1f8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_298d60e36b611a863df323a87723f680 = $(`<div id="html_298d60e36b611a863df323a87723f680" style="width: 100.0%; height: 100.0%;">台亞新店中興路加油站新北市新店區中興路3段131號</div>`)[0];
+                popup_c457e4bd2b0c28fce383ec6c99ac1f8a.setContent(html_298d60e36b611a863df323a87723f680);
+            
+        
+
+        marker_eeae99e8ce7038c39bba4bf609035853.bindPopup(popup_c457e4bd2b0c28fce383ec6c99ac1f8a)
+        ;
+
+        
+    
+    
+            var marker_d08e65430d58883b19ecb6b73c8572aa = L.marker(
+                [24.9713158, 121.5425806],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_77c4af1132b8712d8ab12a0e4623562a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c95d09dc211a822d0edb0938262e250b = $(`<div id="html_c95d09dc211a822d0edb0938262e250b" style="width: 100.0%; height: 100.0%;">新店北新路加油站新北市新店區北新路1段90號</div>`)[0];
+                popup_77c4af1132b8712d8ab12a0e4623562a.setContent(html_c95d09dc211a822d0edb0938262e250b);
+            
+        
+
+        marker_d08e65430d58883b19ecb6b73c8572aa.bindPopup(popup_77c4af1132b8712d8ab12a0e4623562a)
+        ;
+
+        
+    
+    
+            var marker_b6d9c93e657491cd5ec2183238ad24d7 = L.marker(
+                [24.9781203, 121.5421072],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_207788c09625edf8cca27a014bb1a2a2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c146b8cbc7707553c813d3f8f4d6cdfa = $(`<div id="html_c146b8cbc7707553c813d3f8f4d6cdfa" style="width: 100.0%; height: 100.0%;">大豐加油站新北市新店區北新路2段205號</div>`)[0];
+                popup_207788c09625edf8cca27a014bb1a2a2.setContent(html_c146b8cbc7707553c813d3f8f4d6cdfa);
+            
+        
+
+        marker_b6d9c93e657491cd5ec2183238ad24d7.bindPopup(popup_207788c09625edf8cca27a014bb1a2a2)
+        ;
+
+        
+    
+    
+            var marker_241bf4df04446dc557949746288e2406 = L.marker(
+                [24.9717483, 121.5190639],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_7386f5d2aad46a5da21c6f51353f0c36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0df6f34df9b961cd23847004519609c = $(`<div id="html_c0df6f34df9b961cd23847004519609c" style="width: 100.0%; height: 100.0%;">全國新店安和路加油站新北市新店區安和路2段121號</div>`)[0];
+                popup_7386f5d2aad46a5da21c6f51353f0c36.setContent(html_c0df6f34df9b961cd23847004519609c);
+            
+        
+
+        marker_241bf4df04446dc557949746288e2406.bindPopup(popup_7386f5d2aad46a5da21c6f51353f0c36)
+        ;
+
+        
+    
+    
+            var marker_ae1d6a779394515039c248d8c75de71a = L.marker(
+                [24.974459, 121.518834],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_79f446f5c0d9f3e2f4187821f55f9109 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a81bd1ddc16e75262da57c087562f37 = $(`<div id="html_5a81bd1ddc16e75262da57c087562f37" style="width: 100.0%; height: 100.0%;">安坑加油站新北市新店區安和路2段192號</div>`)[0];
+                popup_79f446f5c0d9f3e2f4187821f55f9109.setContent(html_5a81bd1ddc16e75262da57c087562f37);
+            
+        
+
+        marker_ae1d6a779394515039c248d8c75de71a.bindPopup(popup_79f446f5c0d9f3e2f4187821f55f9109)
+        ;
+
+        
+    
+    
+            var marker_412c123905faa2e42d0fe27a5486c186 = L.marker(
+                [24.9813938, 121.5173408],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d5a74ea866f07c20cdae79ef1229569a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ebe94f43da308a29d72ffb541f40ce64 = $(`<div id="html_ebe94f43da308a29d72ffb541f40ce64" style="width: 100.0%; height: 100.0%;">欣欣加油站新北市新店區安和路3段35號</div>`)[0];
+                popup_d5a74ea866f07c20cdae79ef1229569a.setContent(html_ebe94f43da308a29d72ffb541f40ce64);
+            
+        
+
+        marker_412c123905faa2e42d0fe27a5486c186.bindPopup(popup_d5a74ea866f07c20cdae79ef1229569a)
+        ;
+
+        
+    
+    
+            var marker_0d4184f0d7cc0bcf153b09ba3c4c9dc2 = L.marker(
+                [24.963133, 121.5140801],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_25e740de0050398bcc64a0c404cb2b18 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c8729f561695d8fb02c698068f26cef = $(`<div id="html_9c8729f561695d8fb02c698068f26cef" style="width: 100.0%; height: 100.0%;">柑園碧安加油站新北市新店區安康路1段20號</div>`)[0];
+                popup_25e740de0050398bcc64a0c404cb2b18.setContent(html_9c8729f561695d8fb02c698068f26cef);
+            
+        
+
+        marker_0d4184f0d7cc0bcf153b09ba3c4c9dc2.bindPopup(popup_25e740de0050398bcc64a0c404cb2b18)
+        ;
+
+        
+    
+    
+            var marker_7b5fadbe7b04b38c04622369420d0b95 = L.marker(
+                [24.963133, 121.5140801],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_05af19140e59943ea516237d61d2c49d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_676330deb1c6d940ccfb5195f4ee71c2 = $(`<div id="html_676330deb1c6d940ccfb5195f4ee71c2" style="width: 100.0%; height: 100.0%;">台亞安坑交流道加油站新北市新店區安康路1段308號</div>`)[0];
+                popup_05af19140e59943ea516237d61d2c49d.setContent(html_676330deb1c6d940ccfb5195f4ee71c2);
+            
+        
+
+        marker_7b5fadbe7b04b38c04622369420d0b95.bindPopup(popup_05af19140e59943ea516237d61d2c49d)
+        ;
+
+        
+    
+    
+            var marker_7cf872e3d1c0baa2c5f3ba8b8ae2f3a4 = L.marker(
+                [24.963133, 121.5140801],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_28862ba24776aa732716a6e59bd74734 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bebfcae4e4dc715da5142cdd134af823 = $(`<div id="html_bebfcae4e4dc715da5142cdd134af823" style="width: 100.0%; height: 100.0%;">華城加油站新北市新店區安康路1段319號</div>`)[0];
+                popup_28862ba24776aa732716a6e59bd74734.setContent(html_bebfcae4e4dc715da5142cdd134af823);
+            
+        
+
+        marker_7cf872e3d1c0baa2c5f3ba8b8ae2f3a4.bindPopup(popup_28862ba24776aa732716a6e59bd74734)
+        ;
+
+        
+    
+    
+            var marker_be4119e67fdb707e43ab6524f2c2d26b = L.marker(
+                [24.963133, 121.5140801],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_da17ed99f10797827b3bdcfeb87cb32e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ed85f8c6e83df85e4ec0e6b1faa92d5 = $(`<div id="html_3ed85f8c6e83df85e4ec0e6b1faa92d5" style="width: 100.0%; height: 100.0%;">台亞碧潭加油站新北市新店區安康路1段35號</div>`)[0];
+                popup_da17ed99f10797827b3bdcfeb87cb32e.setContent(html_3ed85f8c6e83df85e4ec0e6b1faa92d5);
+            
+        
+
+        marker_be4119e67fdb707e43ab6524f2c2d26b.bindPopup(popup_da17ed99f10797827b3bdcfeb87cb32e)
+        ;
+
+        
+    
+    
+            var marker_f9b89806c9e40dd40f78608ab540bcdf = L.marker(
+                [24.9577049, 121.5041703],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8efdb4c5a207602d6a9ca20c54e9c2f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4cc1221bfaf7f7cf7620417a7ad78f10 = $(`<div id="html_4cc1221bfaf7f7cf7620417a7ad78f10" style="width: 100.0%; height: 100.0%;">車子路加油站新北市新店區安康路2段269號</div>`)[0];
+                popup_8efdb4c5a207602d6a9ca20c54e9c2f5.setContent(html_4cc1221bfaf7f7cf7620417a7ad78f10);
+            
+        
+
+        marker_f9b89806c9e40dd40f78608ab540bcdf.bindPopup(popup_8efdb4c5a207602d6a9ca20c54e9c2f5)
+        ;
+
+        
+    
+    
+            var marker_8b2cd0b798cafd0769d7c20f2974a1cf = L.marker(
+                [24.9573863, 121.5015908],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_5e69a2a7e9c38e16cda678b21a0e2804 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c1cd27ab6c5ff949522cad766f27979f = $(`<div id="html_c1cd27ab6c5ff949522cad766f27979f" style="width: 100.0%; height: 100.0%;">德安加油站新北市新店區安康路2段362號</div>`)[0];
+                popup_5e69a2a7e9c38e16cda678b21a0e2804.setContent(html_c1cd27ab6c5ff949522cad766f27979f);
+            
+        
+
+        marker_8b2cd0b798cafd0769d7c20f2974a1cf.bindPopup(popup_5e69a2a7e9c38e16cda678b21a0e2804)
+        ;
+
+        
+    
+    
+            var marker_d53b20be8134ea2735ad6477bdc9591e = L.marker(
+                [24.9400865, 121.4710046],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2b91451fe58a0a3718abe14643de5eb6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c2e1ca94dd9af6ddfe49021cf2afe3a4 = $(`<div id="html_c2e1ca94dd9af6ddfe49021cf2afe3a4" style="width: 100.0%; height: 100.0%;">五城加油站新北市新店區安康路3段800號</div>`)[0];
+                popup_2b91451fe58a0a3718abe14643de5eb6.setContent(html_c2e1ca94dd9af6ddfe49021cf2afe3a4);
+            
+        
+
+        marker_d53b20be8134ea2735ad6477bdc9591e.bindPopup(popup_2b91451fe58a0a3718abe14643de5eb6)
+        ;
+
+        
+    
+    
+            var marker_cd0edda4bd7713041b52893f4e408792 = L.marker(
+                [24.9635347, 121.5155179],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_cda8374ee1dcbc3ab86f1dd50d185bd6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc37bfe44dac7a73329613a31a9085e5 = $(`<div id="html_dc37bfe44dac7a73329613a31a9085e5" style="width: 100.0%; height: 100.0%;">統一精工新店安坑新北市新店區安康路二段5號</div>`)[0];
+                popup_cda8374ee1dcbc3ab86f1dd50d185bd6.setContent(html_dc37bfe44dac7a73329613a31a9085e5);
+            
+        
+
+        marker_cd0edda4bd7713041b52893f4e408792.bindPopup(popup_cda8374ee1dcbc3ab86f1dd50d185bd6)
+        ;
+
+        
+    
+    
+            var marker_57095d9e0589e7a6e057920da7ee754d = L.marker(
+                [24.9164311, 121.5475048],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1e9d7ed4e9172d6a74f9ed45b86facd6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1790d6143935fc6ae65c6ee4b37a616 = $(`<div id="html_a1790d6143935fc6ae65c6ee4b37a616" style="width: 100.0%; height: 100.0%;">屈尺加油站新北市新店區新烏路2段202號</div>`)[0];
+                popup_1e9d7ed4e9172d6a74f9ed45b86facd6.setContent(html_a1790d6143935fc6ae65c6ee4b37a616);
+            
+        
+
+        marker_57095d9e0589e7a6e057920da7ee754d.bindPopup(popup_1e9d7ed4e9172d6a74f9ed45b86facd6)
+        ;
+
+        
+    
+    
+            var marker_a7305ca4ad5f9c8812ed58f83ffa81de = L.marker(
+                [24.9674965, 121.5371341],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_6ecc9767bcaa3f7a56cc4ae690e64506 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d887cddb62c665e8f30f2d32af9a85fd = $(`<div id="html_d887cddb62c665e8f30f2d32af9a85fd" style="width: 100.0%; height: 100.0%;">統一精工新店加油站新北市新店區環河路116號</div>`)[0];
+                popup_6ecc9767bcaa3f7a56cc4ae690e64506.setContent(html_d887cddb62c665e8f30f2d32af9a85fd);
+            
+        
+
+        marker_a7305ca4ad5f9c8812ed58f83ffa81de.bindPopup(popup_6ecc9767bcaa3f7a56cc4ae690e64506)
+        ;
+
+        
+    
+    
+            var marker_ab63ca2b92fc27c7388e1ee5d7266b07 = L.marker(
+                [24.97757, 121.5491423],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_86c3263adc0d0c0492b192dd832c3184 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d961c0ffd420f3240989ceb5720a9ac = $(`<div id="html_1d961c0ffd420f3240989ceb5720a9ac" style="width: 100.0%; height: 100.0%;">寶橋加油站新北市新店區寶橋路219號</div>`)[0];
+                popup_86c3263adc0d0c0492b192dd832c3184.setContent(html_1d961c0ffd420f3240989ceb5720a9ac);
+            
+        
+
+        marker_ab63ca2b92fc27c7388e1ee5d7266b07.bindPopup(popup_86c3263adc0d0c0492b192dd832c3184)
+        ;
+
+        
+    
+    
+            var marker_cda471c0e085075516efcc49549390d7 = L.marker(
+                [25.0348314, 121.4453277],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_352b74616498b45884d9e82cbd6980f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72af9ca789a95df7e4d17a19af61e88b = $(`<div id="html_72af9ca789a95df7e4d17a19af61e88b" style="width: 100.0%; height: 100.0%;">新莊加油站新北市新莊區中正路338號</div>`)[0];
+                popup_352b74616498b45884d9e82cbd6980f4.setContent(html_72af9ca789a95df7e4d17a19af61e88b);
+            
+        
+
+        marker_cda471c0e085075516efcc49549390d7.bindPopup(popup_352b74616498b45884d9e82cbd6980f4)
+        ;
+
+        
+    
+    
+            var marker_f331a3f227323fc30fe5fd19dbb9934c = L.marker(
+                [25.0332709, 121.4405737],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c58ee271dc7bac02a0a178d3490e71fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cc757903bfc262e69bfcba8c7a830d17 = $(`<div id="html_cc757903bfc262e69bfcba8c7a830d17" style="width: 100.0%; height: 100.0%;">新樹加油站新北市新莊區中正路501號</div>`)[0];
+                popup_c58ee271dc7bac02a0a178d3490e71fe.setContent(html_cc757903bfc262e69bfcba8c7a830d17);
+            
+        
+
+        marker_f331a3f227323fc30fe5fd19dbb9934c.bindPopup(popup_c58ee271dc7bac02a0a178d3490e71fe)
+        ;
+
+        
+    
+    
+            var marker_981e5e50988dfbe9b2cc690c0d09b327 = L.marker(
+                [25.028354, 121.4197262],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_174d98b750311290261e0e2c80b66d73 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc0f383a4a257cb5a97b2c5c91b91ac8 = $(`<div id="html_bc0f383a4a257cb5a97b2c5c91b91ac8" style="width: 100.0%; height: 100.0%;">永錡中正加油站新北市新莊區中正路692-8號</div>`)[0];
+                popup_174d98b750311290261e0e2c80b66d73.setContent(html_bc0f383a4a257cb5a97b2c5c91b91ac8);
+            
+        
+
+        marker_981e5e50988dfbe9b2cc690c0d09b327.bindPopup(popup_174d98b750311290261e0e2c80b66d73)
+        ;
+
+        
+    
+    
+            var marker_370c0243523c08b771ec7b717d8fb121 = L.marker(
+                [25.0479047, 121.4526368],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_6041d684fd4ff90a740e4036345b4a9c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f11067bb9ba88805b7e03a21ba174161 = $(`<div id="html_f11067bb9ba88805b7e03a21ba174161" style="width: 100.0%; height: 100.0%;">全國新莊加油站新北市新莊區中華路2段83號</div>`)[0];
+                popup_6041d684fd4ff90a740e4036345b4a9c.setContent(html_f11067bb9ba88805b7e03a21ba174161);
+            
+        
+
+        marker_370c0243523c08b771ec7b717d8fb121.bindPopup(popup_6041d684fd4ff90a740e4036345b4a9c)
+        ;
+
+        
+    
+    
+            var marker_2567b299b28dfccaf7bd14e84c77d7e7 = L.marker(
+                [25.0631313, 121.4586901],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_211e0b342343012bed7cc77d9adc6c22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0ca419a787dd87e63c0705c9e441f1de = $(`<div id="html_0ca419a787dd87e63c0705c9e441f1de" style="width: 100.0%; height: 100.0%;">五工加油站新北市新莊區五工路60號</div>`)[0];
+                popup_211e0b342343012bed7cc77d9adc6c22.setContent(html_0ca419a787dd87e63c0705c9e441f1de);
+            
+        
+
+        marker_2567b299b28dfccaf7bd14e84c77d7e7.bindPopup(popup_211e0b342343012bed7cc77d9adc6c22)
+        ;
+
+        
+    
+    
+            var marker_65f7c1bd63687f85c1922f1cef6e3d80 = L.marker(
+                [25.06475, 121.456031],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9e49d0f2c8726aa33bf95304d207110a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae3d9c5dae2051ed5014260e48b1b673 = $(`<div id="html_ae3d9c5dae2051ed5014260e48b1b673" style="width: 100.0%; height: 100.0%;">五股工業區加油站新北市新莊區五工路99-3號</div>`)[0];
+                popup_9e49d0f2c8726aa33bf95304d207110a.setContent(html_ae3d9c5dae2051ed5014260e48b1b673);
+            
+        
+
+        marker_65f7c1bd63687f85c1922f1cef6e3d80.bindPopup(popup_9e49d0f2c8726aa33bf95304d207110a)
+        ;
+
+        
+    
+    
+            var marker_1a71e520fa91f318282626953b4ee2b7 = L.marker(
+                [25.061795, 121.451072],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f3b07da70ce2a4f5d7862554c947ff6c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c37418b8793d324298b78ca563c98bab = $(`<div id="html_c37418b8793d324298b78ca563c98bab" style="width: 100.0%; height: 100.0%;">大全加油站新北市新莊區五權三路2號</div>`)[0];
+                popup_f3b07da70ce2a4f5d7862554c947ff6c.setContent(html_c37418b8793d324298b78ca563c98bab);
+            
+        
+
+        marker_1a71e520fa91f318282626953b4ee2b7.bindPopup(popup_f3b07da70ce2a4f5d7862554c947ff6c)
+        ;
+
+        
+    
+    
+            var marker_797de75ed913bcc91e48fa054356f5d5 = L.marker(
+                [25.0083919, 121.4309137],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_61a125b07ed9bdf2a6f40908469fa0d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8a82b4033200513935433d28446c4ea3 = $(`<div id="html_8a82b4033200513935433d28446c4ea3" style="width: 100.0%; height: 100.0%;">民安西路加油站新北市新莊區民安西路452號</div>`)[0];
+                popup_61a125b07ed9bdf2a6f40908469fa0d3.setContent(html_8a82b4033200513935433d28446c4ea3);
+            
+        
+
+        marker_797de75ed913bcc91e48fa054356f5d5.bindPopup(popup_61a125b07ed9bdf2a6f40908469fa0d3)
+        ;
+
+        
+    
+    
+            var marker_ebdfe7cd587f3ba22c2c448350db771c = L.marker(
+                [25.027198, 121.4341007],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1152afda4bbd1dcbe2864c23a2ae2779 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e5a1a11a63866e20ef15870dcc684a09 = $(`<div id="html_e5a1a11a63866e20ef15870dcc684a09" style="width: 100.0%; height: 100.0%;">好市多新莊新北市新莊區建國一路138-1號</div>`)[0];
+                popup_1152afda4bbd1dcbe2864c23a2ae2779.setContent(html_e5a1a11a63866e20ef15870dcc684a09);
+            
+        
+
+        marker_ebdfe7cd587f3ba22c2c448350db771c.bindPopup(popup_1152afda4bbd1dcbe2864c23a2ae2779)
+        ;
+
+        
+    
+    
+            var marker_234a7492ee7ab56d20a7b8f8779d588f = L.marker(
+                [25.0397727, 121.4597086],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d9b9dab0d33ecf3b2de1e11016503ad9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b590b04617cf100a2843ac4a8f0666e6 = $(`<div id="html_b590b04617cf100a2843ac4a8f0666e6" style="width: 100.0%; height: 100.0%;">新莊大漢橋加油站新北市新莊區思源路41號之1</div>`)[0];
+                popup_d9b9dab0d33ecf3b2de1e11016503ad9.setContent(html_b590b04617cf100a2843ac4a8f0666e6);
+            
+        
+
+        marker_234a7492ee7ab56d20a7b8f8779d588f.bindPopup(popup_d9b9dab0d33ecf3b2de1e11016503ad9)
+        ;
+
+        
+    
+    
+            var marker_b7987bcd0e1e93ea91275d75c7acafcc = L.marker(
+                [25.0446175, 121.4603674],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_73e058d8d6d02ca753eef48afa9d4368 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_afbd2433df60395c3d0c310ad5fd07cb = $(`<div id="html_afbd2433df60395c3d0c310ad5fd07cb" style="width: 100.0%; height: 100.0%;">全國思源路加油站新北市新莊區思源路68號</div>`)[0];
+                popup_73e058d8d6d02ca753eef48afa9d4368.setContent(html_afbd2433df60395c3d0c310ad5fd07cb);
+            
+        
+
+        marker_b7987bcd0e1e93ea91275d75c7acafcc.bindPopup(popup_73e058d8d6d02ca753eef48afa9d4368)
+        ;
+
+        
+    
+    
+            var marker_f3f8f3161d228006c1720113be8665f4 = L.marker(
+                [25.04145, 121.459534],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_e6d3bb4d0a0fc4ac3edd272c2c3ed6ec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_473ae8776ff9b4fcd13c9efb994fbc44 = $(`<div id="html_473ae8776ff9b4fcd13c9efb994fbc44" style="width: 100.0%; height: 100.0%;">三花新莊加油站新北市新莊區思源路89號</div>`)[0];
+                popup_e6d3bb4d0a0fc4ac3edd272c2c3ed6ec.setContent(html_473ae8776ff9b4fcd13c9efb994fbc44);
+            
+        
+
+        marker_f3f8f3161d228006c1720113be8665f4.bindPopup(popup_e6d3bb4d0a0fc4ac3edd272c2c3ed6ec)
+        ;
+
+        
+    
+    
+            var marker_b2565067db7e14bb56d3cdebd2f3af90 = L.marker(
+                [25.0446746, 121.4651683],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_193b6153955be2e4fcf0f9f85da5b4e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_abc5d6841d56787d4c23ed18f1b2b65c = $(`<div id="html_abc5d6841d56787d4c23ed18f1b2b65c" style="width: 100.0%; height: 100.0%;">興化加油站新北市新莊區復興路3段117號</div>`)[0];
+                popup_193b6153955be2e4fcf0f9f85da5b4e9.setContent(html_abc5d6841d56787d4c23ed18f1b2b65c);
+            
+        
+
+        marker_b2565067db7e14bb56d3cdebd2f3af90.bindPopup(popup_193b6153955be2e4fcf0f9f85da5b4e9)
+        ;
+
+        
+    
+    
+            var marker_f17925b9fc30a661f33888312d80d6a1 = L.marker(
+                [25.0322803, 121.4176319],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9a940a0fbd3794b18db606fbb5e7f7a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fdc10575e9deaecd8ddf91ba721dd036 = $(`<div id="html_fdc10575e9deaecd8ddf91ba721dd036" style="width: 100.0%; height: 100.0%;">聯新加油站新北市新莊區新北大道七段120號</div>`)[0];
+                popup_9a940a0fbd3794b18db606fbb5e7f7a8.setContent(html_fdc10575e9deaecd8ddf91ba721dd036);
+            
+        
+
+        marker_f17925b9fc30a661f33888312d80d6a1.bindPopup(popup_9a940a0fbd3794b18db606fbb5e7f7a8)
+        ;
+
+        
+    
+    
+            var marker_c06bb8ae3eae0221f16d5d70102259b1 = L.marker(
+                [25.0610173, 121.4649403],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_7e39852c4aa06b436e1c72026d87bfad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_55089340fd3bc19dc49071b1c651e5c0 = $(`<div id="html_55089340fd3bc19dc49071b1c651e5c0" style="width: 100.0%; height: 100.0%;">台亞新莊化成路站新北市新莊區新北大道二段167號</div>`)[0];
+                popup_7e39852c4aa06b436e1c72026d87bfad.setContent(html_55089340fd3bc19dc49071b1c651e5c0);
+            
+        
+
+        marker_c06bb8ae3eae0221f16d5d70102259b1.bindPopup(popup_7e39852c4aa06b436e1c72026d87bfad)
+        ;
+
+        
+    
+    
+            var marker_cb30986f746b453e6ec307e2e08a0832 = L.marker(
+                [25.020689, 121.4342168],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_41a6741fb2e8b38db3a736434fcb622f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_39a451ea7f1704131c1d865a098776d0 = $(`<div id="html_39a451ea7f1704131c1d865a098776d0" style="width: 100.0%; height: 100.0%;">台亞新樹路新北市新莊區新樹路271號</div>`)[0];
+                popup_41a6741fb2e8b38db3a736434fcb622f.setContent(html_39a451ea7f1704131c1d865a098776d0);
+            
+        
+
+        marker_cb30986f746b453e6ec307e2e08a0832.bindPopup(popup_41a6741fb2e8b38db3a736434fcb622f)
+        ;
+
+        
+    
+    
+            var marker_0f2e18f493809cb2ab7a8e7f4b39f618 = L.marker(
+                [25.0069136, 121.4326052],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2986b09de62ff81d7ac92697aaf3d089 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_305e580f4153c7d9e5b7ff2be7a373bb = $(`<div id="html_305e580f4153c7d9e5b7ff2be7a373bb" style="width: 100.0%; height: 100.0%;">台亞新安加油站新北市新莊區新樹路294號</div>`)[0];
+                popup_2986b09de62ff81d7ac92697aaf3d089.setContent(html_305e580f4153c7d9e5b7ff2be7a373bb);
+            
+        
+
+        marker_0f2e18f493809cb2ab7a8e7f4b39f618.bindPopup(popup_2986b09de62ff81d7ac92697aaf3d089)
+        ;
+
+        
+    
+    
+            var marker_d7dedefda993e2b93d6720fba5ec8f15 = L.marker(
+                [25.0521695, 121.4680023],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ea733cc0f88f6c28748eb6b840772f52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91e6ff9359df71e0e58016eb55fa16ae = $(`<div id="html_91e6ff9359df71e0e58016eb55fa16ae" style="width: 100.0%; height: 100.0%;">興德加油站新北市新莊區頭前路13號</div>`)[0];
+                popup_ea733cc0f88f6c28748eb6b840772f52.setContent(html_91e6ff9359df71e0e58016eb55fa16ae);
+            
+        
+
+        marker_d7dedefda993e2b93d6720fba5ec8f15.bindPopup(popup_ea733cc0f88f6c28748eb6b840772f52)
+        ;
+
+        
+    
+    
+            var marker_42e07ed172b2d2646ca815b33b70a7d5 = L.marker(
+                [25.1103456, 121.7947752],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a049aece3ba002d37be34322e3c99db1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d348453c832133363009af4d23cdfe1 = $(`<div id="html_1d348453c832133363009af4d23cdfe1" style="width: 100.0%; height: 100.0%;">瑞泉加油站新北市瑞芳區(魚桀)魚坑路1號</div>`)[0];
+                popup_a049aece3ba002d37be34322e3c99db1.setContent(html_1d348453c832133363009af4d23cdfe1);
+            
+        
+
+        marker_42e07ed172b2d2646ca815b33b70a7d5.bindPopup(popup_a049aece3ba002d37be34322e3c99db1)
+        ;
+
+        
+    
+    
+            var marker_a9d0af8f3da6db593279240151f72950 = L.marker(
+                [25.1029435, 121.7853304],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_78561c8d35e2bad0e4178e3acd52de46 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2eeb69b6551775654835ada845a01d21 = $(`<div id="html_2eeb69b6551775654835ada845a01d21" style="width: 100.0%; height: 100.0%;">瑞隆加油站新北市瑞芳區(魚桀)魚坑路356號</div>`)[0];
+                popup_78561c8d35e2bad0e4178e3acd52de46.setContent(html_2eeb69b6551775654835ada845a01d21);
+            
+        
+
+        marker_a9d0af8f3da6db593279240151f72950.bindPopup(popup_78561c8d35e2bad0e4178e3acd52de46)
+        ;
+
+        
+    
+    
+            var marker_5343c6e84d380deeecda07b3a7ac826c = L.marker(
+                [25.1069124, 121.8014749],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_27bac359e6e45b437b2ef63c516d1262 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9ea275d19f8ebb02dadb9d34a4c3d410 = $(`<div id="html_9ea275d19f8ebb02dadb9d34a4c3d410" style="width: 100.0%; height: 100.0%;">瑞芳加油站新北市瑞芳區中山路200號</div>`)[0];
+                popup_27bac359e6e45b437b2ef63c516d1262.setContent(html_9ea275d19f8ebb02dadb9d34a4c3d410);
+            
+        
+
+        marker_5343c6e84d380deeecda07b3a7ac826c.bindPopup(popup_27bac359e6e45b437b2ef63c516d1262)
+        ;
+
+        
+    
+    
+            var marker_ac7970933207ff3ceb591cfaa3d93e2f = L.marker(
+                [25.121529, 121.8286],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_3ba033f6f7f01e80b853a8dbd97d1122 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85451743f44cf5782c02282c03eaaaf1 = $(`<div id="html_85451743f44cf5782c02282c03eaaaf1" style="width: 100.0%; height: 100.0%;">海濱加油站新北市瑞芳區海濱路157-2號</div>`)[0];
+                popup_3ba033f6f7f01e80b853a8dbd97d1122.setContent(html_85451743f44cf5782c02282c03eaaaf1);
+            
+        
+
+        marker_ac7970933207ff3ceb591cfaa3d93e2f.bindPopup(popup_3ba033f6f7f01e80b853a8dbd97d1122)
+        ;
+
+        
+    
+    
+            var marker_03a8be000b668c095c74d648d8cc314c = L.marker(
+                [25.1239715, 121.831093],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_83de961c7be134c20bb4db533482ddee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc6584bd312e1f7d3ffe6c93eb37b472 = $(`<div id="html_bc6584bd312e1f7d3ffe6c93eb37b472" style="width: 100.0%; height: 100.0%;">林長加油站新北市瑞芳區海濱路32-6號</div>`)[0];
+                popup_83de961c7be134c20bb4db533482ddee.setContent(html_bc6584bd312e1f7d3ffe6c93eb37b472);
+            
+        
+
+        marker_03a8be000b668c095c74d648d8cc314c.bindPopup(popup_83de961c7be134c20bb4db533482ddee)
+        ;
+
+        
+    
+    
+            var marker_85dd006d07d770784f6063bcbaea88d2 = L.marker(
+                [25.120687, 121.822299],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a869f49f862c735aebe6737d41023f8e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a31de19ea55a8386f057ea12a6483d6 = $(`<div id="html_1a31de19ea55a8386f057ea12a6483d6" style="width: 100.0%; height: 100.0%;">豫章濱加油站新北市瑞芳區瑞濱路67號</div>`)[0];
+                popup_a869f49f862c735aebe6737d41023f8e.setContent(html_1a31de19ea55a8386f057ea12a6483d6);
+            
+        
+
+        marker_85dd006d07d770784f6063bcbaea88d2.bindPopup(popup_a869f49f862c735aebe6737d41023f8e)
+        ;
+
+        
+    
+    
+            var marker_7a1c2830572da4fd09165c5a3fda9056 = L.marker(
+                [25.2157045, 121.6444248],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9fefcfb8ee47196ffa70c6505294e4e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0cf9cb35b4d5248d4f73eaec32b60486 = $(`<div id="html_0cf9cb35b4d5248d4f73eaec32b60486" style="width: 100.0%; height: 100.0%;">基金加油站新北市萬里區大鵬村萬里加投19-5號</div>`)[0];
+                popup_9fefcfb8ee47196ffa70c6505294e4e0.setContent(html_0cf9cb35b4d5248d4f73eaec32b60486);
+            
+        
+
+        marker_7a1c2830572da4fd09165c5a3fda9056.bindPopup(popup_9fefcfb8ee47196ffa70c6505294e4e0)
+        ;
+
+        
+    
+    
+            var marker_3e69660f43b970b226e058a5509844ff = L.marker(
+                [25.214719, 121.644585],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8e07b14f7da1eeccf592f7382b073bfb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e440c7bd21fbafd1e445bf740a86199 = $(`<div id="html_2e440c7bd21fbafd1e445bf740a86199" style="width: 100.0%; height: 100.0%;">台亞萬里加油站新北市萬里區萬里加投83號</div>`)[0];
+                popup_8e07b14f7da1eeccf592f7382b073bfb.setContent(html_2e440c7bd21fbafd1e445bf740a86199);
+            
+        
+
+        marker_3e69660f43b970b226e058a5509844ff.bindPopup(popup_8e07b14f7da1eeccf592f7382b073bfb)
+        ;
+
+        
+    
+    
+            var marker_3427c4ccb04456f63f5e67eb73a2ad0d = L.marker(
+                [25.19549148, 121.6888154],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ffc82a2b54c7acf76f97a140d5707edd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f44d1829b1fa71cc3afd82c12e7c8c9a = $(`<div id="html_f44d1829b1fa71cc3afd82c12e7c8c9a" style="width: 100.0%; height: 100.0%;">萬里加油站新北市萬里區龜吼里美崙31-1號 </div>`)[0];
+                popup_ffc82a2b54c7acf76f97a140d5707edd.setContent(html_f44d1829b1fa71cc3afd82c12e7c8c9a);
+            
+        
+
+        marker_3427c4ccb04456f63f5e67eb73a2ad0d.bindPopup(popup_ffc82a2b54c7acf76f97a140d5707edd)
+        ;
+
+        
+    
+    
+            var marker_26211584e9ecafc5b62c9d0d88167c79 = L.marker(
+                [24.9716207, 121.4155721],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_fa2f61c340509f299bedf83f8601a3eb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5da14a14675f391b625211d39f58e236 = $(`<div id="html_5da14a14675f391b625211d39f58e236" style="width: 100.0%; height: 100.0%;">永錡彭厝加油站新北市樹林區八德街395號</div>`)[0];
+                popup_fa2f61c340509f299bedf83f8601a3eb.setContent(html_5da14a14675f391b625211d39f58e236);
+            
+        
+
+        marker_26211584e9ecafc5b62c9d0d88167c79.bindPopup(popup_fa2f61c340509f299bedf83f8601a3eb)
+        ;
+
+        
+    
+    
+            var marker_3c9c6095087ea0fd1c03b9ff60aeaafb = L.marker(
+                [25.0144623, 121.3950294],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_61b02a3dc484e226e9ed2b7085c5d1a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64c9a91dc9491c395d368ca31afec198 = $(`<div id="html_64c9a91dc9491c395d368ca31afec198" style="width: 100.0%; height: 100.0%;">思源加油站新北市樹林區三興路50號</div>`)[0];
+                popup_61b02a3dc484e226e9ed2b7085c5d1a5.setContent(html_64c9a91dc9491c395d368ca31afec198);
+            
+        
+
+        marker_3c9c6095087ea0fd1c03b9ff60aeaafb.bindPopup(popup_61b02a3dc484e226e9ed2b7085c5d1a5)
+        ;
+
+        
+    
+    
+            var marker_5b132ba3acc71717f1af07b002e7b3fe = L.marker(
+                [25.0016309, 121.4262649],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_50d76276e2729a1f4d526d3dd1d69c9a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_078445a32ca3ac62b1c0d50c0d2b6f3c = $(`<div id="html_078445a32ca3ac62b1c0d50c0d2b6f3c" style="width: 100.0%; height: 100.0%;">中信加油站新北市樹林區大安路1-10號</div>`)[0];
+                popup_50d76276e2729a1f4d526d3dd1d69c9a.setContent(html_078445a32ca3ac62b1c0d50c0d2b6f3c);
+            
+        
+
+        marker_5b132ba3acc71717f1af07b002e7b3fe.bindPopup(popup_50d76276e2729a1f4d526d3dd1d69c9a)
+        ;
+
+        
+    
+    
+            var marker_fa223376b59375872a9c24fd74692f5e = L.marker(
+                [24.9961322, 121.4212601],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_0409c10be992ced2f14eebf4da3a54e6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77cb948823588da95e8cc7ff1726fa66 = $(`<div id="html_77cb948823588da95e8cc7ff1726fa66" style="width: 100.0%; height: 100.0%;">永錡保安加油站新北市樹林區大安路179號</div>`)[0];
+                popup_0409c10be992ced2f14eebf4da3a54e6.setContent(html_77cb948823588da95e8cc7ff1726fa66);
+            
+        
+
+        marker_fa223376b59375872a9c24fd74692f5e.bindPopup(popup_0409c10be992ced2f14eebf4da3a54e6)
+        ;
+
+        
+    
+    
+            var marker_7e641ac36d9564d865d6e7739ec51f12 = L.marker(
+                [25.004714, 121.4303147],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_fe4e66702b63829fa1ba38d5a7ff7c86 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44e5f760079ea51d267ccaa6fbf777e3 = $(`<div id="html_44e5f760079ea51d267ccaa6fbf777e3" style="width: 100.0%; height: 100.0%;">全國大安路加油站新北市樹林區大安路2號</div>`)[0];
+                popup_fe4e66702b63829fa1ba38d5a7ff7c86.setContent(html_44e5f760079ea51d267ccaa6fbf777e3);
+            
+        
+
+        marker_7e641ac36d9564d865d6e7739ec51f12.bindPopup(popup_fe4e66702b63829fa1ba38d5a7ff7c86)
+        ;
+
+        
+    
+    
+            var marker_8a3890d3f0ad77b3eb45314aa388a554 = L.marker(
+                [24.9840091, 121.4118889],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_9f83bf8d04aff825b79cf0186dd36967 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_894421a1e2d8d6a2f46ddfb501e24bc7 = $(`<div id="html_894421a1e2d8d6a2f46ddfb501e24bc7" style="width: 100.0%; height: 100.0%;">永錡大安加油站新北市樹林區大安路576號</div>`)[0];
+                popup_9f83bf8d04aff825b79cf0186dd36967.setContent(html_894421a1e2d8d6a2f46ddfb501e24bc7);
+            
+        
+
+        marker_8a3890d3f0ad77b3eb45314aa388a554.bindPopup(popup_9f83bf8d04aff825b79cf0186dd36967)
+        ;
+
+        
+    
+    
+            var marker_164f344743256ba9c13f30f1a44fbf00 = L.marker(
+                [24.9728381, 121.3951994],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f7cd70121b4a8bc06cbfd0be09063ef6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1fcc8e6d91a7e9bb838a32471334cf8 = $(`<div id="html_b1fcc8e6d91a7e9bb838a32471334cf8" style="width: 100.0%; height: 100.0%;">山佳加油站新北市樹林區中山路3段30號</div>`)[0];
+                popup_f7cd70121b4a8bc06cbfd0be09063ef6.setContent(html_b1fcc8e6d91a7e9bb838a32471334cf8);
+            
+        
+
+        marker_164f344743256ba9c13f30f1a44fbf00.bindPopup(popup_f7cd70121b4a8bc06cbfd0be09063ef6)
+        ;
+
+        
+    
+    
+            var marker_0e4a8ad7fd47c4e0b1d555ef95e21995 = L.marker(
+                [25.0009471, 121.4249459],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_b00191a09429d269c99d12b4fff7b872 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_458f4df479bed5539ee745be0ed34bc5 = $(`<div id="html_458f4df479bed5539ee745be0ed34bc5" style="width: 100.0%; height: 100.0%;">浮洲加油站新北市樹林區中正路105號</div>`)[0];
+                popup_b00191a09429d269c99d12b4fff7b872.setContent(html_458f4df479bed5539ee745be0ed34bc5);
+            
+        
+
+        marker_0e4a8ad7fd47c4e0b1d555ef95e21995.bindPopup(popup_b00191a09429d269c99d12b4fff7b872)
+        ;
+
+        
+    
+    
+            var marker_4fae0388a17ccd4c843032b00a2d73a4 = L.marker(
+                [25.001387, 121.4251897],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_d0781c78b7472a8d50c5a07dffc9ee9b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_37895d55374c337f560405807d515507 = $(`<div id="html_37895d55374c337f560405807d515507" style="width: 100.0%; height: 100.0%;">樹新加油站新北市樹林區中正路106號</div>`)[0];
+                popup_d0781c78b7472a8d50c5a07dffc9ee9b.setContent(html_37895d55374c337f560405807d515507);
+            
+        
+
+        marker_4fae0388a17ccd4c843032b00a2d73a4.bindPopup(popup_d0781c78b7472a8d50c5a07dffc9ee9b)
+        ;
+
+        
+    
+    
+            var marker_7be3f1bc786f43161f29b5d204f82870 = L.marker(
+                [25.0089619, 121.416202],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1bec6124f20ee684845b3987cbb48d46 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_253c35551e6c89baf68ff69ddae351c3 = $(`<div id="html_253c35551e6c89baf68ff69ddae351c3" style="width: 100.0%; height: 100.0%;">和信加油站新北市樹林區中正路280-2號</div>`)[0];
+                popup_1bec6124f20ee684845b3987cbb48d46.setContent(html_253c35551e6c89baf68ff69ddae351c3);
+            
+        
+
+        marker_7be3f1bc786f43161f29b5d204f82870.bindPopup(popup_1bec6124f20ee684845b3987cbb48d46)
+        ;
+
+        
+    
+    
+            var marker_b17be242c3103e0eab3fcbc424d26edb = L.marker(
+                [25.008775, 121.4155139],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_34be169ec539783f4e3e97be2bb080be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c91a1da09d8d7d9b0d6340795999639 = $(`<div id="html_5c91a1da09d8d7d9b0d6340795999639" style="width: 100.0%; height: 100.0%;">三多加油站新北市樹林區中正路433號</div>`)[0];
+                popup_34be169ec539783f4e3e97be2bb080be.setContent(html_5c91a1da09d8d7d9b0d6340795999639);
+            
+        
+
+        marker_b17be242c3103e0eab3fcbc424d26edb.bindPopup(popup_34be169ec539783f4e3e97be2bb080be)
+        ;
+
+        
+    
+    
+            var marker_6f40cd6ae567a052896606174c5fb37e = L.marker(
+                [24.9840394, 121.4251325],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c4c9f11fa3f0c33128764c95e04de5d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f289b2d0ba051a6f162e04c403ad95d6 = $(`<div id="html_f289b2d0ba051a6f162e04c403ad95d6" style="width: 100.0%; height: 100.0%;">永盛加油站新北市樹林區中華路1-1號</div>`)[0];
+                popup_c4c9f11fa3f0c33128764c95e04de5d3.setContent(html_f289b2d0ba051a6f162e04c403ad95d6);
+            
+        
+
+        marker_6f40cd6ae567a052896606174c5fb37e.bindPopup(popup_c4c9f11fa3f0c33128764c95e04de5d3)
+        ;
+
+        
+    
+    
+            var marker_e678edeabd49624e42326d0a3a9a2d57 = L.marker(
+                [24.980662, 121.412142],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_6c77195c55069db5b9e0530b390c205c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ca5452b2ed5d8367b97a7a82c81a1ee = $(`<div id="html_5ca5452b2ed5d8367b97a7a82c81a1ee" style="width: 100.0%; height: 100.0%;">統一精工樹林加油站新北市樹林區中華路190號</div>`)[0];
+                popup_6c77195c55069db5b9e0530b390c205c.setContent(html_5ca5452b2ed5d8367b97a7a82c81a1ee);
+            
+        
+
+        marker_e678edeabd49624e42326d0a3a9a2d57.bindPopup(popup_6c77195c55069db5b9e0530b390c205c)
+        ;
+
+        
+    
+    
+            var marker_25793d3eb053ee6c29ad8056676fc6eb = L.marker(
+                [24.9841383, 121.4256851],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_36ded800303b940399fea9f8fd317091 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf0285dea2bcceb1a8a34bb777033f62 = $(`<div id="html_bf0285dea2bcceb1a8a34bb777033f62" style="width: 100.0%; height: 100.0%;">城林橋加油站新北市樹林區中華路2號</div>`)[0];
+                popup_36ded800303b940399fea9f8fd317091.setContent(html_bf0285dea2bcceb1a8a34bb777033f62);
+            
+        
+
+        marker_25793d3eb053ee6c29ad8056676fc6eb.bindPopup(popup_36ded800303b940399fea9f8fd317091)
+        ;
+
+        
+    
+    
+            var marker_40342a1ab7a7bf0950f4adb205ea55a6 = L.marker(
+                [24.980203, 121.414181],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_7b220c26ee000773cb467c93b1609a08 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_abe8c38428bfba9567dfaf1db43987c4 = $(`<div id="html_abe8c38428bfba9567dfaf1db43987c4" style="width: 100.0%; height: 100.0%;">金樹林加油站新北市樹林區中華路365號</div>`)[0];
+                popup_7b220c26ee000773cb467c93b1609a08.setContent(html_abe8c38428bfba9567dfaf1db43987c4);
+            
+        
+
+        marker_40342a1ab7a7bf0950f4adb205ea55a6.bindPopup(popup_7b220c26ee000773cb467c93b1609a08)
+        ;
+
+        
+    
+    
+            var marker_e3727f782e7dd32b4058a7d2124f17f2 = L.marker(
+                [24.9818331, 121.4201032],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_ada6c3cb5938b2dedd3f0e6203e42521 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f424860e4146d373bc8e5c3f0b01757 = $(`<div id="html_2f424860e4146d373bc8e5c3f0b01757" style="width: 100.0%; height: 100.0%;">中華路加油站新北市樹林區中華路66號</div>`)[0];
+                popup_ada6c3cb5938b2dedd3f0e6203e42521.setContent(html_2f424860e4146d373bc8e5c3f0b01757);
+            
+        
+
+        marker_e3727f782e7dd32b4058a7d2124f17f2.bindPopup(popup_ada6c3cb5938b2dedd3f0e6203e42521)
+        ;
+
+        
+    
+    
+            var marker_8cf88fefd9af291974536d04d5ca07f8 = L.marker(
+                [24.9623788, 121.3916527],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_893750b9bdc7c1dc5751f17ef99e5b6c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e094fb38bec7f295ad4bc40962e727e = $(`<div id="html_5e094fb38bec7f295ad4bc40962e727e" style="width: 100.0%; height: 100.0%;">柑園加油站新北市樹林區佳園路2段47號</div>`)[0];
+                popup_893750b9bdc7c1dc5751f17ef99e5b6c.setContent(html_5e094fb38bec7f295ad4bc40962e727e);
+            
+        
+
+        marker_8cf88fefd9af291974536d04d5ca07f8.bindPopup(popup_893750b9bdc7c1dc5751f17ef99e5b6c)
+        ;
+
+        
+    
+    
+            var marker_1f6e27f92e1313374fb7142ebef3a3fd = L.marker(
+                [24.9460652, 121.3853078],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_88559c0b0ad52f49fe6704cf6fac3960 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b3ac5f1b5c6f0228e1a43c786de6374e = $(`<div id="html_b3ac5f1b5c6f0228e1a43c786de6374e" style="width: 100.0%; height: 100.0%;">柑園北大加油站新北市樹林區佳園路3段227號</div>`)[0];
+                popup_88559c0b0ad52f49fe6704cf6fac3960.setContent(html_b3ac5f1b5c6f0228e1a43c786de6374e);
+            
+        
+
+        marker_1f6e27f92e1313374fb7142ebef3a3fd.bindPopup(popup_88559c0b0ad52f49fe6704cf6fac3960)
+        ;
+
+        
+    
+    
+            var marker_1f9b22a696cbb0060613f89e68bb49f0 = L.marker(
+                [24.9551783, 121.3884958],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_50e087b3459e59f8abd1b5ae2816fa41 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_df9b61f44f2c1dcfd42f2d720981495d = $(`<div id="html_df9b61f44f2c1dcfd42f2d720981495d" style="width: 100.0%; height: 100.0%;">佳園加油站新北市樹林區佳園路3段9號</div>`)[0];
+                popup_50e087b3459e59f8abd1b5ae2816fa41.setContent(html_df9b61f44f2c1dcfd42f2d720981495d);
+            
+        
+
+        marker_1f9b22a696cbb0060613f89e68bb49f0.bindPopup(popup_50e087b3459e59f8abd1b5ae2816fa41)
+        ;
+
+        
+    
+    
+            var marker_8624f97c8a83d6c5d6fa47df8fa6d872 = L.marker(
+                [25.0134009, 121.4239637],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_2755b2f67d0eee80d70788cf08616555 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8dde7a99bb5622feb3eb49aa793fe05 = $(`<div id="html_d8dde7a99bb5622feb3eb49aa793fe05" style="width: 100.0%; height: 100.0%;">台亞俊英加油站新北市樹林區俊英街280號</div>`)[0];
+                popup_2755b2f67d0eee80d70788cf08616555.setContent(html_d8dde7a99bb5622feb3eb49aa793fe05);
+            
+        
+
+        marker_8624f97c8a83d6c5d6fa47df8fa6d872.bindPopup(popup_2755b2f67d0eee80d70788cf08616555)
+        ;
+
+        
+    
+    
+            var marker_8a71ec6ab4d0ac6d2dfcfd728f56aa93 = L.marker(
+                [25.0178225, 121.418698],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_de1ee113d070464c3cd768396654524d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81c3fa09c56132b4109c235d764c8474 = $(`<div id="html_81c3fa09c56132b4109c235d764c8474" style="width: 100.0%; height: 100.0%;">福懋樹林加油站新北市樹林區俊興街298號</div>`)[0];
+                popup_de1ee113d070464c3cd768396654524d.setContent(html_81c3fa09c56132b4109c235d764c8474);
+            
+        
+
+        marker_8a71ec6ab4d0ac6d2dfcfd728f56aa93.bindPopup(popup_de1ee113d070464c3cd768396654524d)
+        ;
+
+        
+    
+    
+            var marker_164d2adc0dd4af03b101da45063efd02 = L.marker(
+                [24.9569403, 121.3985719],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_8c10a574d26730f5938f751610623108 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40ceae45a642f0bb364d2e780e0cc314 = $(`<div id="html_40ceae45a642f0bb364d2e780e0cc314" style="width: 100.0%; height: 100.0%;">上順柑園加油站新北市樹林區柑園街1段1-2號</div>`)[0];
+                popup_8c10a574d26730f5938f751610623108.setContent(html_40ceae45a642f0bb364d2e780e0cc314);
+            
+        
+
+        marker_164d2adc0dd4af03b101da45063efd02.bindPopup(popup_8c10a574d26730f5938f751610623108)
+        ;
+
+        
+    
+    
+            var marker_01d7c3dbe35e185bb94274ecc96cf8df = L.marker(
+                [24.9995199, 121.430115],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_133f270107f3129deb7e9598a659dc27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47774eee60646785ab70b7d22d93ca23 = $(`<div id="html_47774eee60646785ab70b7d22d93ca23" style="width: 100.0%; height: 100.0%;">樹林加油站新北市樹林區樹新路207號</div>`)[0];
+                popup_133f270107f3129deb7e9598a659dc27.setContent(html_47774eee60646785ab70b7d22d93ca23);
+            
+        
+
+        marker_01d7c3dbe35e185bb94274ecc96cf8df.bindPopup(popup_133f270107f3129deb7e9598a659dc27)
+        ;
+
+        
+    
+    
+            var marker_f9c042b239ae3e3d170ce28b7648b98c = L.marker(
+                [25.0934514, 121.4616011],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_74298414bc2b8aea081ea01c34a6cf33 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14b24f345837fafd9dd61b7a2dc68365 = $(`<div id="html_14b24f345837fafd9dd61b7a2dc68365" style="width: 100.0%; height: 100.0%;">蘆洲三民路加油站新北市蘆洲區三民路550號</div>`)[0];
+                popup_74298414bc2b8aea081ea01c34a6cf33.setContent(html_14b24f345837fafd9dd61b7a2dc68365);
+            
+        
+
+        marker_f9c042b239ae3e3d170ce28b7648b98c.bindPopup(popup_74298414bc2b8aea081ea01c34a6cf33)
+        ;
+
+        
+    
+    
+            var marker_ba1f22563996242a1f756ceb19abc003 = L.marker(
+                [25.0853572, 121.4731219],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_4348a8d81b8ffe51b59b3209ce4db565 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_352a100c2cc78a109d38bc3211bf0393 = $(`<div id="html_352a100c2cc78a109d38bc3211bf0393" style="width: 100.0%; height: 100.0%;">蘆洲加油站新北市蘆洲區三民路99號</div>`)[0];
+                popup_4348a8d81b8ffe51b59b3209ce4db565.setContent(html_352a100c2cc78a109d38bc3211bf0393);
+            
+        
+
+        marker_ba1f22563996242a1f756ceb19abc003.bindPopup(popup_4348a8d81b8ffe51b59b3209ce4db565)
+        ;
+
+        
+    
+    
+            var marker_09b5341b8fc7425f81949b26d1e4a4db = L.marker(
+                [25.0772993, 121.4693156],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_52a298b10e133215a97aebbb418dbfb3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9ba09e581c4620d672890fa1887ceada = $(`<div id="html_9ba09e581c4620d672890fa1887ceada" style="width: 100.0%; height: 100.0%;">北基蘆洲加油站新北市蘆洲區中山一路310號</div>`)[0];
+                popup_52a298b10e133215a97aebbb418dbfb3.setContent(html_9ba09e581c4620d672890fa1887ceada);
+            
+        
+
+        marker_09b5341b8fc7425f81949b26d1e4a4db.bindPopup(popup_52a298b10e133215a97aebbb418dbfb3)
+        ;
+
+        
+    
+    
+            var marker_ce3be06a28374ab5f3a957dfa1aeba84 = L.marker(
+                [25.0767272, 121.4690786],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_f9f3aff0ecc35b41ea0acad546882ca4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56c431cfe75ca39488bf49d1f7b03f42 = $(`<div id="html_56c431cfe75ca39488bf49d1f7b03f42" style="width: 100.0%; height: 100.0%;">全國蘆洲加油站新北市蘆洲區中山一路417號</div>`)[0];
+                popup_f9f3aff0ecc35b41ea0acad546882ca4.setContent(html_56c431cfe75ca39488bf49d1f7b03f42);
+            
+        
+
+        marker_ce3be06a28374ab5f3a957dfa1aeba84.bindPopup(popup_f9f3aff0ecc35b41ea0acad546882ca4)
+        ;
+
+        
+    
+    
+            var marker_c1465400d4c4938aa0074487a2dcffc8 = L.marker(
+                [25.0771528, 121.4688293],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_a099fabe43d5056c44eae21af9a452d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56fd75151dfd50395a4bb02d304d8bc2 = $(`<div id="html_56fd75151dfd50395a4bb02d304d8bc2" style="width: 100.0%; height: 100.0%;">蘆洲中山二路加油站新北市蘆洲區中山二路309號</div>`)[0];
+                popup_a099fabe43d5056c44eae21af9a452d4.setContent(html_56fd75151dfd50395a4bb02d304d8bc2);
+            
+        
+
+        marker_c1465400d4c4938aa0074487a2dcffc8.bindPopup(popup_a099fabe43d5056c44eae21af9a452d4)
+        ;
+
+        
+    
+    
+            var marker_b0fde3a2df301fa3fac183f42a893f22 = L.marker(
+                [24.9476188, 121.3402344],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_880fcf025d38a81c42f136b7ef699c01 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd2bb9a24285545083b4460ff5bceae2 = $(`<div id="html_bd2bb9a24285545083b4460ff5bceae2" style="width: 100.0%; height: 100.0%;">裕進加油站新北市鶯歌區八德路1-2號</div>`)[0];
+                popup_880fcf025d38a81c42f136b7ef699c01.setContent(html_bd2bb9a24285545083b4460ff5bceae2);
+            
+        
+
+        marker_b0fde3a2df301fa3fac183f42a893f22.bindPopup(popup_880fcf025d38a81c42f136b7ef699c01)
+        ;
+
+        
+    
+    
+            var marker_5abac9fa91bc78de632a6e510aaaf69b = L.marker(
+                [24.9409246, 121.356593],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_4fb9c1fc6c901d4a928caf0328e9492a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_199b3bb1abb2053727fafc2ad352689c = $(`<div id="html_199b3bb1abb2053727fafc2ad352689c" style="width: 100.0%; height: 100.0%;">三鶯交流道加油站新北市鶯歌區三鶯路5號</div>`)[0];
+                popup_4fb9c1fc6c901d4a928caf0328e9492a.setContent(html_199b3bb1abb2053727fafc2ad352689c);
+            
+        
+
+        marker_5abac9fa91bc78de632a6e510aaaf69b.bindPopup(popup_4fb9c1fc6c901d4a928caf0328e9492a)
+        ;
+
+        
+    
+    
+            var marker_034a58dcf95b893d8789007320d085dd = L.marker(
+                [24.9409246, 121.356593],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c0bc309c75032241ebc05e9f92b1b473 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4e82ab4ae2c7f3fd14e9aa64a3d4492 = $(`<div id="html_c4e82ab4ae2c7f3fd14e9aa64a3d4492" style="width: 100.0%; height: 100.0%;">板新加油站新北市鶯歌區三鶯路5號之1</div>`)[0];
+                popup_c0bc309c75032241ebc05e9f92b1b473.setContent(html_c4e82ab4ae2c7f3fd14e9aa64a3d4492);
+            
+        
+
+        marker_034a58dcf95b893d8789007320d085dd.bindPopup(popup_c0bc309c75032241ebc05e9f92b1b473)
+        ;
+
+        
+    
+    
+            var marker_8a2c9ca054ca58bbdfcd3a88f1c9c173 = L.marker(
+                [24.9573941, 121.3541855],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_c72148e22a6b4c37fa9e783b4c85e5cd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be58b26cf4541ef378f8ba475e643d78 = $(`<div id="html_be58b26cf4541ef378f8ba475e643d78" style="width: 100.0%; height: 100.0%;">峰沅加油站新北市鶯歌區中正一路225號</div>`)[0];
+                popup_c72148e22a6b4c37fa9e783b4c85e5cd.setContent(html_be58b26cf4541ef378f8ba475e643d78);
+            
+        
+
+        marker_8a2c9ca054ca58bbdfcd3a88f1c9c173.bindPopup(popup_c72148e22a6b4c37fa9e783b4c85e5cd)
+        ;
+
+        
+    
+    
+            var marker_752d0e39085494eab352c0fd6d2b6853 = L.marker(
+                [24.9567007, 121.3642812],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_5c83392ccd6ab5d919429f2048703b6f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_68493e8fc2377156df3b1140bcda1bf6 = $(`<div id="html_68493e8fc2377156df3b1140bcda1bf6" style="width: 100.0%; height: 100.0%;">東林加油站新北市鶯歌區中正一路461-5號</div>`)[0];
+                popup_5c83392ccd6ab5d919429f2048703b6f.setContent(html_68493e8fc2377156df3b1140bcda1bf6);
+            
+        
+
+        marker_752d0e39085494eab352c0fd6d2b6853.bindPopup(popup_5c83392ccd6ab5d919429f2048703b6f)
+        ;
+
+        
+    
+    
+            var marker_40d44bc7d476a2a9e5eea39bbaf07d92 = L.marker(
+                [24.950327, 121.352077],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_1b40f120b4c7d6b53eb1d8aeb93fd568 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a210ac13530a3378c5c4634e871c6fc5 = $(`<div id="html_a210ac13530a3378c5c4634e871c6fc5" style="width: 100.0%; height: 100.0%;">鶯歌加油站新北市鶯歌區文化路152號</div>`)[0];
+                popup_1b40f120b4c7d6b53eb1d8aeb93fd568.setContent(html_a210ac13530a3378c5c4634e871c6fc5);
+            
+        
+
+        marker_40d44bc7d476a2a9e5eea39bbaf07d92.bindPopup(popup_1b40f120b4c7d6b53eb1d8aeb93fd568)
+        ;
+
+        
+    
+    
+            var marker_165038117d30be480c28c032e4680db5 = L.marker(
+                [24.9463574, 121.3527388],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_acd75cf6f063669929071e9c63929064 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a82f8eb2da8f2e222ad68f5744b7326 = $(`<div id="html_5a82f8eb2da8f2e222ad68f5744b7326" style="width: 100.0%; height: 100.0%;">全國三鶯加油站新北市鶯歌區文化路669號</div>`)[0];
+                popup_acd75cf6f063669929071e9c63929064.setContent(html_5a82f8eb2da8f2e222ad68f5744b7326);
+            
+        
+
+        marker_165038117d30be480c28c032e4680db5.bindPopup(popup_acd75cf6f063669929071e9c63929064)
+        ;
+
+        
+    
+    
+            var marker_97c1b15034f74474d5297417807ca296 = L.marker(
+                [24.9641962, 121.3333897],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_46a9eee72d5fee89876129dcd9a1b780 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5411a5e0c342cbca8f1d5273e045de65 = $(`<div id="html_5411a5e0c342cbca8f1d5273e045de65" style="width: 100.0%; height: 100.0%;">鳳鳴加油站新北市鶯歌區鶯桃路412號</div>`)[0];
+                popup_46a9eee72d5fee89876129dcd9a1b780.setContent(html_5411a5e0c342cbca8f1d5273e045de65);
+            
+        
+
+        marker_97c1b15034f74474d5297417807ca296.bindPopup(popup_46a9eee72d5fee89876129dcd9a1b780)
+        ;
+
+        
+    
+    
+            var marker_da84176ba791f0be6032ec27f3d28db8 = L.marker(
+                [24.9529349, 121.3408237],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_5930915755c4dedff93d95013e12b59b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_abed5a6daee0e98fdf9e6a31da95155d = $(`<div id="html_abed5a6daee0e98fdf9e6a31da95155d" style="width: 100.0%; height: 100.0%;">鶯桃路加油站新北市鶯歌區鶯桃路永新巷1號</div>`)[0];
+                popup_5930915755c4dedff93d95013e12b59b.setContent(html_abed5a6daee0e98fdf9e6a31da95155d);
+            
+        
+
+        marker_da84176ba791f0be6032ec27f3d28db8.bindPopup(popup_5930915755c4dedff93d95013e12b59b)
+        ;
+
+        
+    
+    
+            var marker_5b64b16c36aefaf7fece94c71f3a1817 = L.marker(
+                [24.971682, 121.336632],
+                {}
+            ).addTo(marker_cluster_a2d8aef1ccb9dc5b02f93d06c2e54f94);
+        
+    
+        var popup_bd1b12155fafc20dd01abbed00c8f173 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eebc5ef402b5e5b6a4d5190465e96bc3 = $(`<div id="html_eebc5ef402b5e5b6a4d5190465e96bc3" style="width: 100.0%; height: 100.0%;">山隆通運股份有限公司鶯歌加油站新北市鶯歌區鶯歌路276號</div>`)[0];
+                popup_bd1b12155fafc20dd01abbed00c8f173.setContent(html_eebc5ef402b5e5b6a4d5190465e96bc3);
+            
+        
+
+        marker_5b64b16c36aefaf7fece94c71f3a1817.bindPopup(popup_bd1b12155fafc20dd01abbed00c8f173)
+        ;
+
+        
+    
+</script>
+</html>
