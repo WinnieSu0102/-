@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><b>新北市交通</b></title>
+    <title>新北市交通</title>
     <link rel="stylesheet" href="parking.css">
-    <style>
-        nav{
-            display: flex;
-            justify-content: center;
-        }
-
-        li{
-            color: aquamarine;
-        }
-    </style>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
         <script>
@@ -35,15 +25,72 @@
     
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_b4b86280ae0ccb4f5ced48ad19eb83fc {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-            </style>
+                <style>
+                    #map_b4b86280ae0ccb4f5ced48ad19eb83fc {
+                        position: relative;
+                        width: 80.0%;
+                        height: 100.0%;
+                        left: 10.0%;
+                        right:10.0%;
+                        top: 0.0%;
+                        margin-bottom: 30px;
+                    }
+                    .menu{
+                        display: inline-block;
+                        text-decoration: none;
+                        font-size: 1.8em;
+                        line-height: 1.8em; 
+                        margin-left: 30px;
+                    }
+                    aside{
+                        background: #ECFFFF;
+                        position: relative;
+                        width: 100%;
+                        height: 70px;
+                        display: flex;
+                    }
+                    ul{
+                        margin-left: 130px;
+                    }
+                    h1{
+                        margin-left: 100px;
+                    }
+                    h2{
+                        margin-left: 130px;
+                    }
+                    footer{
+                        background: #ECFFFF;
+                        position: relative;
+                        width: 100%;
+                        height: 200px;
+                        display: flex;
+                    }
+                    box{
+                        width: 400px;
+                        height: 175px;
+                        margin:20px;
+                        box-sizing: border-box;
+                    }
+                    box li{
+                        text-decoration: none;
+                        list-style-type: none;
+                        font-size: 1.4em;
+                    }
+                    box li a:hover{
+                        color: #66B3FF;
+                    }
+                    #talktalk{
+                        font-family: Comic Sans MS;	
+                        color: darkgray;
+                        height: 80px;
+                        margin-top: 60px;
+                        margin-right: 70px;
+                        font-size: 1.0em;
+                        border:2.5px;
+                        border-color: #C4E1FF;
+                        border-style: dashed;
+                    }
+                </style>
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
@@ -51,21 +98,41 @@
 </head>
 <body>
     
-    <header class="container">
+    <header>
         <aside >
             <h1>新北市交通資訊</h1>
-            <h2>道路施工</h2>
         </aside>
-        <nav>
+        <h2>道路施工</h2>
+        <div>
             <ul >
-                <li><a href="/">停車位</a></li>
-                <li><a href="/dig">道路施工</a></li>
-                <li><a href="/gas">加油站</a></li>
+                <li class="menu"><a href="/">停車位</a></li>
+                <li class="menu"><a href="/dig">道路施工</a></li>
+                <li class="menu"><a href="/gas">加油站</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <div class="folium-map" id="map_b4b86280ae0ccb4f5ced48ad19eb83fc" ></div>
+
+    <footer>
+        <box >
+			<ul><h3>社群</h3>				
+                <li ><a href="">Youtube</a></li>
+				<li ><a href="">Facebook</a></li>
+				<li ><a href="">Instagram</a></li>
+			</ul>
+		</box>
+        <box >
+			<ul><h3>關於</h3>				
+                <li ><a href="">關於我們</a></li>
+				<li ><a href="">人才招募</a></li>
+				<li ><a href="https://data.gov.tw/datasets/search?p=10&size=10&s=dataset_view_times_desc&lgl-1=22026&lgl-2=9497&lgl-3=9550,9515,9503,9517,9527,9552,9511,9533,9545,9521&rct=257">資料來源</a></li>
+			</ul>
+		</box>
+        <box>
+            <textarea name="talktalk" id="talktalk" cols="35" rows="3" placeholder="Talk something ~" ></textarea><br>
+        </box>
+    </footer>
         
 </body>
 <script>
