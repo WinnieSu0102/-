@@ -87,7 +87,7 @@ for index, row in df_electric_v.iterrows():
         information = str(row["add"]) + '' + "收費方式:"+str(row['cha'])
         folium.Marker(location = [row['Latitude'], row['Longitude']], popup = information).add_to(marker_cluster)
 
-map.save('electric_v.html')
+#map.save('electric_v.html')
 
 @app.route('/')
 def park():
