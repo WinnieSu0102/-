@@ -1,2 +1,1 @@
-web gunicorn app:appgit add .
-web:node index.js
+web gunicorn app:app
