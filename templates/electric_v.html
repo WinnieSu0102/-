@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>新北市交通</title>
+    <link rel="stylesheet" href="parking.css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b7a7d5bf57e6a4c505e860de0117a659 {
+                    position: relative;
+                        width: 80.0%;
+                        height: 100.0%;
+                        left: 10.0%;
+                        right:10.0%;
+                        top: 0.0%;
+                        margin-bottom: 30px;
+                }
+                .menu{
+                        display: inline-block;
+                        text-decoration: none;
+                        font-size: 1.8em;
+                        line-height: 1.8em; 
+                        margin-left: 30px;
+                    }
+                    aside{
+                        background: #ECFFFF;
+                        position: relative;
+                        width: 100%;
+                        height: 70px;
+                        display: flex;
+                    }
+                    ul{
+                        margin-left: 130px;
+                    }
+                    h1{
+                        margin-left: 100px;
+                    }
+                    h2{
+                        margin-left: 130px;
+                    }
+                    footer{
+                        background: #ECFFFF;
+                        position: relative;
+                        width: 100%;
+                        height: 200px;
+                        display: flex;
+                    }
+                    box{
+                        width: 400px;
+                        height: 175px;
+                        margin:20px;
+                        box-sizing: border-box;
+                    }
+                    box li{
+                        text-decoration: none;
+                        list-style-type: none;
+                        font-size: 1.4em;
+                    }
+                    box li a:hover{
+                        color: #66B3FF;
+                    }
+                    #talktalk{
+                        font-family: Comic Sans MS;	
+                        color: darkgray;
+                        height: 80px;
+                        margin-top: 60px;
+                        margin-right: 70px;
+                        font-size: 1.0em;
+                        border:2.5px;
+                        border-color: #C4E1FF;
+                        border-style: dashed;
+                    }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    <header>
+        <aside >
+            <h1>新北市交通資訊</h1>
+        </aside>
+        <h2>電動汽車充電站</h2>
+        <div>
+            <ul >
+                <li class="menu"><a href="/">停車位</a></li>
+                <li class="menu"><a href="/gas">加油站</a></li>
+                <li class="menu"><a href="/electirc_vechicle">電動汽車充電站</a></li>
+                <li class="menu"><a href="/electirc_motorcycle">電動機車充電站</a></li>
+                <li class="menu"><a href="/dig">道路施工</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="folium-map" id="map_b7a7d5bf57e6a4c505e860de0117a659" ></div>
+        
+    <footer>
+        <box >
+			<ul><h3>社群</h3>				
+                <li ><a href="">Youtube</a></li>
+				<li ><a href="">Facebook</a></li>
+				<li ><a href="">Instagram</a></li>
+			</ul>
+		</box>
+        <box >
+			<ul><h3>關於</h3>				
+                <li ><a href="">關於我們</a></li>
+				<li ><a href="">人才招募</a></li>
+				<li ><a href="https://data.gov.tw/datasets/search?p=10&size=10&s=dataset_view_times_desc&lgl-1=22026&lgl-2=9497&lgl-3=9550,9515,9503,9517,9527,9552,9511,9533,9545,9521&rct=257">資料來源</a></li>
+			</ul>
+		</box>
+        <box>
+            <textarea name="talktalk" id="talktalk" cols="35" rows="3" placeholder="Talk something ~" ></textarea><br>
+        </box>
+    </footer>
+</body>
+<script>
+    
+    
+            var map_b7a7d5bf57e6a4c505e860de0117a659 = L.map(
+                "map_b7a7d5bf57e6a4c505e860de0117a659",
+                {
+                    center: [23.5, 121.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_09e26aab9fbcd3cb1cc4cd81a6b095d7 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b7a7d5bf57e6a4c505e860de0117a659);
+        
+    
+            var marker_cluster_b7cad795b7dc1efbe470c624598c64f6 = L.markerClusterGroup(
+                {}
+            );
+            map_b7a7d5bf57e6a4c505e860de0117a659.addLayer(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+            var marker_4709a9a134e1e0a865916fc9c84a4665 = L.marker(
+                [25.1570822, 121.4047677],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_a2638fc67a665bec901fb92a42477614 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e2a56a09a2bb69ddf3f37633b10a1830 = $(`<div id="html_e2a56a09a2bb69ddf3f37633b10a1830" style="width: 100.0%; height: 100.0%;">新北市八里區博物館路200號收費方式:不收費</div>`)[0];
+                popup_a2638fc67a665bec901fb92a42477614.setContent(html_e2a56a09a2bb69ddf3f37633b10a1830);
+            
+        
+
+        marker_4709a9a134e1e0a865916fc9c84a4665.bindPopup(popup_a2638fc67a665bec901fb92a42477614)
+        ;
+
+        
+    
+    
+            var marker_3ddd0de101bbe4dcfe2631103db573c7 = L.marker(
+                [25.1470863, 121.400056],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c68a3cfb6c8cb36a55205cc0fd301fab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65445c383cec55c844ece3ea37bbb36a = $(`<div id="html_65445c383cec55c844ece3ea37bbb36a" style="width: 100.0%; height: 100.0%;">新北市八里區舊城路12號收費方式:不收費</div>`)[0];
+                popup_c68a3cfb6c8cb36a55205cc0fd301fab.setContent(html_65445c383cec55c844ece3ea37bbb36a);
+            
+        
+
+        marker_3ddd0de101bbe4dcfe2631103db573c7.bindPopup(popup_c68a3cfb6c8cb36a55205cc0fd301fab)
+        ;
+
+        
+    
+    
+            var marker_3d53ce60e7247528f3de6bcd34dbc4f9 = L.marker(
+                [25.1606815, 121.4302723],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c9da623a6262e7a11dbc3a2a7ec6019c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be62e6dcebc8147c4963f38e2b17a4f1 = $(`<div id="html_be62e6dcebc8147c4963f38e2b17a4f1" style="width: 100.0%; height: 100.0%;">新北市八里區觀海大道36號收費方式:不收費</div>`)[0];
+                popup_c9da623a6262e7a11dbc3a2a7ec6019c.setContent(html_be62e6dcebc8147c4963f38e2b17a4f1);
+            
+        
+
+        marker_3d53ce60e7247528f3de6bcd34dbc4f9.bindPopup(popup_c9da623a6262e7a11dbc3a2a7ec6019c)
+        ;
+
+        
+    
+    
+            var marker_56def9c5bcffd1f18c22def215165b89 = L.marker(
+                [25.2549597, 121.5031063],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_dedbc0b42f7a29ae12c10799566f443a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_261e968d271fb61705da094313589f78 = $(`<div id="html_261e968d271fb61705da094313589f78" style="width: 100.0%; height: 100.0%;">新北市三芝區中山路二段48-1號收費方式:不收費</div>`)[0];
+                popup_dedbc0b42f7a29ae12c10799566f443a.setContent(html_261e968d271fb61705da094313589f78);
+            
+        
+
+        marker_56def9c5bcffd1f18c22def215165b89.bindPopup(popup_dedbc0b42f7a29ae12c10799566f443a)
+        ;
+
+        
+    
+    
+            var marker_81fdb35baf45c5899595185455109a5e = L.marker(
+                [25.246394, 121.514604],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_06b2621993411b7820a72c9191673df0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e2a0011420610140a586456ea217435 = $(`<div id="html_8e2a0011420610140a586456ea217435" style="width: 100.0%; height: 100.0%;">新北市三芝區埔頭坑164之2號收費方式:不收費</div>`)[0];
+                popup_06b2621993411b7820a72c9191673df0.setContent(html_8e2a0011420610140a586456ea217435);
+            
+        
+
+        marker_81fdb35baf45c5899595185455109a5e.bindPopup(popup_06b2621993411b7820a72c9191673df0)
+        ;
+
+        
+    
+    
+            var marker_af39a7928c1a6664c35b797ddd67ce44 = L.marker(
+                [25.0645459, 121.4961138],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_72759cb6a87768c39a3221eff28f4d50 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c76c89c3003050f2705e80aea2245809 = $(`<div id="html_c76c89c3003050f2705e80aea2245809" style="width: 100.0%; height: 100.0%;">新北市三重區信義西街31號收費方式:不收費</div>`)[0];
+                popup_72759cb6a87768c39a3221eff28f4d50.setContent(html_c76c89c3003050f2705e80aea2245809);
+            
+        
+
+        marker_af39a7928c1a6664c35b797ddd67ce44.bindPopup(popup_72759cb6a87768c39a3221eff28f4d50)
+        ;
+
+        
+    
+    
+            var marker_25c2e903d15ff6dceab0c32dfe6645d9 = L.marker(
+                [25.0610971, 121.4896149],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_2cf926ea65258ae49042150991c51d1f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95c1172c018fe7ab1a7fdba48e4e83ce = $(`<div id="html_95c1172c018fe7ab1a7fdba48e4e83ce" style="width: 100.0%; height: 100.0%;">新北市三重區新北大道一段7號收費方式:不收費</div>`)[0];
+                popup_2cf926ea65258ae49042150991c51d1f.setContent(html_95c1172c018fe7ab1a7fdba48e4e83ce);
+            
+        
+
+        marker_25c2e903d15ff6dceab0c32dfe6645d9.bindPopup(popup_2cf926ea65258ae49042150991c51d1f)
+        ;
+
+        
+    
+    
+            var marker_73c86ed0c20e80a61bb982ab56245748 = L.marker(
+                [25.0614534, 121.4867114],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c9c4388f2ee716473ef247ffb5d6d3ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7915da40e13868a08e6099af6ca9c545 = $(`<div id="html_7915da40e13868a08e6099af6ca9c545" style="width: 100.0%; height: 100.0%;">新北市三重區大智路188號收費方式:不收費</div>`)[0];
+                popup_c9c4388f2ee716473ef247ffb5d6d3ba.setContent(html_7915da40e13868a08e6099af6ca9c545);
+            
+        
+
+        marker_73c86ed0c20e80a61bb982ab56245748.bindPopup(popup_c9c4388f2ee716473ef247ffb5d6d3ba)
+        ;
+
+        
+    
+    
+            var marker_0cca254ab1ab79e4352cdc1f5adae39b = L.marker(
+                [25.078643, 121.490633],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_61a591bb12354a7e28c7cdd657911edf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_825f59c294b0fe5792a8e6abba67ec35 = $(`<div id="html_825f59c294b0fe5792a8e6abba67ec35" style="width: 100.0%; height: 100.0%;">新北市三重區自強路四段55號收費方式:不收費</div>`)[0];
+                popup_61a591bb12354a7e28c7cdd657911edf.setContent(html_825f59c294b0fe5792a8e6abba67ec35);
+            
+        
+
+        marker_0cca254ab1ab79e4352cdc1f5adae39b.bindPopup(popup_61a591bb12354a7e28c7cdd657911edf)
+        ;
+
+        
+    
+    
+            var marker_8e7f07202a9831922acae38b01461545 = L.marker(
+                [25.0543937, 121.4883227],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_e632ca50e7922b5465bbcc9b9997d844 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63302136519ccc4f5966f48edeebb31d = $(`<div id="html_63302136519ccc4f5966f48edeebb31d" style="width: 100.0%; height: 100.0%;">新北市三重區集美街57號收費方式:不收費</div>`)[0];
+                popup_e632ca50e7922b5465bbcc9b9997d844.setContent(html_63302136519ccc4f5966f48edeebb31d);
+            
+        
+
+        marker_8e7f07202a9831922acae38b01461545.bindPopup(popup_e632ca50e7922b5465bbcc9b9997d844)
+        ;
+
+        
+    
+    
+            var marker_c775dcbb8da554a23647aa84fb72b1f5 = L.marker(
+                [25.0656964, 121.4803284],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_006d9b4ee67e709b426e1a162f18b8d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3e582d17f359f735cf8f2a292f8ccd9 = $(`<div id="html_f3e582d17f359f735cf8f2a292f8ccd9" style="width: 100.0%; height: 100.0%;">新北市三重區忠孝路三段89號B2收費方式:不收費</div>`)[0];
+                popup_006d9b4ee67e709b426e1a162f18b8d5.setContent(html_f3e582d17f359f735cf8f2a292f8ccd9);
+            
+        
+
+        marker_c775dcbb8da554a23647aa84fb72b1f5.bindPopup(popup_006d9b4ee67e709b426e1a162f18b8d5)
+        ;
+
+        
+    
+    
+            var marker_e43977734de22c8e503bf933e777466c = L.marker(
+                [25.0719793, 121.4890326],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_d0df1d60f0d65d132b3b1b8ce5821a25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_095d144f53b0c750e0bf5a3de56a8f0c = $(`<div id="html_095d144f53b0c750e0bf5a3de56a8f0c" style="width: 100.0%; height: 100.0%;">新北市三重區忠孝路一段70號收費方式:不收費</div>`)[0];
+                popup_d0df1d60f0d65d132b3b1b8ce5821a25.setContent(html_095d144f53b0c750e0bf5a3de56a8f0c);
+            
+        
+
+        marker_e43977734de22c8e503bf933e777466c.bindPopup(popup_d0df1d60f0d65d132b3b1b8ce5821a25)
+        ;
+
+        
+    
+    
+            var marker_e4a1ddd93b9a7ce7bf702e680158c153 = L.marker(
+                [25.0844282, 121.4906712],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_551d16fc220ca4115280a7439040c1da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d134a7d37e56158cd117c4225dcde10 = $(`<div id="html_2d134a7d37e56158cd117c4225dcde10" style="width: 100.0%; height: 100.0%;">新北市三重區五華街160號收費方式:不收費</div>`)[0];
+                popup_551d16fc220ca4115280a7439040c1da.setContent(html_2d134a7d37e56158cd117c4225dcde10);
+            
+        
+
+        marker_e4a1ddd93b9a7ce7bf702e680158c153.bindPopup(popup_551d16fc220ca4115280a7439040c1da)
+        ;
+
+        
+    
+    
+            var marker_013142ab08fb194c200d9b8518660461 = L.marker(
+                [25.080786, 121.496016],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_e7c3abd3a6fc98cb70600f1d42ebd1a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_581689d9f7245d6fde470aabda90ac73 = $(`<div id="html_581689d9f7245d6fde470aabda90ac73" style="width: 100.0%; height: 100.0%;">新北市三重區五華街7巷30號B1收費方式:不收費</div>`)[0];
+                popup_e7c3abd3a6fc98cb70600f1d42ebd1a7.setContent(html_581689d9f7245d6fde470aabda90ac73);
+            
+        
+
+        marker_013142ab08fb194c200d9b8518660461.bindPopup(popup_e7c3abd3a6fc98cb70600f1d42ebd1a7)
+        ;
+
+        
+    
+    
+            var marker_ad6f7328d1524291cc4436f52b6154f4 = L.marker(
+                [25.0639327, 121.4837771],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0ba758012ced8efed45170339be20bef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7aa96384b1cac0cfe971ff61902dace = $(`<div id="html_e7aa96384b1cac0cfe971ff61902dace" style="width: 100.0%; height: 100.0%;">新北市三重區中華路125號B1收費方式:不收費</div>`)[0];
+                popup_0ba758012ced8efed45170339be20bef.setContent(html_e7aa96384b1cac0cfe971ff61902dace);
+            
+        
+
+        marker_ad6f7328d1524291cc4436f52b6154f4.bindPopup(popup_0ba758012ced8efed45170339be20bef)
+        ;
+
+        
+    
+    
+            var marker_eba798c1a4df611e6f0e265d415f9b44 = L.marker(
+                [25.0770435, 121.4806326],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_01fb0ce1ecdbfdfb8c129e77b337eea9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_854246296bc03b8b4e17990579b5e54e = $(`<div id="html_854246296bc03b8b4e17990579b5e54e" style="width: 100.0%; height: 100.0%;">新北市三重區永福街66號B1收費方式:不收費</div>`)[0];
+                popup_01fb0ce1ecdbfdfb8c129e77b337eea9.setContent(html_854246296bc03b8b4e17990579b5e54e);
+            
+        
+
+        marker_eba798c1a4df611e6f0e265d415f9b44.bindPopup(popup_01fb0ce1ecdbfdfb8c129e77b337eea9)
+        ;
+
+        
+    
+    
+            var marker_964aee8b72e632c76691fe30c5e29cec = L.marker(
+                [25.0683296, 121.4975202],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_ca5b38c87809d2dbeef0eeaceceb57ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9beffd027496c72acc7c3ee97e8c9b0 = $(`<div id="html_a9beffd027496c72acc7c3ee97e8c9b0" style="width: 100.0%; height: 100.0%;">新北市三重區雙園街1號B1收費方式:不收費</div>`)[0];
+                popup_ca5b38c87809d2dbeef0eeaceceb57ce.setContent(html_a9beffd027496c72acc7c3ee97e8c9b0);
+            
+        
+
+        marker_964aee8b72e632c76691fe30c5e29cec.bindPopup(popup_ca5b38c87809d2dbeef0eeaceceb57ce)
+        ;
+
+        
+    
+    
+            var marker_bd381c8acf3bad22c3ef6385300ea85f = L.marker(
+                [25.0742889, 121.4987545],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_8a46c5d1b1715d5fb52fbc58e8287cde = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1e2c61f4fab89e21bb0c993d6d53d0b9 = $(`<div id="html_1e2c61f4fab89e21bb0c993d6d53d0b9" style="width: 100.0%; height: 100.0%;">新北市三重區公園街32號 平面收費方式:不收費</div>`)[0];
+                popup_8a46c5d1b1715d5fb52fbc58e8287cde.setContent(html_1e2c61f4fab89e21bb0c993d6d53d0b9);
+            
+        
+
+        marker_bd381c8acf3bad22c3ef6385300ea85f.bindPopup(popup_8a46c5d1b1715d5fb52fbc58e8287cde)
+        ;
+
+        
+    
+    
+            var marker_d4f7341ab6d7722ef2ca992c3292a3fb = L.marker(
+                [25.0611256, 121.481766],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_9a4b2abcf80abd0f435f27627b14d600 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16b898bdd789be5fbb8fbf58972199bf = $(`<div id="html_16b898bdd789be5fbb8fbf58972199bf" style="width: 100.0%; height: 100.0%;">新北市三重區新北大道一段159號 (對面停車場)收費方式:不收費</div>`)[0];
+                popup_9a4b2abcf80abd0f435f27627b14d600.setContent(html_16b898bdd789be5fbb8fbf58972199bf);
+            
+        
+
+        marker_d4f7341ab6d7722ef2ca992c3292a3fb.bindPopup(popup_9a4b2abcf80abd0f435f27627b14d600)
+        ;
+
+        
+    
+    
+            var marker_e36d1c2425f053c62f16be0d4a4750e9 = L.marker(
+                [25.0594536, 121.4993049],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_fc3786da423eec74a8b99b91d2a4f941 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1868d01e18d03f360c4132021cc1add8 = $(`<div id="html_1868d01e18d03f360c4132021cc1add8" style="width: 100.0%; height: 100.0%;">新北市三重區正義南路62號收費方式:不收費</div>`)[0];
+                popup_fc3786da423eec74a8b99b91d2a4f941.setContent(html_1868d01e18d03f360c4132021cc1add8);
+            
+        
+
+        marker_e36d1c2425f053c62f16be0d4a4750e9.bindPopup(popup_fc3786da423eec74a8b99b91d2a4f941)
+        ;
+
+        
+    
+    
+            var marker_06497d4695960e36762c6d1578ca0aaa = L.marker(
+                [24.8981171, 121.3376371],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6a896329cbd4273faf84c7691b6581a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4828438d3f38e802cc4e3b2f509061b7 = $(`<div id="html_4828438d3f38e802cc4e3b2f509061b7" style="width: 100.0%; height: 100.0%;">新北市三峽區中正路三段262號收費方式:不收費</div>`)[0];
+                popup_6a896329cbd4273faf84c7691b6581a7.setContent(html_4828438d3f38e802cc4e3b2f509061b7);
+            
+        
+
+        marker_06497d4695960e36762c6d1578ca0aaa.bindPopup(popup_6a896329cbd4273faf84c7691b6581a7)
+        ;
+
+        
+    
+    
+            var marker_396425d6fae6921a2665fc6f3e890030 = L.marker(
+                [24.9345806, 121.3700769],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_f0e7ad46808bc467be64311b3d2eb09a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_070a70a1aa0f1d1527bc42ddfb08e1c9 = $(`<div id="html_070a70a1aa0f1d1527bc42ddfb08e1c9" style="width: 100.0%; height: 100.0%;">新北市三峽區中山路16號收費方式:不收費</div>`)[0];
+                popup_f0e7ad46808bc467be64311b3d2eb09a.setContent(html_070a70a1aa0f1d1527bc42ddfb08e1c9);
+            
+        
+
+        marker_396425d6fae6921a2665fc6f3e890030.bindPopup(popup_f0e7ad46808bc467be64311b3d2eb09a)
+        ;
+
+        
+    
+    
+            var marker_c5120c569507bc2270c487abae190680 = L.marker(
+                [24.9456343, 121.3717495],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_a376892f80221f9cb198706121441eff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_689ab8e400a41013caa980591d6876b8 = $(`<div id="html_689ab8e400a41013caa980591d6876b8" style="width: 100.0%; height: 100.0%;">新北市三峽區大學路151號收費方式:不收費</div>`)[0];
+                popup_a376892f80221f9cb198706121441eff.setContent(html_689ab8e400a41013caa980591d6876b8);
+            
+        
+
+        marker_c5120c569507bc2270c487abae190680.bindPopup(popup_a376892f80221f9cb198706121441eff)
+        ;
+
+        
+    
+    
+            var marker_aa7deb934a675a24b825a04634d00dc5 = L.marker(
+                [24.9859282, 121.4678118],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6d947a373142a0f9c0093ef80714bfca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2031d220461cfbfae29d4159d3146568 = $(`<div id="html_2031d220461cfbfae29d4159d3146568" style="width: 100.0%; height: 100.0%;">新北市土城區德峰街65號收費方式:不收費</div>`)[0];
+                popup_6d947a373142a0f9c0093ef80714bfca.setContent(html_2031d220461cfbfae29d4159d3146568);
+            
+        
+
+        marker_aa7deb934a675a24b825a04634d00dc5.bindPopup(popup_6d947a373142a0f9c0093ef80714bfca)
+        ;
+
+        
+    
+    
+            var marker_c401a375c2f99ca6da8d7c7351514cc6 = L.marker(
+                [24.9574879, 121.4141103],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_f846c65f3cfcd673a8f33d259fea7ccb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0d76c7999c8f4bbcffdffc99ae37e7cb = $(`<div id="html_0d76c7999c8f4bbcffdffc99ae37e7cb" style="width: 100.0%; height: 100.0%;">新北市土城區中州路11號收費方式:不收費</div>`)[0];
+                popup_f846c65f3cfcd673a8f33d259fea7ccb.setContent(html_0d76c7999c8f4bbcffdffc99ae37e7cb);
+            
+        
+
+        marker_c401a375c2f99ca6da8d7c7351514cc6.bindPopup(popup_f846c65f3cfcd673a8f33d259fea7ccb)
+        ;
+
+        
+    
+    
+            var marker_cb1e5f3796baf6f432b61c413d05a0f4 = L.marker(
+                [24.98447, 121.4468407],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0d0029998f348296e5c4cc848dbe580d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_29fd01f397fe13ed31de51bc0459696e = $(`<div id="html_29fd01f397fe13ed31de51bc0459696e" style="width: 100.0%; height: 100.0%;">新北市土城區裕生路106號收費方式:不收費</div>`)[0];
+                popup_0d0029998f348296e5c4cc848dbe580d.setContent(html_29fd01f397fe13ed31de51bc0459696e);
+            
+        
+
+        marker_cb1e5f3796baf6f432b61c413d05a0f4.bindPopup(popup_0d0029998f348296e5c4cc848dbe580d)
+        ;
+
+        
+    
+    
+            var marker_66fd7c81623a3c005ab09d6790cf7226 = L.marker(
+                [24.9838094, 121.4585622],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_3b5984f394c8143fa47486cb88377785 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3febb6e9d37eb2d6558891ec782a7e1d = $(`<div id="html_3febb6e9d37eb2d6558891ec782a7e1d" style="width: 100.0%; height: 100.0%;">新北市土城區金城路二段266號收費方式:不收費</div>`)[0];
+                popup_3b5984f394c8143fa47486cb88377785.setContent(html_3febb6e9d37eb2d6558891ec782a7e1d);
+            
+        
+
+        marker_66fd7c81623a3c005ab09d6790cf7226.bindPopup(popup_3b5984f394c8143fa47486cb88377785)
+        ;
+
+        
+    
+    
+            var marker_78e9a264ce2209e63fc546e3709465b8 = L.marker(
+                [24.986957, 121.464622],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_1740982907b153839ec76360d3663caa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d4333267d6454d76f79c3e4c552efef = $(`<div id="html_1d4333267d6454d76f79c3e4c552efef" style="width: 100.0%; height: 100.0%;">新北市土城區立德路113號收費方式:不收費</div>`)[0];
+                popup_1740982907b153839ec76360d3663caa.setContent(html_1d4333267d6454d76f79c3e4c552efef);
+            
+        
+
+        marker_78e9a264ce2209e63fc546e3709465b8.bindPopup(popup_1740982907b153839ec76360d3663caa)
+        ;
+
+        
+    
+    
+            var marker_279f5b5d66ae235edd5b5529d6fd2d6c = L.marker(
+                [24.9843745, 121.4658536],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_09ff7ac6becc065de8970addc18455af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8a8ad6dd30f2e201feb896126ca2699 = $(`<div id="html_b8a8ad6dd30f2e201feb896126ca2699" style="width: 100.0%; height: 100.0%;">新北市土城區延吉街與永豐路交界處收費方式:不收費</div>`)[0];
+                popup_09ff7ac6becc065de8970addc18455af.setContent(html_b8a8ad6dd30f2e201feb896126ca2699);
+            
+        
+
+        marker_279f5b5d66ae235edd5b5529d6fd2d6c.bindPopup(popup_09ff7ac6becc065de8970addc18455af)
+        ;
+
+        
+    
+    
+            var marker_a9005452adddf75de271380244aaefc1 = L.marker(
+                [24.9910183, 121.5082067],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_69686b93304b672ce6d98a60eb45c2a6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d7c9b914ac81b7ceb931d86e818875d9 = $(`<div id="html_d7c9b914ac81b7ceb931d86e818875d9" style="width: 100.0%; height: 100.0%;">新北市中和區和平街68號對面收費方式:不收費</div>`)[0];
+                popup_69686b93304b672ce6d98a60eb45c2a6.setContent(html_d7c9b914ac81b7ceb931d86e818875d9);
+            
+        
+
+        marker_a9005452adddf75de271380244aaefc1.bindPopup(popup_69686b93304b672ce6d98a60eb45c2a6)
+        ;
+
+        
+    
+    
+            var marker_fd4f2fc9dbbf5668e12b41db2391e2d0 = L.marker(
+                [25.0066724, 121.4747789],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_1d15d263738df24f7a95ec48309c1bad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bcac9bb3f4bd1a62af9869a46dc4491a = $(`<div id="html_bcac9bb3f4bd1a62af9869a46dc4491a" style="width: 100.0%; height: 100.0%;">新北市中和區中山路三段122號B3,5F收費方式:不收費</div>`)[0];
+                popup_1d15d263738df24f7a95ec48309c1bad.setContent(html_bcac9bb3f4bd1a62af9869a46dc4491a);
+            
+        
+
+        marker_fd4f2fc9dbbf5668e12b41db2391e2d0.bindPopup(popup_1d15d263738df24f7a95ec48309c1bad)
+        ;
+
+        
+    
+    
+            var marker_f72b275cdac0a5a887ad329e49a91fe6 = L.marker(
+                [24.9985714, 121.4999099],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_8464d8ce6bd70b97df6ae85758c39d49 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_36e2c5c4f137b52c0a0ceacfde260207 = $(`<div id="html_36e2c5c4f137b52c0a0ceacfde260207" style="width: 100.0%; height: 100.0%;">新北市中和區景平路632-8號B1收費方式:不收費</div>`)[0];
+                popup_8464d8ce6bd70b97df6ae85758c39d49.setContent(html_36e2c5c4f137b52c0a0ceacfde260207);
+            
+        
+
+        marker_f72b275cdac0a5a887ad329e49a91fe6.bindPopup(popup_8464d8ce6bd70b97df6ae85758c39d49)
+        ;
+
+        
+    
+    
+            var marker_eeb070a6a4b45633eabf805659dec2f9 = L.marker(
+                [25.003549, 121.4756204],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_5ee3902663bb819b10e8e0ed6842cfca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fdf5867e8eb15aed8835fa367feac962 = $(`<div id="html_fdf5867e8eb15aed8835fa367feac962" style="width: 100.0%; height: 100.0%;">新北市中和區自治街67號B1收費方式:不收費</div>`)[0];
+                popup_5ee3902663bb819b10e8e0ed6842cfca.setContent(html_fdf5867e8eb15aed8835fa367feac962);
+            
+        
+
+        marker_eeb070a6a4b45633eabf805659dec2f9.bindPopup(popup_5ee3902663bb819b10e8e0ed6842cfca)
+        ;
+
+        
+    
+    
+            var marker_7d9ee10a8d15da6e49e664ef88558228 = L.marker(
+                [25.00354, 121.474151],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_927cb5263891253f34586fd49bbe9496 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_540462ada77473f5cbb243e7b29aac95 = $(`<div id="html_540462ada77473f5cbb243e7b29aac95" style="width: 100.0%; height: 100.0%;">新北市中和區民享街37號B1收費方式:不收費</div>`)[0];
+                popup_927cb5263891253f34586fd49bbe9496.setContent(html_540462ada77473f5cbb243e7b29aac95);
+            
+        
+
+        marker_7d9ee10a8d15da6e49e664ef88558228.bindPopup(popup_927cb5263891253f34586fd49bbe9496)
+        ;
+
+        
+    
+    
+            var marker_cf580f892261dd0b8c7ba00631edb52c = L.marker(
+                [24.9992259, 121.4683256],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_5c10cda6c5a6cee81a1e3408f5258ba7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47e573b4dae484c2209b49282a051e77 = $(`<div id="html_47e573b4dae484c2209b49282a051e77" style="width: 100.0%; height: 100.0%;">新北市中和區民德路188號收費方式:不收費</div>`)[0];
+                popup_5c10cda6c5a6cee81a1e3408f5258ba7.setContent(html_47e573b4dae484c2209b49282a051e77);
+            
+        
+
+        marker_cf580f892261dd0b8c7ba00631edb52c.bindPopup(popup_5c10cda6c5a6cee81a1e3408f5258ba7)
+        ;
+
+        
+    
+    
+            var marker_1ffd48dcae695cf51c549bf6c0202062 = L.marker(
+                [24.9896174, 121.5066106],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_2e8e24f2ef9af26ceec0714690147a0b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd3f79043d6f2c17594182e7ab010e2e = $(`<div id="html_bd3f79043d6f2c17594182e7ab010e2e" style="width: 100.0%; height: 100.0%;">新北市中和區南山路236號B1收費方式:不收費</div>`)[0];
+                popup_2e8e24f2ef9af26ceec0714690147a0b.setContent(html_bd3f79043d6f2c17594182e7ab010e2e);
+            
+        
+
+        marker_1ffd48dcae695cf51c549bf6c0202062.bindPopup(popup_2e8e24f2ef9af26ceec0714690147a0b)
+        ;
+
+        
+    
+    
+            var marker_368de7eac4981c559eb74a3ef5c6e8bf = L.marker(
+                [24.9904709, 121.5024702],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_7a2378e8feb5d5569772c357476fbd4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_25e0b9f682d60787e5e3214aec8685bb = $(`<div id="html_25e0b9f682d60787e5e3214aec8685bb" style="width: 100.0%; height: 100.0%;">新北市中和區復興路278號收費方式:不收費</div>`)[0];
+                popup_7a2378e8feb5d5569772c357476fbd4c.setContent(html_25e0b9f682d60787e5e3214aec8685bb);
+            
+        
+
+        marker_368de7eac4981c559eb74a3ef5c6e8bf.bindPopup(popup_7a2378e8feb5d5569772c357476fbd4c)
+        ;
+
+        
+    
+    
+            var marker_9bd0af42976469461e464320035f99bf = L.marker(
+                [24.9881652, 121.4880486],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_b68aa75d065fcba0790c99b0a66be5c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_116b67e70ec492242c8f3b9dc1c603d3 = $(`<div id="html_116b67e70ec492242c8f3b9dc1c603d3" style="width: 100.0%; height: 100.0%;">新北市中和區圓通路369巷33號收費方式:不收費</div>`)[0];
+                popup_b68aa75d065fcba0790c99b0a66be5c5.setContent(html_116b67e70ec492242c8f3b9dc1c603d3);
+            
+        
+
+        marker_9bd0af42976469461e464320035f99bf.bindPopup(popup_b68aa75d065fcba0790c99b0a66be5c5)
+        ;
+
+        
+    
+    
+            var marker_c36d9da1e2242b6cb9949d2bff5b6cfc = L.marker(
+                [24.9956911, 121.5235949],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_78536d3f71ffa801df75214714232152 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_daf63e933b68e63ee5521b802edbacf9 = $(`<div id="html_daf63e933b68e63ee5521b802edbacf9" style="width: 100.0%; height: 100.0%;">新北市中和區自立路15巷12號B1收費方式:不收費</div>`)[0];
+                popup_78536d3f71ffa801df75214714232152.setContent(html_daf63e933b68e63ee5521b802edbacf9);
+            
+        
+
+        marker_c36d9da1e2242b6cb9949d2bff5b6cfc.bindPopup(popup_78536d3f71ffa801df75214714232152)
+        ;
+
+        
+    
+    
+            var marker_f7d7a126a0c9f0f14ed19518557a495a = L.marker(
+                [25.001359, 121.4837253],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0e20ec12607372448b5603b01ffe5d6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ab6488145d4466d7fc21d08cd325499 = $(`<div id="html_3ab6488145d4466d7fc21d08cd325499" style="width: 100.0%; height: 100.0%;">新北市中和區民樂路65號B1收費方式:不收費</div>`)[0];
+                popup_0e20ec12607372448b5603b01ffe5d6d.setContent(html_3ab6488145d4466d7fc21d08cd325499);
+            
+        
+
+        marker_f7d7a126a0c9f0f14ed19518557a495a.bindPopup(popup_0e20ec12607372448b5603b01ffe5d6d)
+        ;
+
+        
+    
+    
+            var marker_188bec63b4f4f9be6e1c44c38ea42e93 = L.marker(
+                [25.0016486, 121.4925529],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0624d6eb94947e909eb73377e3a987d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bfdc3acb4309921c80eaa0db9d63010 = $(`<div id="html_9bfdc3acb4309921c80eaa0db9d63010" style="width: 100.0%; height: 100.0%;">新北市中和區中山路二段347號收費方式:不收費</div>`)[0];
+                popup_0624d6eb94947e909eb73377e3a987d5.setContent(html_9bfdc3acb4309921c80eaa0db9d63010);
+            
+        
+
+        marker_188bec63b4f4f9be6e1c44c38ea42e93.bindPopup(popup_0624d6eb94947e909eb73377e3a987d5)
+        ;
+
+        
+    
+    
+            var marker_ed4a0000663ad1973a78596b53c37b14 = L.marker(
+                [25.0066724, 121.4747789],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6f155debca77cd3b2a3a9387a66f34dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a31337649dae95bb31a3182416513455 = $(`<div id="html_a31337649dae95bb31a3182416513455" style="width: 100.0%; height: 100.0%;">新北市中和區中山路三段122號收費方式:不收費</div>`)[0];
+                popup_6f155debca77cd3b2a3a9387a66f34dc.setContent(html_a31337649dae95bb31a3182416513455);
+            
+        
+
+        marker_ed4a0000663ad1973a78596b53c37b14.bindPopup(popup_6f155debca77cd3b2a3a9387a66f34dc)
+        ;
+
+        
+    
+    
+            var marker_0872e32076de0107f06c2d7c7763b280 = L.marker(
+                [25.0831794, 121.4391675],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_99915ed40e6baf8841483af572e0400a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dfac89f94af42e68c3e0bde41b3ed6de = $(`<div id="html_dfac89f94af42e68c3e0bde41b3ed6de" style="width: 100.0%; height: 100.0%;">新北市五股區工商路3號收費方式:不收費</div>`)[0];
+                popup_99915ed40e6baf8841483af572e0400a.setContent(html_dfac89f94af42e68c3e0bde41b3ed6de);
+            
+        
+
+        marker_0872e32076de0107f06c2d7c7763b280.bindPopup(popup_99915ed40e6baf8841483af572e0400a)
+        ;
+
+        
+    
+    
+            var marker_bdd39ff8d3400103d03e7a40addc2cd6 = L.marker(
+                [25.036638, 121.773742],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_e3a5a932c7e9e024dafd54e875bd1c11 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b48d7f986a4cb7eb3d4170ba7546c2e7 = $(`<div id="html_b48d7f986a4cb7eb3d4170ba7546c2e7" style="width: 100.0%; height: 100.0%;">新北市平溪區南山里南山坪路136號收費方式:不收費</div>`)[0];
+                popup_e3a5a932c7e9e024dafd54e875bd1c11.setContent(html_b48d7f986a4cb7eb3d4170ba7546c2e7);
+            
+        
+
+        marker_bdd39ff8d3400103d03e7a40addc2cd6.bindPopup(popup_e3a5a932c7e9e024dafd54e875bd1c11)
+        ;
+
+        
+    
+    
+            var marker_e02a2db66c3d108b6e96d01ff9227f6f = L.marker(
+                [24.9988332, 121.5203326],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_7cf716aa9f3f1c5713d410ad51f37652 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6e931481c67e4829e61f42548974d926 = $(`<div id="html_6e931481c67e4829e61f42548974d926" style="width: 100.0%; height: 100.0%;">新北市永和區民權路1號B1收費方式:不收費</div>`)[0];
+                popup_7cf716aa9f3f1c5713d410ad51f37652.setContent(html_6e931481c67e4829e61f42548974d926);
+            
+        
+
+        marker_e02a2db66c3d108b6e96d01ff9227f6f.bindPopup(popup_7cf716aa9f3f1c5713d410ad51f37652)
+        ;
+
+        
+    
+    
+            var marker_e872468b5c61f7778263e237e42e3da0 = L.marker(
+                [25.00182, 121.517269],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_da35a56edd336dd6a22757ad11a102cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e57f00302b5926881e6147bb23a6128d = $(`<div id="html_e57f00302b5926881e6147bb23a6128d" style="width: 100.0%; height: 100.0%;">新北市永和區中正路299號B1收費方式:不收費</div>`)[0];
+                popup_da35a56edd336dd6a22757ad11a102cc.setContent(html_e57f00302b5926881e6147bb23a6128d);
+            
+        
+
+        marker_e872468b5c61f7778263e237e42e3da0.bindPopup(popup_da35a56edd336dd6a22757ad11a102cc)
+        ;
+
+        
+    
+    
+            var marker_2148f245eb7fbb5c6ada8d584636d816 = L.marker(
+                [25.0046778, 121.5228465],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c8b0294e14ebf86ef5a57b1b00da75f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_186f4848240b05a5ba2223468094de86 = $(`<div id="html_186f4848240b05a5ba2223468094de86" style="width: 100.0%; height: 100.0%;">新北市永和區永亨路96號收費方式:不收費</div>`)[0];
+                popup_c8b0294e14ebf86ef5a57b1b00da75f8.setContent(html_186f4848240b05a5ba2223468094de86);
+            
+        
+
+        marker_2148f245eb7fbb5c6ada8d584636d816.bindPopup(popup_c8b0294e14ebf86ef5a57b1b00da75f8)
+        ;
+
+        
+    
+    
+            var marker_0601827afe029c8815fa754dce8a8a37 = L.marker(
+                [25.0100883, 121.5062099],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_1998bca17b9a798a761f3a5827da787e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_066d3e1009b76091114ef4db28589f9d = $(`<div id="html_066d3e1009b76091114ef4db28589f9d" style="width: 100.0%; height: 100.0%;">新北市永和區仁愛路244-1號收費方式:不收費</div>`)[0];
+                popup_1998bca17b9a798a761f3a5827da787e.setContent(html_066d3e1009b76091114ef4db28589f9d);
+            
+        
+
+        marker_0601827afe029c8815fa754dce8a8a37.bindPopup(popup_1998bca17b9a798a761f3a5827da787e)
+        ;
+
+        
+    
+    
+            var marker_a4cdd29e1a91e487ed27b5ddeb42abb1 = L.marker(
+                [25.0130476, 121.5194342],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_eac48d872495d3df0090ae6ceabd2d66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_643bdba907f4232cb94b5e4db0198064 = $(`<div id="html_643bdba907f4232cb94b5e4db0198064" style="width: 100.0%; height: 100.0%;">新北市永和區竹林路79號B1~B3 收費方式:不收費</div>`)[0];
+                popup_eac48d872495d3df0090ae6ceabd2d66.setContent(html_643bdba907f4232cb94b5e4db0198064);
+            
+        
+
+        marker_a4cdd29e1a91e487ed27b5ddeb42abb1.bindPopup(popup_eac48d872495d3df0090ae6ceabd2d66)
+        ;
+
+        
+    
+    
+            var marker_ab3d74b134cf41162691fc144f3986aa = L.marker(
+                [25.0641134, 121.6570082],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_ef0b09c7434855677550e7c3e31c3ed6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c7981f5350e8761311ab3aba9c0504c = $(`<div id="html_0c7981f5350e8761311ab3aba9c0504c" style="width: 100.0%; height: 100.0%;">新北市汐止區忠孝東路1號收費方式:不收費</div>`)[0];
+                popup_ef0b09c7434855677550e7c3e31c3ed6.setContent(html_0c7981f5350e8761311ab3aba9c0504c);
+            
+        
+
+        marker_ab3d74b134cf41162691fc144f3986aa.bindPopup(popup_ef0b09c7434855677550e7c3e31c3ed6)
+        ;
+
+        
+    
+    
+            var marker_a4648ecf5ee238079948d80c5a2f6936 = L.marker(
+                [24.9356968, 121.7102864],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_480bb6a1b59060eeefdedbce31ee6327 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f30bcd3fb5a416fdef2f3488fd5ca4fa = $(`<div id="html_f30bcd3fb5a416fdef2f3488fd5ca4fa" style="width: 100.0%; height: 100.0%;">新北市坪林區水柳腳34-1號收費方式:不收費</div>`)[0];
+                popup_480bb6a1b59060eeefdedbce31ee6327.setContent(html_f30bcd3fb5a416fdef2f3488fd5ca4fa);
+            
+        
+
+        marker_a4648ecf5ee238079948d80c5a2f6936.bindPopup(popup_480bb6a1b59060eeefdedbce31ee6327)
+        ;
+
+        
+    
+    
+            var marker_7d544cdffae6249977cdfafabe5ccee2 = L.marker(
+                [25.0122266, 121.4588746],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_95777d9675a41ff3f9296774b49c2335 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_209fc217ca46d28414794a95a0294510 = $(`<div id="html_209fc217ca46d28414794a95a0294510" style="width: 100.0%; height: 100.0%;">新北市板橋區文化路一段25號收費方式:不收費</div>`)[0];
+                popup_95777d9675a41ff3f9296774b49c2335.setContent(html_209fc217ca46d28414794a95a0294510);
+            
+        
+
+        marker_7d544cdffae6249977cdfafabe5ccee2.bindPopup(popup_95777d9675a41ff3f9296774b49c2335)
+        ;
+
+        
+    
+    
+            var marker_e780bdb4cad9c26d627f062b0cbf39ea = L.marker(
+                [25.0108349, 121.4581976],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_03e90bc29f45ab69563eec102178a1f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4bf2de1450965d064398de26376f348 = $(`<div id="html_c4bf2de1450965d064398de26376f348" style="width: 100.0%; height: 100.0%;">新北市板橋區文化路一段23號B1收費方式:不收費</div>`)[0];
+                popup_03e90bc29f45ab69563eec102178a1f5.setContent(html_c4bf2de1450965d064398de26376f348);
+            
+        
+
+        marker_e780bdb4cad9c26d627f062b0cbf39ea.bindPopup(popup_03e90bc29f45ab69563eec102178a1f5)
+        ;
+
+        
+    
+    
+            var marker_c90a73758dd7de19124987ef367ca58a = L.marker(
+                [25.0119923, 121.4604758],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_2ca1c4a143a0e2e24b1ce4e9682f8b27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_94adf352b620b9132f1b85e9e22fe92e = $(`<div id="html_94adf352b620b9132f1b85e9e22fe92e" style="width: 100.0%; height: 100.0%;">新北市板橋區民權路89號2F收費方式:不收費</div>`)[0];
+                popup_2ca1c4a143a0e2e24b1ce4e9682f8b27.setContent(html_94adf352b620b9132f1b85e9e22fe92e);
+            
+        
+
+        marker_c90a73758dd7de19124987ef367ca58a.bindPopup(popup_2ca1c4a143a0e2e24b1ce4e9682f8b27)
+        ;
+
+        
+    
+    
+            var marker_8e8560bc1a8ca64303c3e0119ece64b1 = L.marker(
+                [25.0133729, 121.4759145],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_71051bd6d9961728422b5c951a9c1bf1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3491b79f76278ed302e7f35ab58da961 = $(`<div id="html_3491b79f76278ed302e7f35ab58da961" style="width: 100.0%; height: 100.0%;">新北市板橋區民生路一段30巷B1收費方式:不收費</div>`)[0];
+                popup_71051bd6d9961728422b5c951a9c1bf1.setContent(html_3491b79f76278ed302e7f35ab58da961);
+            
+        
+
+        marker_8e8560bc1a8ca64303c3e0119ece64b1.bindPopup(popup_71051bd6d9961728422b5c951a9c1bf1)
+        ;
+
+        
+    
+    
+            var marker_9c9dad1e549af8579fe26882fb7f0508 = L.marker(
+                [25.0027745, 121.444435],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_52fa36fd8787be91334be4448c492665 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35d6d59d6f899626b78f3541b458b4ea = $(`<div id="html_35d6d59d6f899626b78f3541b458b4ea" style="width: 100.0%; height: 100.0%;">新北市板橋區大觀路二段28號收費方式:不收費</div>`)[0];
+                popup_52fa36fd8787be91334be4448c492665.setContent(html_35d6d59d6f899626b78f3541b458b4ea);
+            
+        
+
+        marker_9c9dad1e549af8579fe26882fb7f0508.bindPopup(popup_52fa36fd8787be91334be4448c492665)
+        ;
+
+        
+    
+    
+            var marker_c233aef2ef8dbc7be5e992dbc24ba8b5 = L.marker(
+                [24.9956555, 121.4508225],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_d00dfbfd0be8f4cc1500d21227720a29 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d6abde266b8488649a743bf2458ca1b6 = $(`<div id="html_d6abde266b8488649a743bf2458ca1b6" style="width: 100.0%; height: 100.0%;">新北市板橋區南雅南路二段144巷口收費方式:不收費</div>`)[0];
+                popup_d00dfbfd0be8f4cc1500d21227720a29.setContent(html_d6abde266b8488649a743bf2458ca1b6);
+            
+        
+
+        marker_c233aef2ef8dbc7be5e992dbc24ba8b5.bindPopup(popup_d00dfbfd0be8f4cc1500d21227720a29)
+        ;
+
+        
+    
+    
+            var marker_d6829ef7bdcec45cd1a992bbd901ead5 = L.marker(
+                [25.0171025, 121.4664289],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_4da262f5dd9455044b85e9fda62dc47f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b0f2b6a83a8a8dd8636654fb4a365cc = $(`<div id="html_7b0f2b6a83a8a8dd8636654fb4a365cc" style="width: 100.0%; height: 100.0%;">新北市板橋區漢生東路53巷對面收費方式:不收費</div>`)[0];
+                popup_4da262f5dd9455044b85e9fda62dc47f.setContent(html_7b0f2b6a83a8a8dd8636654fb4a365cc);
+            
+        
+
+        marker_d6829ef7bdcec45cd1a992bbd901ead5.bindPopup(popup_4da262f5dd9455044b85e9fda62dc47f)
+        ;
+
+        
+    
+    
+            var marker_038c067aaae0b0cf3b2fbd16ce80cd34 = L.marker(
+                [25.0262147, 121.4812082],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6a8ff481e4fa6e4df3e0511903e1f498 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a346fef3828c7c6ebe9bc37511b5e15 = $(`<div id="html_5a346fef3828c7c6ebe9bc37511b5e15" style="width: 100.0%; height: 100.0%;">新北市板橋區萬板路及縣民大道三段245巷交叉口收費方式:不收費</div>`)[0];
+                popup_6a8ff481e4fa6e4df3e0511903e1f498.setContent(html_5a346fef3828c7c6ebe9bc37511b5e15);
+            
+        
+
+        marker_038c067aaae0b0cf3b2fbd16ce80cd34.bindPopup(popup_6a8ff481e4fa6e4df3e0511903e1f498)
+        ;
+
+        
+    
+    
+            var marker_3e8e0b6b362352d548475a87842ab938 = L.marker(
+                [24.999861, 121.4637284],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_eb9e481fd0b09a36ea75d4ec3d964ff5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0fa146c06ca3d33e1e754e9a44ae4baa = $(`<div id="html_0fa146c06ca3d33e1e754e9a44ae4baa" style="width: 100.0%; height: 100.0%;">新北市板橋區重慶路265號收費方式:不收費</div>`)[0];
+                popup_eb9e481fd0b09a36ea75d4ec3d964ff5.setContent(html_0fa146c06ca3d33e1e754e9a44ae4baa);
+            
+        
+
+        marker_3e8e0b6b362352d548475a87842ab938.bindPopup(popup_eb9e481fd0b09a36ea75d4ec3d964ff5)
+        ;
+
+        
+    
+    
+            var marker_d8058b299f6ae52738b02eacf6205864 = L.marker(
+                [25.0013933, 121.4550959],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_b5867aaded9f1ed24787333c094bf006 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d6d8423f9843f67b2c1e28f0d3b863c1 = $(`<div id="html_d6d8423f9843f67b2c1e28f0d3b863c1" style="width: 100.0%; height: 100.0%;">新北市板橋區貴興街139號收費方式:不收費</div>`)[0];
+                popup_b5867aaded9f1ed24787333c094bf006.setContent(html_d6d8423f9843f67b2c1e28f0d3b863c1);
+            
+        
+
+        marker_d8058b299f6ae52738b02eacf6205864.bindPopup(popup_b5867aaded9f1ed24787333c094bf006)
+        ;
+
+        
+    
+    
+            var marker_88395506ea5e5c52d08f91f62cf2bc3f = L.marker(
+                [25.0122436, 121.4653462],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_e41ffc50536276c70feb25440f2515e5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a22def21d32202f6c96cf2e82957f09f = $(`<div id="html_a22def21d32202f6c96cf2e82957f09f" style="width: 100.0%; height: 100.0%;">新北市板橋區中山路一段161號收費方式:不收費</div>`)[0];
+                popup_e41ffc50536276c70feb25440f2515e5.setContent(html_a22def21d32202f6c96cf2e82957f09f);
+            
+        
+
+        marker_88395506ea5e5c52d08f91f62cf2bc3f.bindPopup(popup_e41ffc50536276c70feb25440f2515e5)
+        ;
+
+        
+    
+    
+            var marker_eb1f48a61148e67158dd01046056ee08 = L.marker(
+                [25.0288722, 121.4684336],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_dce385bc86d8a1b4ea1c21ef9596388c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b498d312b16adf60937a3f498a928bbb = $(`<div id="html_b498d312b16adf60937a3f498a928bbb" style="width: 100.0%; height: 100.0%;">新北市板橋區松江街63號(面對學校大門左邊約50米為停車場入口)收費方式:不收費</div>`)[0];
+                popup_dce385bc86d8a1b4ea1c21ef9596388c.setContent(html_b498d312b16adf60937a3f498a928bbb);
+            
+        
+
+        marker_eb1f48a61148e67158dd01046056ee08.bindPopup(popup_dce385bc86d8a1b4ea1c21ef9596388c)
+        ;
+
+        
+    
+    
+            var marker_2b7a0a74d9cfca6d7cf9cef00e6c3597 = L.marker(
+                [25.0217849, 121.4759789],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_16e2cd9190a9f690b42f2314c3091d8e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce54325607737bdbdc75d775890a841b = $(`<div id="html_ce54325607737bdbdc75d775890a841b" style="width: 100.0%; height: 100.0%;">新北市板橋區縣民大道三段202號收費方式:不收費</div>`)[0];
+                popup_16e2cd9190a9f690b42f2314c3091d8e.setContent(html_ce54325607737bdbdc75d775890a841b);
+            
+        
+
+        marker_2b7a0a74d9cfca6d7cf9cef00e6c3597.bindPopup(popup_16e2cd9190a9f690b42f2314c3091d8e)
+        ;
+
+        
+    
+    
+            var marker_258ee7b76f081fe8b593b1e1d7edecbd = L.marker(
+                [25.0141549, 121.4636257],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_3b34b984d840e864603eebe6f44ec28f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_24404f40f2b3c86f8b0d62450894a9c6 = $(`<div id="html_24404f40f2b3c86f8b0d62450894a9c6" style="width: 100.0%; height: 100.0%;">新北市板橋區縣民大道二段7號收費方式:不收費</div>`)[0];
+                popup_3b34b984d840e864603eebe6f44ec28f.setContent(html_24404f40f2b3c86f8b0d62450894a9c6);
+            
+        
+
+        marker_258ee7b76f081fe8b593b1e1d7edecbd.bindPopup(popup_3b34b984d840e864603eebe6f44ec28f)
+        ;
+
+        
+    
+    
+            var marker_2152b6321bbf958022274b1327ebb131 = L.marker(
+                [25.0240328, 121.4542122],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_90fc5bb81fe9a68834c87b3bc274c4fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f95e197c9ef66f86c7f742449f5edf3 = $(`<div id="html_3f95e197c9ef66f86c7f742449f5edf3" style="width: 100.0%; height: 100.0%;">新北市板橋區中正路437號收費方式:不收費</div>`)[0];
+                popup_90fc5bb81fe9a68834c87b3bc274c4fa.setContent(html_3f95e197c9ef66f86c7f742449f5edf3);
+            
+        
+
+        marker_2152b6321bbf958022274b1327ebb131.bindPopup(popup_90fc5bb81fe9a68834c87b3bc274c4fa)
+        ;
+
+        
+    
+    
+            var marker_998a702768c8d7489518ca4d20f468fb = L.marker(
+                [25.0246818, 121.4636007],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_03045d4b431263b4df208bcf3b38abf9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_20d78718de6a7cffd5ab6c3a7699cb3a = $(`<div id="html_20d78718de6a7cffd5ab6c3a7699cb3a" style="width: 100.0%; height: 100.0%;">新北市板橋區陽明街166號收費方式:不收費</div>`)[0];
+                popup_03045d4b431263b4df208bcf3b38abf9.setContent(html_20d78718de6a7cffd5ab6c3a7699cb3a);
+            
+        
+
+        marker_998a702768c8d7489518ca4d20f468fb.bindPopup(popup_03045d4b431263b4df208bcf3b38abf9)
+        ;
+
+        
+    
+    
+            var marker_ac48b93fa095b4797d506d8741a7f3cc = L.marker(
+                [25.0212753, 121.4751739],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c80621d11b6237524be774771ad4ddd9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_165777f0cc5464a6d940dd7226c79511 = $(`<div id="html_165777f0cc5464a6d940dd7226c79511" style="width: 100.0%; height: 100.0%;">新北市板橋區華翠橋下(新北市板橋區富山街至太和街間)收費方式:不收費</div>`)[0];
+                popup_c80621d11b6237524be774771ad4ddd9.setContent(html_165777f0cc5464a6d940dd7226c79511);
+            
+        
+
+        marker_ac48b93fa095b4797d506d8741a7f3cc.bindPopup(popup_c80621d11b6237524be774771ad4ddd9)
+        ;
+
+        
+    
+    
+            var marker_b87e0bbcdb1b94076cc18811f5ad9a60 = L.marker(
+                [25.0787529, 121.3892843],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0cef6b5a1719801ba49824e506be89d8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ba3647ea6f3cf6506b709cf5aa748de3 = $(`<div id="html_ba3647ea6f3cf6506b709cf5aa748de3" style="width: 100.0%; height: 100.0%;">新北市林口區中山路99號收費方式:不收費</div>`)[0];
+                popup_0cef6b5a1719801ba49824e506be89d8.setContent(html_ba3647ea6f3cf6506b709cf5aa748de3);
+            
+        
+
+        marker_b87e0bbcdb1b94076cc18811f5ad9a60.bindPopup(popup_0cef6b5a1719801ba49824e506be89d8)
+        ;
+
+        
+    
+    
+            var marker_ad5f125116654b6dca7453c3b6e1c221 = L.marker(
+                [25.076625, 121.3897469],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_f663dd8ecefdc72a2b0fa11ba7f2f5fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d1c94314cad8b72c101340de1d6dffab = $(`<div id="html_d1c94314cad8b72c101340de1d6dffab" style="width: 100.0%; height: 100.0%;">新北市林口區興林街與仁愛路一段交叉口收費方式:不收費</div>`)[0];
+                popup_f663dd8ecefdc72a2b0fa11ba7f2f5fa.setContent(html_d1c94314cad8b72c101340de1d6dffab);
+            
+        
+
+        marker_ad5f125116654b6dca7453c3b6e1c221.bindPopup(popup_f663dd8ecefdc72a2b0fa11ba7f2f5fa)
+        ;
+
+        
+    
+    
+            var marker_1f893a4ca4085915676e6d2aaa1c4769 = L.marker(
+                [25.0663333, 121.3616049],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_1cadb52143421fca307bdb2db5563e77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d4c1319e8f6e38d5c2492ef0b469d873 = $(`<div id="html_d4c1319e8f6e38d5c2492ef0b469d873" style="width: 100.0%; height: 100.0%;">新北市林口區文化三路一段2號 B2收費方式:不收費</div>`)[0];
+                popup_1cadb52143421fca307bdb2db5563e77.setContent(html_d4c1319e8f6e38d5c2492ef0b469d873);
+            
+        
+
+        marker_1f893a4ca4085915676e6d2aaa1c4769.bindPopup(popup_1cadb52143421fca307bdb2db5563e77)
+        ;
+
+        
+    
+    
+            var marker_900717f64f75333c21f82cba934ab418 = L.marker(
+                [25.0499925, 121.4274469],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_472ef3831f3cf027f5cf95deb35fd41d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88630d1a490ddc7a74046af5e7b789cf = $(`<div id="html_88630d1a490ddc7a74046af5e7b789cf" style="width: 100.0%; height: 100.0%;">新北市泰山區明志路二段188號收費方式:不收費</div>`)[0];
+                popup_472ef3831f3cf027f5cf95deb35fd41d.setContent(html_88630d1a490ddc7a74046af5e7b789cf);
+            
+        
+
+        marker_900717f64f75333c21f82cba934ab418.bindPopup(popup_472ef3831f3cf027f5cf95deb35fd41d)
+        ;
+
+        
+    
+    
+            var marker_067edecd317588030524a5816cfdaff4 = L.marker(
+                [25.0621334, 121.4342021],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0e60c4312d36a39c7c3e247ba962940f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_98b4bdab65e7a7006753481ef19ea6b6 = $(`<div id="html_98b4bdab65e7a7006753481ef19ea6b6" style="width: 100.0%; height: 100.0%;">新北市泰山區楓江路26巷20號收費方式:不收費</div>`)[0];
+                popup_0e60c4312d36a39c7c3e247ba962940f.setContent(html_98b4bdab65e7a7006753481ef19ea6b6);
+            
+        
+
+        marker_067edecd317588030524a5816cfdaff4.bindPopup(popup_0e60c4312d36a39c7c3e247ba962940f)
+        ;
+
+        
+    
+    
+            var marker_9855f3f6205232168a22368f4a4fd2a2 = L.marker(
+                [25.0559726, 121.4341415],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_3d4f42040073854690a7ea9450d5f46c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_175acbc91d598808728127c1c216dc27 = $(`<div id="html_175acbc91d598808728127c1c216dc27" style="width: 100.0%; height: 100.0%;">新北市泰山區仁愛路與全興路交叉處收費方式:不收費</div>`)[0];
+                popup_3d4f42040073854690a7ea9450d5f46c.setContent(html_175acbc91d598808728127c1c216dc27);
+            
+        
+
+        marker_9855f3f6205232168a22368f4a4fd2a2.bindPopup(popup_3d4f42040073854690a7ea9450d5f46c)
+        ;
+
+        
+    
+    
+            var marker_ff2670e4dc34599752fe13ab8952a650 = L.marker(
+                [24.8656702, 121.5515398],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_dc65f2842f9bffb2e1a17c462e021001 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7893315bd374bab6808a5f5658ade848 = $(`<div id="html_7893315bd374bab6808a5f5658ade848" style="width: 100.0%; height: 100.0%;">新北市烏來區烏來街47號2樓收費方式:不收費</div>`)[0];
+                popup_dc65f2842f9bffb2e1a17c462e021001.setContent(html_7893315bd374bab6808a5f5658ade848);
+            
+        
+
+        marker_ff2670e4dc34599752fe13ab8952a650.bindPopup(popup_dc65f2842f9bffb2e1a17c462e021001)
+        ;
+
+        
+    
+    
+            var marker_51192b0f345116a98b8cb89f9facfa5e = L.marker(
+                [24.8717499, 121.5475696],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c5dd3ba0f48fe55abfcdf83a58523a66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f937a0c85b4e00f963bc298999e4a558 = $(`<div id="html_f937a0c85b4e00f963bc298999e4a558" style="width: 100.0%; height: 100.0%;">新北市烏來區忠治里新烏路五段88號收費方式:不收費</div>`)[0];
+                popup_c5dd3ba0f48fe55abfcdf83a58523a66.setContent(html_f937a0c85b4e00f963bc298999e4a558);
+            
+        
+
+        marker_51192b0f345116a98b8cb89f9facfa5e.bindPopup(popup_c5dd3ba0f48fe55abfcdf83a58523a66)
+        ;
+
+        
+    
+    
+            var marker_15a7137dd1f61a7ef295890e83440163 = L.marker(
+                [25.0533585, 121.9252698],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_9916dbd73a74e4261f22a574b91308f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12708a1ceba37c675c76342c670aaf67 = $(`<div id="html_12708a1ceba37c675c76342c670aaf67" style="width: 100.0%; height: 100.0%;">新北市貢寮區仁愛路43號B1收費方式:不收費</div>`)[0];
+                popup_9916dbd73a74e4261f22a574b91308f9.setContent(html_12708a1ceba37c675c76342c670aaf67);
+            
+        
+
+        marker_15a7137dd1f61a7ef295890e83440163.bindPopup(popup_9916dbd73a74e4261f22a574b91308f9)
+        ;
+
+        
+    
+    
+            var marker_b135be788767aad11e32d994992e4c51 = L.marker(
+                [25.1801459, 121.4539838],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_e4a9167e3b54da8a8c3c39f549e22166 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d7a09d9d6daaea9dff45d5c1420f9b11 = $(`<div id="html_d7a09d9d6daaea9dff45d5c1420f9b11" style="width: 100.0%; height: 100.0%;">新北市淡水區淡金路一段166號收費方式:不收費</div>`)[0];
+                popup_e4a9167e3b54da8a8c3c39f549e22166.setContent(html_d7a09d9d6daaea9dff45d5c1420f9b11);
+            
+        
+
+        marker_b135be788767aad11e32d994992e4c51.bindPopup(popup_e4a9167e3b54da8a8c3c39f549e22166)
+        ;
+
+        
+    
+    
+            var marker_76d0f8306a1358e19d106240bd96f9fb = L.marker(
+                [25.1783577, 121.4438581],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_7e983ed59d215c54dcd43ce14354617a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_07237ffdbc5bed9bcb1c8ff13f28f90c = $(`<div id="html_07237ffdbc5bed9bcb1c8ff13f28f90c" style="width: 100.0%; height: 100.0%;">新北市淡水區中山北路一段189號收費方式:不收費</div>`)[0];
+                popup_7e983ed59d215c54dcd43ce14354617a.setContent(html_07237ffdbc5bed9bcb1c8ff13f28f90c);
+            
+        
+
+        marker_76d0f8306a1358e19d106240bd96f9fb.bindPopup(popup_7e983ed59d215c54dcd43ce14354617a)
+        ;
+
+        
+    
+    
+            var marker_b0cf566fb13a34b129f4c4ea258ecf07 = L.marker(
+                [25.172402, 121.439208],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_eb7f404305c2b8415aad61f86189734c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4d08155504197d0646e8defedcc49376 = $(`<div id="html_4d08155504197d0646e8defedcc49376" style="width: 100.0%; height: 100.0%;">新北市淡水區建設街6號收費方式:不收費</div>`)[0];
+                popup_eb7f404305c2b8415aad61f86189734c.setContent(html_4d08155504197d0646e8defedcc49376);
+            
+        
+
+        marker_b0cf566fb13a34b129f4c4ea258ecf07.bindPopup(popup_eb7f404305c2b8415aad61f86189734c)
+        ;
+
+        
+    
+    
+            var marker_15148f14d3dbde570a633f0d90a2f2fb = L.marker(
+                [25.0019295, 121.6133084],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_bf7b3a780329994dbae6871e25241a36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_07ef5be25a97f1d89dbd967df05bc1de = $(`<div id="html_07ef5be25a97f1d89dbd967df05bc1de" style="width: 100.0%; height: 100.0%;">新北市深坑區北深路二段192號收費方式:不收費</div>`)[0];
+                popup_bf7b3a780329994dbae6871e25241a36.setContent(html_07ef5be25a97f1d89dbd967df05bc1de);
+            
+        
+
+        marker_15148f14d3dbde570a633f0d90a2f2fb.bindPopup(popup_bf7b3a780329994dbae6871e25241a36)
+        ;
+
+        
+    
+    
+            var marker_1ce43e25895849a525a816a3fd73d40b = L.marker(
+                [25.0018158, 121.6155917],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_ec0864e605cffa78ecda9dc88b60021b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b89ed3f041f9b25190395dfcb58b6166 = $(`<div id="html_b89ed3f041f9b25190395dfcb58b6166" style="width: 100.0%; height: 100.0%;">新北市深坑區文化街與平埔街口B1收費方式:不收費</div>`)[0];
+                popup_ec0864e605cffa78ecda9dc88b60021b.setContent(html_b89ed3f041f9b25190395dfcb58b6166);
+            
+        
+
+        marker_1ce43e25895849a525a816a3fd73d40b.bindPopup(popup_ec0864e605cffa78ecda9dc88b60021b)
+        ;
+
+        
+    
+    
+            var marker_422c578970a1971c0a9fb9d846544733 = L.marker(
+                [24.9578506, 121.5375994],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_a2a88d650931adfd3cf6161d98de6789 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0d90195f423a4e6b780378ab81563deb = $(`<div id="html_0d90195f423a4e6b780378ab81563deb" style="width: 100.0%; height: 100.0%;">新北市新店區北宜路一段2號收費方式:不收費</div>`)[0];
+                popup_a2a88d650931adfd3cf6161d98de6789.setContent(html_0d90195f423a4e6b780378ab81563deb);
+            
+        
+
+        marker_422c578970a1971c0a9fb9d846544733.bindPopup(popup_a2a88d650931adfd3cf6161d98de6789)
+        ;
+
+        
+    
+    
+            var marker_205b00116e90e22b532936bb48fb2174 = L.marker(
+                [24.9607595, 121.5370045],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_ef6cbd0a7f97e25dab7a81466ba104c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f65f0393fa37b144f0720d5461d0756 = $(`<div id="html_2f65f0393fa37b144f0720d5461d0756" style="width: 100.0%; height: 100.0%;">新北市新店區環河路29巷5號1樓旁空地收費方式:不收費</div>`)[0];
+                popup_ef6cbd0a7f97e25dab7a81466ba104c9.setContent(html_2f65f0393fa37b144f0720d5461d0756);
+            
+        
+
+        marker_205b00116e90e22b532936bb48fb2174.bindPopup(popup_ef6cbd0a7f97e25dab7a81466ba104c9)
+        ;
+
+        
+    
+    
+            var marker_8fc0ce46050fca472e3d2eecc29bbc68 = L.marker(
+                [24.9771274, 121.547303],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_bbafa34b930695f8d4eefa5a2073e35c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_484ab1af3b8b8d7e4d433c4a57b3d5ce = $(`<div id="html_484ab1af3b8b8d7e4d433c4a57b3d5ce" style="width: 100.0%; height: 100.0%;">新北市新店區中興路三段6號收費方式:不收費</div>`)[0];
+                popup_bbafa34b930695f8d4eefa5a2073e35c.setContent(html_484ab1af3b8b8d7e4d433c4a57b3d5ce);
+            
+        
+
+        marker_8fc0ce46050fca472e3d2eecc29bbc68.bindPopup(popup_bbafa34b930695f8d4eefa5a2073e35c)
+        ;
+
+        
+    
+    
+            var marker_7dd47e4be2eeac1535e5a417f2d283ed = L.marker(
+                [24.974504, 121.545719],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6bcf5a9bdcf4a5b5322cc7fe972c9165 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c52aae1ffb71a185f60e28ba005a9fe0 = $(`<div id="html_c52aae1ffb71a185f60e28ba005a9fe0" style="width: 100.0%; height: 100.0%;">新北市新店區寶橋路10號收費方式:不收費</div>`)[0];
+                popup_6bcf5a9bdcf4a5b5322cc7fe972c9165.setContent(html_c52aae1ffb71a185f60e28ba005a9fe0);
+            
+        
+
+        marker_7dd47e4be2eeac1535e5a417f2d283ed.bindPopup(popup_6bcf5a9bdcf4a5b5322cc7fe972c9165)
+        ;
+
+        
+    
+    
+            var marker_98512cbde5abaa0ad4759241588474ad = L.marker(
+                [24.9772085, 121.5384533],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_7b160bb7990a00a54f440cede0a085b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ce600068bc96959624fd039ff2016c8 = $(`<div id="html_3ce600068bc96959624fd039ff2016c8" style="width: 100.0%; height: 100.0%;">新北市新店區民族路109號B2收費方式:不收費</div>`)[0];
+                popup_7b160bb7990a00a54f440cede0a085b0.setContent(html_3ce600068bc96959624fd039ff2016c8);
+            
+        
+
+        marker_98512cbde5abaa0ad4759241588474ad.bindPopup(popup_7b160bb7990a00a54f440cede0a085b0)
+        ;
+
+        
+    
+    
+            var marker_e58baa67bc0a7691ecc09003dcc99a14 = L.marker(
+                [24.9628639, 121.5129645],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_757046b4b10eb512c6802619b48ad244 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4bf2e7a678085fecacca7597fb08d124 = $(`<div id="html_4bf2e7a678085fecacca7597fb08d124" style="width: 100.0%; height: 100.0%;">新北市新店區安康路二段120號4F收費方式:不收費</div>`)[0];
+                popup_757046b4b10eb512c6802619b48ad244.setContent(html_4bf2e7a678085fecacca7597fb08d124);
+            
+        
+
+        marker_e58baa67bc0a7691ecc09003dcc99a14.bindPopup(popup_757046b4b10eb512c6802619b48ad244)
+        ;
+
+        
+    
+    
+            var marker_6258cbadd4d94f066fc3d1f5e1ea4bf3 = L.marker(
+                [24.9733271, 121.5192336],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_7f9290abef036effae4a6aa240661649 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95a9a87e14c86cf0ce02b77a68060de0 = $(`<div id="html_95a9a87e14c86cf0ce02b77a68060de0" style="width: 100.0%; height: 100.0%;">新北市新店區安和路二段141號收費方式:不收費</div>`)[0];
+                popup_7f9290abef036effae4a6aa240661649.setContent(html_95a9a87e14c86cf0ce02b77a68060de0);
+            
+        
+
+        marker_6258cbadd4d94f066fc3d1f5e1ea4bf3.bindPopup(popup_7f9290abef036effae4a6aa240661649)
+        ;
+
+        
+    
+    
+            var marker_f15919dcbe616d004e7b94364c57d14d = L.marker(
+                [24.9681871, 121.5426647],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_4e4593f1e7d4d2ee7dbf0061101a0417 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_041a1070cc29e9260c7a0bfd8d29346d = $(`<div id="html_041a1070cc29e9260c7a0bfd8d29346d" style="width: 100.0%; height: 100.0%;">新北市新店區北新路一段92號B1收費方式:不收費</div>`)[0];
+                popup_4e4593f1e7d4d2ee7dbf0061101a0417.setContent(html_041a1070cc29e9260c7a0bfd8d29346d);
+            
+        
+
+        marker_f15919dcbe616d004e7b94364c57d14d.bindPopup(popup_4e4593f1e7d4d2ee7dbf0061101a0417)
+        ;
+
+        
+    
+    
+            var marker_47c0eb94e92d4d1667fddb49529d9dbc = L.marker(
+                [24.9710424, 121.537346],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_705c7b075fa38cfd6f7f903df6d5a265 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bbe62019fcb7d404836f93e3fe4a6e9c = $(`<div id="html_bbe62019fcb7d404836f93e3fe4a6e9c" style="width: 100.0%; height: 100.0%;">新北市新店區三民路20-1號B1收費方式:不收費</div>`)[0];
+                popup_705c7b075fa38cfd6f7f903df6d5a265.setContent(html_bbe62019fcb7d404836f93e3fe4a6e9c);
+            
+        
+
+        marker_47c0eb94e92d4d1667fddb49529d9dbc.bindPopup(popup_705c7b075fa38cfd6f7f903df6d5a265)
+        ;
+
+        
+    
+    
+            var marker_6d92ab0cb9d5f74383e3933d94e80b83 = L.marker(
+                [24.9756196, 121.5320259],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_243022b66b8b4f10bdf2a759b645fa25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6be049c57cfbc2880480a3e9ab388b60 = $(`<div id="html_6be049c57cfbc2880480a3e9ab388b60" style="width: 100.0%; height: 100.0%;">新北市新店區中央路93號收費方式:不收費</div>`)[0];
+                popup_243022b66b8b4f10bdf2a759b645fa25.setContent(html_6be049c57cfbc2880480a3e9ab388b60);
+            
+        
+
+        marker_6d92ab0cb9d5f74383e3933d94e80b83.bindPopup(popup_243022b66b8b4f10bdf2a759b645fa25)
+        ;
+
+        
+    
+    
+            var marker_90a77c6877d0f21916325e4362f0017f = L.marker(
+                [25.0549987, 121.4596052],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_4a9c7f492464e04739a94628080cbe32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4d8068396b34a7410f105d8430fdde33 = $(`<div id="html_4d8068396b34a7410f105d8430fdde33" style="width: 100.0%; height: 100.0%;">新北市新莊區思源路485號收費方式:不收費</div>`)[0];
+                popup_4a9c7f492464e04739a94628080cbe32.setContent(html_4d8068396b34a7410f105d8430fdde33);
+            
+        
+
+        marker_90a77c6877d0f21916325e4362f0017f.bindPopup(popup_4a9c7f492464e04739a94628080cbe32)
+        ;
+
+        
+    
+    
+            var marker_539599d87ecd3c81798f3b9851a5f27b = L.marker(
+                [24.991089, 121.5144311],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_98eddff5c9666e9100606c55c21e1c36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e381c5c3d75b382dd53d7f730b4662c = $(`<div id="html_9e381c5c3d75b382dd53d7f730b4662c" style="width: 100.0%; height: 100.0%;">新北市新莊區景德街138號地下室收費方式:不收費</div>`)[0];
+                popup_98eddff5c9666e9100606c55c21e1c36.setContent(html_9e381c5c3d75b382dd53d7f730b4662c);
+            
+        
+
+        marker_539599d87ecd3c81798f3b9851a5f27b.bindPopup(popup_98eddff5c9666e9100606c55c21e1c36)
+        ;
+
+        
+    
+    
+            var marker_4002493d3b03f3e0deafdadd307e4156 = L.marker(
+                [25.0405446, 121.451806],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6f1b9d0ab95f82d97393bf57506097e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_463265c5ef63f8ce9994d3aa9c00fe3a = $(`<div id="html_463265c5ef63f8ce9994d3aa9c00fe3a" style="width: 100.0%; height: 100.0%;">新北市新莊區中華路一段75號收費方式:不收費</div>`)[0];
+                popup_6f1b9d0ab95f82d97393bf57506097e2.setContent(html_463265c5ef63f8ce9994d3aa9c00fe3a);
+            
+        
+
+        marker_4002493d3b03f3e0deafdadd307e4156.bindPopup(popup_6f1b9d0ab95f82d97393bf57506097e2)
+        ;
+
+        
+    
+    
+            var marker_f652bdc71d6033b0af5fa4fe021fedfe = L.marker(
+                [25.0442514, 121.4420336],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_0fda140449d6128e6c7062ddf4d8da83 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_061c9643b3825c92d1fc9b301699fa1c = $(`<div id="html_061c9643b3825c92d1fc9b301699fa1c" style="width: 100.0%; height: 100.0%;">新北市新莊區中環路二段48之8號收費方式:不收費</div>`)[0];
+                popup_0fda140449d6128e6c7062ddf4d8da83.setContent(html_061c9643b3825c92d1fc9b301699fa1c);
+            
+        
+
+        marker_f652bdc71d6033b0af5fa4fe021fedfe.bindPopup(popup_0fda140449d6128e6c7062ddf4d8da83)
+        ;
+
+        
+    
+    
+            var marker_a957115d150419d18a9abfaf4e05a81b = L.marker(
+                [25.0260716, 121.4240119],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_91ebd5c3a461b28f552878c804a49f2a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2445dd1244bf964605235e516d92c676 = $(`<div id="html_2445dd1244bf964605235e516d92c676" style="width: 100.0%; height: 100.0%;">新北市新莊區後港一路19號B2收費方式:不收費</div>`)[0];
+                popup_91ebd5c3a461b28f552878c804a49f2a.setContent(html_2445dd1244bf964605235e516d92c676);
+            
+        
+
+        marker_a957115d150419d18a9abfaf4e05a81b.bindPopup(popup_91ebd5c3a461b28f552878c804a49f2a)
+        ;
+
+        
+    
+    
+            var marker_b9ef5c71baf19cd2ef26b7cd3b986315 = L.marker(
+                [25.0448453, 121.4527812],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_c2672c419876f26a0e3a499f448b47ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d0594703ba2204d1db0cb4aa7286150 = $(`<div id="html_3d0594703ba2204d1db0cb4aa7286150" style="width: 100.0%; height: 100.0%;">新北市新莊區中華路85巷收費方式:不收費</div>`)[0];
+                popup_c2672c419876f26a0e3a499f448b47ef.setContent(html_3d0594703ba2204d1db0cb4aa7286150);
+            
+        
+
+        marker_b9ef5c71baf19cd2ef26b7cd3b986315.bindPopup(popup_c2672c419876f26a0e3a499f448b47ef)
+        ;
+
+        
+    
+    
+            var marker_70ecd91e26bc2a49a8ade735380c0106 = L.marker(
+                [25.0378738, 121.4578193],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_acc13e6f79ab872e6e14703b38f1edaa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_23ef859400c5759251950f63b65e3a84 = $(`<div id="html_23ef859400c5759251950f63b65e3a84" style="width: 100.0%; height: 100.0%;">新北市新莊區中正路82號收費方式:不收費</div>`)[0];
+                popup_acc13e6f79ab872e6e14703b38f1edaa.setContent(html_23ef859400c5759251950f63b65e3a84);
+            
+        
+
+        marker_70ecd91e26bc2a49a8ade735380c0106.bindPopup(popup_acc13e6f79ab872e6e14703b38f1edaa)
+        ;
+
+        
+    
+    
+            var marker_86688a17d5942fa006b5b97d3d4743ef = L.marker(
+                [25.0333343, 121.4375604],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_6edfc446d8b24bbdc4d7caac3c619625 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_66310df07d4c50466578bcc20a9354c2 = $(`<div id="html_66310df07d4c50466578bcc20a9354c2" style="width: 100.0%; height: 100.0%;">新北市新莊區中正路486之1號收費方式:不收費</div>`)[0];
+                popup_6edfc446d8b24bbdc4d7caac3c619625.setContent(html_66310df07d4c50466578bcc20a9354c2);
+            
+        
+
+        marker_86688a17d5942fa006b5b97d3d4743ef.bindPopup(popup_6edfc446d8b24bbdc4d7caac3c619625)
+        ;
+
+        
+    
+    
+            var marker_97aa714ef03140842cd907cf85708d1c = L.marker(
+                [25.1080608, 121.8082216],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_67ca531dd931f8b2d4439c76623db787 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e0f676dbcf6334f884d29b63e43253b = $(`<div id="html_0e0f676dbcf6334f884d29b63e43253b" style="width: 100.0%; height: 100.0%;">新北市瑞芳區民權街3-1號收費方式:不收費</div>`)[0];
+                popup_67ca531dd931f8b2d4439c76623db787.setContent(html_0e0f676dbcf6334f884d29b63e43253b);
+            
+        
+
+        marker_97aa714ef03140842cd907cf85708d1c.bindPopup(popup_67ca531dd931f8b2d4439c76623db787)
+        ;
+
+        
+    
+    
+            var marker_e4f31c028e1fc9453598d72132edb621 = L.marker(
+                [25.180199, 121.691892],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_b8943fc12d3c52b235163f275dc700a6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8788664f79b159e4d58fee366780ab79 = $(`<div id="html_8788664f79b159e4d58fee366780ab79" style="width: 100.0%; height: 100.0%;">新北市萬里區瑪鍊路123號B1收費方式:不收費</div>`)[0];
+                popup_b8943fc12d3c52b235163f275dc700a6.setContent(html_8788664f79b159e4d58fee366780ab79);
+            
+        
+
+        marker_e4f31c028e1fc9453598d72132edb621.bindPopup(popup_b8943fc12d3c52b235163f275dc700a6)
+        ;
+
+        
+    
+    
+            var marker_b9b9a504be4defe38d1756cd58fac8aa = L.marker(
+                [25.2128228, 121.6974564],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_cdb1fcbff8376791232a906a8d2af90f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77d8585befe056ba4a0ab04a82c24058 = $(`<div id="html_77d8585befe056ba4a0ab04a82c24058" style="width: 100.0%; height: 100.0%;">新北市萬里區野柳里港東路167-1號收費方式:不收費</div>`)[0];
+                popup_cdb1fcbff8376791232a906a8d2af90f.setContent(html_77d8585befe056ba4a0ab04a82c24058);
+            
+        
+
+        marker_b9b9a504be4defe38d1756cd58fac8aa.bindPopup(popup_cdb1fcbff8376791232a906a8d2af90f)
+        ;
+
+        
+    
+    
+            var marker_8f638059542b1a6476f7e9b5dab149a8 = L.marker(
+                [25.1884598, 121.6842268],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_397e1a7be8b68ce6dacc49138639d056 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3959d15591420a3d77535245dc0211be = $(`<div id="html_3959d15591420a3d77535245dc0211be" style="width: 100.0%; height: 100.0%;">新北市萬里區翡翠路17號 B2收費方式:不收費</div>`)[0];
+                popup_397e1a7be8b68ce6dacc49138639d056.setContent(html_3959d15591420a3d77535245dc0211be);
+            
+        
+
+        marker_8f638059542b1a6476f7e9b5dab149a8.bindPopup(popup_397e1a7be8b68ce6dacc49138639d056)
+        ;
+
+        
+    
+    
+            var marker_15f75ff7b0e3c53c913fa1a21d4314e9 = L.marker(
+                [25.039037, 121.8663098],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_477353703d26fe3903bfb2145126619e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_586d9a32717a5dc24e98f807fbcf9497 = $(`<div id="html_586d9a32717a5dc24e98f807fbcf9497" style="width: 100.0%; height: 100.0%;">新北市雙溪區自強路5-1號收費方式:不收費</div>`)[0];
+                popup_477353703d26fe3903bfb2145126619e.setContent(html_586d9a32717a5dc24e98f807fbcf9497);
+            
+        
+
+        marker_15f75ff7b0e3c53c913fa1a21d4314e9.bindPopup(popup_477353703d26fe3903bfb2145126619e)
+        ;
+
+        
+    
+    
+            var marker_4d750c160b5808b883bd6d02834c36fc = L.marker(
+                [25.0844063, 121.4698633],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_4a78ab24b5ff8751802d55ec6c803dd6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_de6fa02171446cb7cb48ca6db2033928 = $(`<div id="html_de6fa02171446cb7cb48ca6db2033928" style="width: 100.0%; height: 100.0%;">新北市蘆洲區中正路100號B1收費方式:不收費</div>`)[0];
+                popup_4a78ab24b5ff8751802d55ec6c803dd6.setContent(html_de6fa02171446cb7cb48ca6db2033928);
+            
+        
+
+        marker_4d750c160b5808b883bd6d02834c36fc.bindPopup(popup_4a78ab24b5ff8751802d55ec6c803dd6)
+        ;
+
+        
+    
+    
+            var marker_c887cc1c1df6a401e4668581bde8596e = L.marker(
+                [25.086046, 121.4767357],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_e9286fe0f12e4e1fae1cdaf6d0f6a1ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_771fd910430b7eec72f64ed51063f259 = $(`<div id="html_771fd910430b7eec72f64ed51063f259" style="width: 100.0%; height: 100.0%;">新北市蘆洲區民權路26號收費方式:不收費</div>`)[0];
+                popup_e9286fe0f12e4e1fae1cdaf6d0f6a1ba.setContent(html_771fd910430b7eec72f64ed51063f259);
+            
+        
+
+        marker_c887cc1c1df6a401e4668581bde8596e.bindPopup(popup_e9286fe0f12e4e1fae1cdaf6d0f6a1ba)
+        ;
+
+        
+    
+    
+            var marker_fad7bab929faf98d1cf98815a2713f71 = L.marker(
+                [25.084956, 121.458132],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_115101287f4cb5a73065442811b0edbf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_961ce279731f9c52531bd36dfefd5db7 = $(`<div id="html_961ce279731f9c52531bd36dfefd5db7" style="width: 100.0%; height: 100.0%;">新北市蘆洲區長安街222號B1收費方式:不收費</div>`)[0];
+                popup_115101287f4cb5a73065442811b0edbf.setContent(html_961ce279731f9c52531bd36dfefd5db7);
+            
+        
+
+        marker_fad7bab929faf98d1cf98815a2713f71.bindPopup(popup_115101287f4cb5a73065442811b0edbf)
+        ;
+
+        
+    
+    
+            var marker_a62db501f2aec98359e6036e8b729590 = L.marker(
+                [25.0903389, 121.4607655],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_dd98b77ae5c433b9199308ac470ca0ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be3726d1105b3c5e44e5e50e4e054ff2 = $(`<div id="html_be3726d1105b3c5e44e5e50e4e054ff2" style="width: 100.0%; height: 100.0%;">新北市蘆洲區長興路300號B2收費方式:不收費</div>`)[0];
+                popup_dd98b77ae5c433b9199308ac470ca0ce.setContent(html_be3726d1105b3c5e44e5e50e4e054ff2);
+            
+        
+
+        marker_a62db501f2aec98359e6036e8b729590.bindPopup(popup_dd98b77ae5c433b9199308ac470ca0ce)
+        ;
+
+        
+    
+    
+            var marker_d76c9729eb1604d9f510aad6a61ebc0c = L.marker(
+                [25.0802506, 121.4755027],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_05e24ad6100555f1acca0b8e047eae8b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_581036a239b8f24d5f6bee8f0cf27bc2 = $(`<div id="html_581036a239b8f24d5f6bee8f0cf27bc2" style="width: 100.0%; height: 100.0%;">新北市蘆洲區信義路59巷2號收費方式:不收費</div>`)[0];
+                popup_05e24ad6100555f1acca0b8e047eae8b.setContent(html_581036a239b8f24d5f6bee8f0cf27bc2);
+            
+        
+
+        marker_d76c9729eb1604d9f510aad6a61ebc0c.bindPopup(popup_05e24ad6100555f1acca0b8e047eae8b)
+        ;
+
+        
+    
+    
+            var marker_ddbead9e63d594fb3b234146805adf0b = L.marker(
+                [24.949251, 121.352032],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_1604220c85d08c887800b39cf4f37395 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1ea6b20e80a8dbe367aa274c223a58a6 = $(`<div id="html_1ea6b20e80a8dbe367aa274c223a58a6" style="width: 100.0%; height: 100.0%;">新北市鶯歌區文化路200號收費方式:不收費</div>`)[0];
+                popup_1604220c85d08c887800b39cf4f37395.setContent(html_1ea6b20e80a8dbe367aa274c223a58a6);
+            
+        
+
+        marker_ddbead9e63d594fb3b234146805adf0b.bindPopup(popup_1604220c85d08c887800b39cf4f37395)
+        ;
+
+        
+    
+    
+            var marker_8b863b9a9a700da632a6e5eecd8fe812 = L.marker(
+                [24.9400363, 121.3299771],
+                {}
+            ).addTo(marker_cluster_b7cad795b7dc1efbe470c624598c64f6);
+        
+    
+        var popup_256b4cccda32253ce39931e3e784b1e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c0760d325733d8c77e78a376bc7827a = $(`<div id="html_4c0760d325733d8c77e78a376bc7827a" style="width: 100.0%; height: 100.0%;">新北市鶯歌區中正三路230巷16號1樓收費方式:不收費</div>`)[0];
+                popup_256b4cccda32253ce39931e3e784b1e2.setContent(html_4c0760d325733d8c77e78a376bc7827a);
+            
+        
+
+        marker_8b863b9a9a700da632a6e5eecd8fe812.bindPopup(popup_256b4cccda32253ce39931e3e784b1e2)
+        ;
+
+        
+    
+</script>
+</html>
