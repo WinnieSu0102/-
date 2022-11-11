@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>新北市交通</title>
-    <link rel="stylesheet" href="parking.css">
+    <title>新北市道路資訊</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
         <script>
@@ -16,6 +15,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
@@ -25,118 +26,169 @@
     
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-                <style>
-                    #map_b4b86280ae0ccb4f5ced48ad19eb83fc {
-                        position: relative;
-                        width: 80.0%;
-                        height: 100.0%;
-                        left: 10.0%;
-                        right:10.0%;
-                        top: 0.0%;
-                        margin-bottom: 30px;
-                    }
-                    .menu{
-                        display: inline-block;
-                        text-decoration: none;
-                        font-size: 1.8em;
-                        line-height: 1.8em; 
-                        margin-left: 30px;
-                    }
-                    aside{
-                        background: #ECFFFF;
-                        position: relative;
-                        width: 100%;
-                        height: 70px;
-                        display: flex;
-                    }
-                    ul{
-                        margin-left: 130px;
-                    }
-                    h1{
-                        margin-left: 100px;
-                    }
-                    h2{
-                        margin-left: 130px;
-                    }
-                    footer{
-                        background: #ECFFFF;
-                        position: relative;
-                        width: 100%;
-                        height: 200px;
-                        display: flex;
-                    }
-                    box{
-                        width: 400px;
-                        height: 175px;
-                        margin:20px;
-                        box-sizing: border-box;
-                    }
-                    box li{
-                        text-decoration: none;
-                        list-style-type: none;
-                        font-size: 1.4em;
-                    }
-                    box li a:hover{
-                        color: #66B3FF;
-                    }
-                    #talktalk{
-                        font-family: Comic Sans MS;	
-                        color: darkgray;
-                        height: 80px;
-                        margin-top: 60px;
-                        margin-right: 70px;
-                        font-size: 1.0em;
-                        border:2.5px;
-                        border-color: #C4E1FF;
-                        border-style: dashed;
-                    }
-                </style>
+            <style>
+                body {
+                    font-family: coco, "Microsoft JhengHei", sans-serif;
+                }
+                .logo {
+                    float: left;
+                    display: flex;
+                    margin: 25px 0px 25px 70px;
+                    align-items: center;
+                }
+                .logo #icon {
+                    width: 35px;
+                }
+                .logo a {
+                    letter-spacing:4px;
+                    font-size: 25px;
+                    margin: 0px 10px 0px 10px;
+                    color: #45729D;
+                    font-family: coco-big;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+                .menu {
+                    margin: 32px 0px 10px 0px;
+                    display: inline-block;
+                    font-size: 15px;
+                }
+                .menu a {
+                    display: block;
+                    padding: 0 10px;
+                    color: #808080;
+                    font-family: coco-big;
+                    text-decoration: none;
+                }
+                .menu a:hover {
+                    color: #45729D;
+                    font-weight: bold;
+                }
+                .search {
+                    position: absolute;
+                    right: 70px;
+                    top: 25px;
+                    align: right;
+                    display: flex;
+                }
+                .search button {
+                    margin-left: 5px;
+                    width: 40px;
+                    height: 30px;
+                    font-size: 2px;
+                    border-radius: 10px;
+                    border: none;
+                    cursor: pointer;
+                }
+                #map_b4b86280ae0ccb4f5ced48ad19eb83fc {
+                    position: relative;
+                    width: 90.0%;
+                    height: 100.0%;
+                    right: 5.0%;
+                    left: 5.0%;
+                    margin-bottom: 30px;
+                }
+                footer {
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 auto;
+                }
+                .footer-left {
+                    float: left;
+                    display: flex;
+                    margin: 0px 0px 50px 20px;
+                }
+                .info {
+                    margin-right: 90px;
+                }
+                .info p {
+                    font-size: 14px;
+                }
+                .info a {
+                    display: block;
+                    text-decoration: none;
+                    line-height: 24px;
+                    font-size: 12px;
+                    color: #808080;
+                }
+                .info a:hover {
+                    color: #45729D;
+                    font-weight: bold;
+                }
+                #feedback {
+                    color: #808080;
+                    height: 90px;
+                    font-size: 12px;
+                    padding: 8px;
+                    margin-right: 20px;
+                    border: 2px;
+                    border-radius: 3px;
+                    border-color: #45729D;
+                    border-style: dashed;
+                }
+            </style>
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 </head>
-<body>
-    
-    <header>
-        <aside >
-            <h1>新北市交通資訊</h1>
-        </aside>
-        <h2>道路施工</h2>
-        <div>
-            <ul >
-                <li class="menu"><a href="/">停車位</a></li>
-                <li class="menu"><a href="/gas">加油站</a></li>
-                <li class="menu"><a href="/electirc_vechicle">電動汽車充電站</a></li>
-                <li class="menu"><a href="/electirc_motorcycle">電動機車充電站</a></li>
-                <li class="menu"><a href="/dig">道路施工</a></li>
-            </ul>
+
+<header>
+    <div class="logo">
+        <img img id="icon" src="./static/icon.png"/>
+        <a href="">新北市道路資訊</a>
+    </div>
+    <div>
+        <ul >
+            <li class="menu"><a href="/">停車位</a></li>
+            <li class="menu"><a href="/gas">加油站</a></li>
+            <li class="menu"><a href="/electirc_vechicle">電動汽車充電站</a></li>
+            <li class="menu"><a href="/electirc_motorcycle">電動機車充電站</a></li>
+            <li class="menu"><a href="/dig" style="font-weight: bold; color: #45729D">道路施工</a></li>
+        </ul>
+    </div>
+    <div class="search">
+        <div id="input">
+            <input type="search" name="search" placeholder="搜尋" style="padding: 6px; border-radius: 10px; border: 1px #e6e6e6 solid;">
         </div>
-    </header>
-
+        <div id="go">
+            <button>GO</button>
+        </div>
+    </div>
+</header>
+    
+<body>
     <div class="folium-map" id="map_b4b86280ae0ccb4f5ced48ad19eb83fc" ></div>
-
-    <footer>
-        <box >
-			<ul><h3>社群</h3>				
-                <li ><a href="">Youtube</a></li>
-				<li ><a href="">Facebook</a></li>
-				<li ><a href="">Instagram</a></li>
-			</ul>
-		</box>
-        <box >
-			<ul><h3>關於</h3>				
-                <li ><a href="">關於我們</a></li>
-				<li ><a href="">人才招募</a></li>
-				<li ><a href="https://data.gov.tw/datasets/search?p=10&size=10&s=dataset_view_times_desc&lgl-1=22026&lgl-2=9497&lgl-3=9550,9515,9503,9517,9527,9552,9511,9533,9545,9521&rct=257">資料來源</a></li>
-			</ul>
-		</box>
-        <box>
-            <textarea name="talktalk" id="talktalk" cols="35" rows="3" placeholder="Talk something ~" ></textarea><br>
-        </box>
-    </footer>
-        
 </body>
+        
+<footer>
+    <div class="footer-left">
+        <div class="info">
+            <p>協助</p>
+            <br>
+            <a href="">常見問題</a>
+            <a href="">使用條款</a>
+            <a href="">隱私權政策</a>
+        </div>
+        <div class="info">
+            <p>關於</p>
+            <br>
+            <a href="">關於我們</a>
+            <a href="https://data.gov.tw/datasets/search?p=10&size=10&s=dataset_view_times_desc&lgl-1=22026&lgl-2=9497&lgl-3=9550,9515,9503,9517,9527,9552,9511,9533,9545,9521&rct=257">資料來源</a>
+        </div>
+        <div class="info">
+            <p>社群</p>
+            <br>
+            <a href="">Facebook</a>
+            <a href="">Youtube</a>
+        </div>
+    </div>
+    <div class="footer-right">
+        <textarea name="feedback" id="feedback" cols="35" rows="3" placeholder="問題回饋" ></textarea><br>
+    </div>
+</footer>
+
 <script>
     
     
