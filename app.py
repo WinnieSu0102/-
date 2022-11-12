@@ -21,17 +21,16 @@ for index, row in df_park.iterrows():
 
 #map.save('park.html')
 
+
+# 經緯度轉換(TWD97 -> WGS84)
+import geopandas as gpd
+# gdf_dig=gpd.read_file('digging.csv')
+# gdf_dig.crs = {'init': 'epsg:3826'}
+# gdf_dig=gdf_dig.to_crs( 'epsg:4326')
+# gdf_dig.to_csv('digging.csv')
+
 # 讀取道路挖掘資料
 df_dig = pd.read_csv('digging.csv')
-# df_dig.head()
-
-# 經緯度轉換
- # from shapely.geometry import Point
- # import geopandas as gpd
- # geom = [Point(xy) for xy in zip(df_earthquake.TWD97X, df_earthquake.TWD97Y)]
- # crs = {'init': 'epsg:3826'}
- # gdf = gpd.GeoDataFrame(df_earthquake, crs=crs, geometry=geom)
-
 map = folium.Map([23.5, 121], zoom_start=7, tiles='OpenStreetMap')
 
 from folium.plugins import MarkerCluster
@@ -44,9 +43,28 @@ for index, row in df_dig.iterrows():
 
 #map.save('dig.html')
 
+
+import requests
+import json
+import numpy
+
+StoreData = pd.read_csv('gas station.csv') 
+geo=[]
+storeaddress = StoreData['address'] 
+for i in range(storeaddress.size-1):  
+  try:
+    r = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + storeaddress[i] + '&key=AIzaSyDSDe5BXTPUec8dAfa44MkqsqslA4Sp484',verify=False)  
+    if r.status_code ==200:
+      data=json.loads(r.text) 
+      geo.append(str(data['results'][0]['geometry']['location']['lat']) + ';' + str(data['results'][0]['geometry']['location']['lng']))
+  except:
+    geo.append('0;0')    
+df = pd.DataFrame(geo, columns= ['Latitude;Longitude']) #export geodata to geo.csv
+df.to_csv(r'gas station2.csv', index = False, header=True)
+
 # 讀取加油站資料
 df_gas = pd.read_csv('gas station.csv')
-
+df_gas2 = pd.read_csv('gas station2.csv')
 map = folium.Map([23.5, 121], zoom_start=7, tiles='OpenStreetMap')
 
 from folium.plugins import MarkerCluster
