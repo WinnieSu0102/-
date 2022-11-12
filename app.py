@@ -43,24 +43,23 @@ for index, row in df_dig.iterrows():
 
 #map.save('dig.html')
 
-
+#使用Geocoding API 將地址轉換為經緯度(因為免費使用有次數限制，所以就先註解了)
 import requests
 import json
 import numpy
-
-StoreData = pd.read_csv('gas station.csv') 
-geo=[]
-storeaddress = StoreData['address'] 
-for i in range(storeaddress.size-1):  
-  try:
-    r = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + storeaddress[i] + '&key=AIzaSyDSDe5BXTPUec8dAfa44MkqsqslA4Sp484',verify=False)  
-    if r.status_code ==200:
-      data=json.loads(r.text) 
-      geo.append(str(data['results'][0]['geometry']['location']['lat']) + ';' + str(data['results'][0]['geometry']['location']['lng']))
-  except:
-    geo.append('0;0')    
-df = pd.DataFrame(geo, columns= ['Latitude;Longitude']) #export geodata to geo.csv
-df.to_csv(r'gas station2.csv', index = False, header=True)
+# StoreData = pd.read_csv('gas station.csv') 
+# geo=[]
+# storeaddress = StoreData['address'] 
+# for i in range(storeaddress.size-1):  
+#   try:
+#     r = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + storeaddress[i] + '&key=AIzaSyDSDe5BXTPUec8dAfa44MkqsqslA4Sp484',verify=False)  
+#     if r.status_code ==200:
+#       data=json.loads(r.text) 
+#       geo.append(str(data['results'][0]['geometry']['location']['lat']) + ';' + str(data['results'][0]['geometry']['location']['lng']))
+#   except:
+#     geo.append('0;0')    
+# df = pd.DataFrame(geo, columns= ['Latitude;Longitude']) 
+# df.to_csv(r'gas station2.csv', index = False, header=True)
 
 # 讀取加油站資料
 df_gas = pd.read_csv('gas station.csv')
