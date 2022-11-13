@@ -47,34 +47,34 @@ for index, row in df_dig.iterrows():
 import requests
 import json
 import numpy
-# StoreData = pd.read_csv('gas station.csv') 
-# geo=[]
-# storeaddress = StoreData['address'] 
-# for i in range(storeaddress.size-1):  
-#   try:
-#     r = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + storeaddress[i] + '&key=AIzaSyDSDe5BXTPUec8dAfa44MkqsqslA4Sp484',verify=False)  
-#     if r.status_code ==200:
-#       data=json.loads(r.text) 
-#       geo.append(str(data['results'][0]['geometry']['location']['lat']) + ';' + str(data['results'][0]['geometry']['location']['lng']))
-#   except:
-#     geo.append('0;0')    
-# df = pd.DataFrame(geo, columns= ['Latitude;Longitude']) 
-# df.to_csv(r'gas station2.csv', index = False, header=True)
+StoreData = pd.read_csv('gas station.csv') 
+geo=[]
+storeaddress = StoreData['address'] 
+num=len(StoreData)
+if num <5:
+        for i in range(storeaddress.size-1):  
+                r = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + storeaddress[i] + '&key=AIzaSyDSDe5BXTPUec8dAfa44MkqsqslA4Sp484',verify=False)  
+                if r.status_code ==200:
+                        data=json.loads(r.text) 
+                        geo.append(str(data['results'][0]['geometry']['location']['lat']) + ';' + str(data['results'][0]['geometry']['location']['lng']))
+  
+        df = pd.DataFrame(geo, columns= ['Latitude,Longitude']) 
+        df.to_csv(r'gas station2.csv', index = False, header=True)
+        
+else:
+        # 讀取加油站資料
+        df_gas = pd.read_csv('gas station.csv')
+        map = folium.Map([23.5, 121], zoom_start=7, tiles='OpenStreetMap')
 
-# 讀取加油站資料
-df_gas = pd.read_csv('gas station.csv')
-df_gas2 = pd.read_csv('gas station2.csv')
-map = folium.Map([23.5, 121], zoom_start=7, tiles='OpenStreetMap')
+        from folium.plugins import MarkerCluster
 
-from folium.plugins import MarkerCluster
+        marker_cluster = MarkerCluster().add_to(map)
 
-marker_cluster = MarkerCluster().add_to(map)
+        for index, row in df_gas.iterrows():
+                information = str(row['station']) + '' + str(row['address'])
+                folium.Marker(location = [row['Latitude'], row['Longitude']], popup = information).add_to(marker_cluster)
+        #map.save('gas.html')
 
-for index, row in df_gas.iterrows():
-        information = str(row['station']) + '' + str(row['address'])
-        folium.Marker(location = [row['Latitude'], row['Longitude']], popup = information).add_to(marker_cluster)
-
-#map.save('gas.html')
 
 # 讀取電動機車資料
 df_electric_m = pd.read_csv('electric motorcycle.csv')
