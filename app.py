@@ -59,7 +59,7 @@ if num <5:
                         geo.append(str(data['results'][0]['geometry']['location']['lat']) + ';' + str(data['results'][0]['geometry']['location']['lng']))
   
         df = pd.DataFrame(geo, columns= ['Latitude,Longitude']) 
-        df.to_csv(r'gas station2.csv', index = False, header=True)
+        df.to_csv(r'gas station.csv', index = False, header=True)
         
 else:
         # 讀取加油站資料
