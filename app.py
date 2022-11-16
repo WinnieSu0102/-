@@ -43,7 +43,7 @@ for index, row in df_dig.iterrows():
 
 #map.save('dig.html')
 
-#使用Geocoding API 將地址轉換為經緯度(因為免費使用有次數限制，所以就先註解了)
+#使用Geocoding API 將地址轉換為經緯度
 import requests
 import json
 import numpy
@@ -61,19 +61,19 @@ if num <5:
         df = pd.DataFrame(geo, columns= ['Latitude,Longitude']) 
         df.to_csv(r'gas station.csv', index = False, header=True)
         
-else:
-        # 讀取加油站資料
-        df_gas = pd.read_csv('gas station.csv')
-        map = folium.Map([23.5, 121], zoom_start=7, tiles='OpenStreetMap')
 
-        from folium.plugins import MarkerCluster
+# 讀取加油站資料
+df_gas = pd.read_csv('gas station.csv')
+map = folium.Map([23.5, 121], zoom_start=7, tiles='OpenStreetMap')
 
-        marker_cluster = MarkerCluster().add_to(map)
+from folium.plugins import MarkerCluster
 
-        for index, row in df_gas.iterrows():
-                information = str(row['station']) + '' + str(row['address'])
-                folium.Marker(location = [row['Latitude'], row['Longitude']], popup = information).add_to(marker_cluster)
-        #map.save('gas.html')
+marker_cluster = MarkerCluster().add_to(map)
+
+for index, row in df_gas.iterrows():
+        information = str(row['station']) + '' + str(row['address'])
+        folium.Marker(location = [row['Latitude'], row['Longitude']], popup = information).add_to(marker_cluster)
+#map.save('gas.html')
 
 
 # 讀取電動機車資料
